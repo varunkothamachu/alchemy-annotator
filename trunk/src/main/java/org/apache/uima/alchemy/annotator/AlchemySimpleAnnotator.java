@@ -21,8 +21,7 @@ public class AlchemySimpleAnnotator extends JCasAnnotator_ImplBase {
 	      // open connection and send data
 	      URLConnection connection = this.alchemyService.openConnection();
 	      connection.setDoOutput(true);
-	      BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection
-	              .getOutputStream(), "UTF-8"));
+	      BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream(), "UTF-8"));
 	      writer.write(this.serviceParams);
 	      String modifiedText = aJCas.getDocumentText();
 	      for(int i = 0; i < this.charsToReplace.length; i++) {
