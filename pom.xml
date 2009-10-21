@@ -2,13 +2,15 @@
 	<parent>
 		<artifactId>SandboxDistr-pearBuilder</artifactId>
 		<groupId>org.apache.uima</groupId>
-		<version>2.3.0-incubating</version>
-		<relativePath>../SandboxDistr/pear-builder-pom</relativePath>
+		<version>2.3.0-incubating-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
   <groupId>org.apache.uima</groupId>
   <artifactId>alchemy-annotator</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <scm>
+  	<url>http://alchemy-annotator.googlecode.com/svn/trunk/</url>
+  </scm>
   <dependencies>
   	<dependency>
   		<groupId>org.apache.uima</groupId>
