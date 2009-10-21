@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>SandboxDistr-pearBuilder</artifactId>
+		<groupId>org.apache.uima</groupId>
+		<version>2.3.0-incubating</version>
+		<relativePath>../SandboxDistr/pear-builder-pom</relativePath>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+  <groupId>org.apache.uima</groupId>
+  <artifactId>alchemy-annotator</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.uima</groupId>
+  		<artifactId>uimaj-core</artifactId>
+  		<version>2.3.0-incubating</version>
+  		<type>pom.lastUpdated</type>
+  		<scope>compile</scope>
+  	</dependency>
+  </dependencies>
+</project>
