@@ -89,11 +89,12 @@ public class AlchemyTextEntityExtractionAnnotator extends JCasAnnotator_ImplBase
 	      BufferedInputStream in = new BufferedInputStream(connection.getInputStream());
 	      Document feedDoc = docBuilder.parse(in);
 	      String xmlContent = feedDoc.getDocumentElement().getTextContent();
-	      System.out.println(xmlContent);
 
+	      //map alchemy api results to type system
+	      
 	    }
 	    catch (Exception e) {
-	    	
+	    	throw new AnalysisEngineProcessException(e);
 	    }
 
 	  }
