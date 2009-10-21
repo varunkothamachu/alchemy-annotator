@@ -90,7 +90,7 @@ public class AlchemyTextEntityExtractionAnnotator extends JCasAnnotator_ImplBase
 	      Document feedDoc = docBuilder.parse(in);
 	      String xmlContent = feedDoc.getDocumentElement().getTextContent();
 
-	      //map alchemy api results to type system
+	      //TODO map alchemy api results to UIMA type system
 	      
 	    }
 	    catch (Exception e) {
