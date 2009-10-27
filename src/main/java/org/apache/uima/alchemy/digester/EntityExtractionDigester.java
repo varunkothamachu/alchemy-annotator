@@ -34,7 +34,6 @@ public class EntityExtractionDigester implements AlchemyOutputDigester{
 			
 		}
 		digester.addSetNext("results/entities/entity", "addEntity" );
-		digester.addBeanPropertySetter("results/entities","entities");
 		return (Results)digester.parse(new StringReader(xmlString));
 	}
 
