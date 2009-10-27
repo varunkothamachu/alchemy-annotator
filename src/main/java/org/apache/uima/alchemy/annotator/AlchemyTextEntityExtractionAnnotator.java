@@ -12,6 +12,10 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.apache.uima.UimaContext;
+import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
+import org.apache.uima.alchemy.digester.EntityExtractionDigester;
+import org.apache.uima.alchemy.digester.domain.Entity;
+import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
@@ -23,11 +27,13 @@ public class AlchemyTextEntityExtractionAnnotator extends JCasAnnotator_ImplBase
 	private URL alchemyService;
 	private String serviceParams;
 	private String[] charsToReplace = {"<", ">", "\"", "'", "&"};
-	
+	private AlchemyOutputDigester digester;
 	
 	@Override
 	public void initialize(UimaContext aContext)
 			throws ResourceInitializationException {
+		this.digester = new EntityExtractionDigester();
+		
 		try {
 			this.alchemyService = createServiceURI();
 		} catch (Exception e) {
@@ -91,6 +97,19 @@ public class AlchemyTextEntityExtractionAnnotator extends JCasAnnotator_ImplBase
 	      String xmlContent = feedDoc.getDocumentElement().getTextContent();
 
 	      //TODO map alchemy api results to UIMA type system
+	      System.out.println(xmlContent);
+	      
+	      try {
+			Results results = this.digester.parseAlchemyXML(xmlContent);
+			System.out.println("status:"+results.getStatus());
+			for (Entity entity : results.getEntities().getEntities()){
+				System.out.println("en:"+entity.getText()+"+"+entity.getType()+"+"+entity.getCount()+"+"+entity.getRelevance());
+			}
+			System.out.println("lang:"+results.getLanguage());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	      
 	    }
 	    catch (Exception e) {
