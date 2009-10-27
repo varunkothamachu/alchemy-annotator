@@ -75,9 +75,9 @@ public class AlchemyTextEntityExtractionAnnotatorTest {
 	
 	@Test
 	public void testAnnotator() {
-		String doc = "Ecology of Infectious Diseases  (EID) SF, NIH Award EID Grants See Press Release 08-160 for announcement of recent awards" +
-				"CONTACTS Name 	Email Phone Room N. Thomas Hobbs nhobbs@nsf.gov 	(703) 292-8610 Donald  Rice drice@nsf.gov (703) 292-7708 " +
-				"Deborah  Winslow dwinslow@nsf.gov (703) 292-7315 PROGRAM GUIDELINES Solicitation 08-601 DUE DATES Full Proposal Deadline Date : December 10, 2008" +
+		String doc = "Ecology of Infectious Diseases (EID) SF, NIH Award EID Grants See Press Release 08-160 for announcement of recent awards" +
+				"CONTACTS Name Email Phone Room N. Thomas Hobbs nhobbs@nsf.gov (703) 292-8610 Donald  Rice drice@nsf.gov (703) 292-7708 " +
+				"Deborah Winslow dwinslow@nsf.gov (703) 292-7315 PROGRAM GUIDELINES Solicitation 08-601 DUE DATES Full Proposal Deadline Date : December 10, 2008" +
 				" Second Wednesday in December, Annually Thereafter SYNOPSIS The Ecology of Infectious Diseases program solicitation supports the development of" +
 				" predictive models and the discovery of principles governing the transmission dynamics of infectious disease agents. To that end, research proposals" +
 				" should focus on understanding the ecological and socio-ecological determinants of transmission by vectors or abiotic agents, the population dynamics " +
