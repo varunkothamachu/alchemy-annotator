@@ -1,5 +1,7 @@
 package org.apache.uima.alchemy.digester;
 
+import java.io.ByteArrayInputStream;
+
 import junit.framework.TestCase;
 
 import org.apache.uima.alchemy.digester.domain.Results;
@@ -18,7 +20,7 @@ public class EntityExtractionDigesterTest extends TestCase {
 			"<musicBrainz>LINKED_DATA_MUSICBRAINZ</musicBrainz></disambiguated><quotations><quotation>ENTITY_QUOTATION</quotation>" +
 			"</quotations></entity></entities></results>";
 			EntityExtractionDigester digester = new EntityExtractionDigester();
-			Results results = digester.parseAlchemyXML(xmlString);
+			Results results = digester.parseAlchemyXML(new ByteArrayInputStream(xmlString.getBytes()));
 			assertTrue(results!=null);
 		} catch (Exception e) {
 			e.printStackTrace();
