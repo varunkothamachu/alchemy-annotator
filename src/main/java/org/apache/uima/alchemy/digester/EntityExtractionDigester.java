@@ -1,7 +1,7 @@
 package org.apache.uima.alchemy.digester;
 
 import java.io.IOException;
-import java.io.StringReader;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 
 import org.apache.commons.digester.Digester;
@@ -13,7 +13,7 @@ import org.xml.sax.SAXException;
 
 public class EntityExtractionDigester implements AlchemyOutputDigester{
 	
-	public Results parseAlchemyXML(String xmlString) throws IOException, SAXException, URISyntaxException {
+	public Results parseAlchemyXML(InputStream stream) throws IOException, SAXException, URISyntaxException {
 		Digester digester = new Digester();
 		digester.setValidating( false );
 
@@ -26,7 +26,7 @@ public class EntityExtractionDigester implements AlchemyOutputDigester{
 		digester.addBeanPropertySetter("results/entities/entity/relevance","relevance");
 		digester.addBeanPropertySetter("results/entities/entity/count","count");
 		digester.addBeanPropertySetter("results/entities/entity/text","text");
-		//TODO try to get the disambiguation results
+		//TODO try to get the disambiguation results if any
 		try {
 			
 		}
@@ -34,7 +34,8 @@ public class EntityExtractionDigester implements AlchemyOutputDigester{
 			
 		}
 		digester.addSetNext("results/entities/entity", "addEntity" );
-		return (Results)digester.parse(new StringReader(xmlString));
+		
+		return (Results)digester.parse(stream);
 	}
 
 }

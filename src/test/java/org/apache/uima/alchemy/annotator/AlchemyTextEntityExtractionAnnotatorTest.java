@@ -1,5 +1,7 @@
 package org.apache.uima.alchemy.annotator;
 
+import static org.junit.Assert.*;
+
 import java.io.IOException;
 
 import org.apache.uima.UIMAFramework;
@@ -88,12 +90,14 @@ public class AlchemyTextEntityExtractionAnnotatorTest {
 				" including for example, participation of epidemiologists, physicians, veterinarians, medical social scientists, medical entomologists, virologists, or " +
 				"parasitologists.RELATED URLS NIH Awards A Special Report: Ecology of Infectious Diseases THIS PROGRAM IS PART OF Additional Funding Opportunities for the " +
 				"DEB Community Emerging Frontiers";
+		String doc2 = "Eight US soldiers die in attacks in south Afghanistan, making October the deadliest month for the US in the war there";
 		String xmlPath = "src/main/resources/TextEntityExtractionAEDescriptor.xml";
 		try {
-			this.executeAE(this.getAE(xmlPath), doc);
+			this.executeAE(this.getAE(xmlPath), doc2);
 		} catch (AnalysisEngineProcessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			fail();
 		}
 	}
 

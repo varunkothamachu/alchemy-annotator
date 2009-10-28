@@ -2,6 +2,7 @@ package org.apache.uima.alchemy.annotator;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
+import java.io.ByteArrayInputStream;
 import java.io.OutputStreamWriter;
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -95,12 +96,13 @@ public class AlchemyTextEntityExtractionAnnotator extends JCasAnnotator_ImplBase
 	      BufferedInputStream in = new BufferedInputStream(connection.getInputStream());
 	      Document feedDoc = docBuilder.parse(in);
 	      String xmlContent = feedDoc.getDocumentElement().getTextContent();
-
-	      //TODO map alchemy api results to UIMA type system
-	      System.out.println(xmlContent);
 	      
+	      // create new InputStream for the XML content
+	      BufferedInputStream bufByteIn = new BufferedInputStream(new ByteArrayInputStream(xmlContent.getBytes(feedDoc.getXmlEncoding())));
+	      
+	      //TODO map alchemy api results to UIMA type system
 	      try {
-			Results results = this.digester.parseAlchemyXML(xmlContent);
+	    	  Results results = this.digester.parseAlchemyXML(bufByteIn);
 			System.out.println("status:"+results.getStatus());
 			for (Entity entity : results.getEntities().getEntities()){
 				System.out.println("en:"+entity.getText()+"+"+entity.getType()+"+"+entity.getCount()+"+"+entity.getRelevance());
