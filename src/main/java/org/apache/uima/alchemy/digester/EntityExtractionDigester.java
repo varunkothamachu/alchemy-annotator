@@ -34,6 +34,7 @@ public class EntityExtractionDigester implements AlchemyOutputDigester{
 			
 		}
 		digester.addSetNext("results/entities/entity", "addEntity" );
+		digester.addSetNext("results/entities","setEntities");
 		
 		return (Results)digester.parse(stream);
 	}
