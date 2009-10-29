@@ -2,7 +2,6 @@ package org.apache.uima.alchemy.annotator;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
@@ -16,20 +15,24 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.apache.commons.lang.Validate;
 import org.apache.uima.UimaContext;
+import org.apache.uima.alchemy.annotator.exception.AlchemyCallFailedException;
+import org.apache.uima.alchemy.annotator.exception.ResultDigestingException;
 import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
 import org.apache.uima.alchemy.digester.EntityExtractionDigester;
 import org.apache.uima.alchemy.digester.domain.Entity;
 import org.apache.uima.alchemy.digester.domain.Results;
+import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
 public class AlchemyTextEntityExtractionAnnotator extends JCasAnnotator_ImplBase {
 
+	private static final String STATUS_OK = "OK";
 	private URL alchemyService;
 	private String serviceParams;
 	private String[] charsToReplace = {"<", ">", "\"", "'", "&"};
@@ -97,21 +100,24 @@ public class AlchemyTextEntityExtractionAnnotator extends JCasAnnotator_ImplBase
 
 			InputStream bufByteIn = parseOutput(connection);
 
-			//TODO map alchemy api results to UIMA type system
+			// map alchemy api results to UIMA type system
 			try {
 				Results results = this.digester.parseAlchemyXML(bufByteIn);
-				System.out.println("status:"+results.getStatus());
-				System.out.println("lang:"+results.getLanguage());
-				System.out.println("entities: "+results.getEntities());
-				for (Entity entity : results.getEntities().getEntities()){
-					System.out.println("en:"+entity.getText()+"+"+entity.getType()+"+"+entity.getCount()+"+"+entity.getRelevance());
+				Validate.notNull(results);
+				Validate.notNull(results.getStatus());
+				if (results.getStatus().equalsIgnoreCase(STATUS_OK)) {
+					Alchemy2TypeSystemMapper.mapEntities(results,aJCas); //create annotations from results
+				}
+				else {
+					throw new AlchemyCallFailedException(results.getStatus());
 				}
 				
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				throw new ResultDigestingException(e);
 			}
-			bufByteIn.close();
+			finally{
+				bufByteIn.close();
+			}
 		}
 		catch (Exception e) {
 			throw new AnalysisEngineProcessException(e);
@@ -122,17 +128,7 @@ public class AlchemyTextEntityExtractionAnnotator extends JCasAnnotator_ImplBase
 	private InputStream parseOutput(URLConnection connection)
 	throws ParserConfigurationException, IOException, SAXException,
 	UnsupportedEncodingException {
-		// first get the XML result out of the returned XML
-		DocumentBuilder docBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 		BufferedInputStream in = new BufferedInputStream(connection.getInputStream());
-//		Document feedDoc = docBuilder.parse(in);
-//		return new ByteArrayInputStream(feedDoc.getDocumentElement().toString().getBytes());
-		
-		
-//		String xmlContent = feedDoc.getDocumentElement().getTextContent();
-
-		// create new InputStream for the XML content
-//		BufferedInputStream bufByteIn = new BufferedInputStream(new ByteArrayInputStream(xmlContent.getBytes(feedDoc.getXmlEncoding())));
 		return in;
 	}
 

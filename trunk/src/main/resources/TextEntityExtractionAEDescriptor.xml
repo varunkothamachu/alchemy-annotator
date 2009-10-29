@@ -1,92 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
-  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <primitive>true</primitive>
-  <annotatorImplementationName>org.apache.uima.alchemy.annotator.AlchemyTextEntityExtractionAnnotator</annotatorImplementationName>
-  <analysisEngineMetaData>
-    <name>TextEntityExtractionAEDescriptor</name>
-    <description/>
-    <version>1.0</version>
-    <vendor/>
-    <configurationParameters>
-      <configurationParameter>
-        <name>apikey</name>
-        <type>String</type>
-        <multiValued>false</multiValued>
-        <mandatory>true</mandatory>
-      </configurationParameter>
-      <configurationParameter>
-        <name>outputMode</name>
-        <type>String</type>
-        <multiValued>false</multiValued>
-        <mandatory>true</mandatory>
-      </configurationParameter>
-      <configurationParameter>
-        <name>disambiguate</name>
-        <type>Integer</type>
-        <multiValued>false</multiValued>
-        <mandatory>true</mandatory>
-      </configurationParameter>
-      <configurationParameter>
-        <name>linkedData</name>
-        <type>String</type>
-        <multiValued>false</multiValued>
-        <mandatory>false</mandatory>
-      </configurationParameter>
-      <configurationParameter>
-        <name>showSourceText</name>
-        <type>Integer</type>
-        <multiValued>false</multiValued>
-        <mandatory>true</mandatory>
-      </configurationParameter>
-      <configurationParameter>
-        <name>baseUrl</name>
-        <type>String</type>
-        <multiValued>false</multiValued>
-        <mandatory>false</mandatory>
-      </configurationParameter>
-    </configurationParameters>
-    <configurationParameterSettings>
-      <nameValuePair>
-        <name>apikey</name>
-        <value>
-          <string></string>
-        </value>
-      </nameValuePair>
-      <nameValuePair>
-        <name>outputMode</name>
-        <value>
-          <string>xml</string>
-        </value>
-      </nameValuePair>
-      <nameValuePair>
-        <name>disambiguate</name>
-        <value>
-          <integer>1</integer>
-        </value>
-      </nameValuePair>
-      <nameValuePair>
-        <name>showSourceText</name>
-        <value>
-          <integer>1</integer>
-        </value>
-      </nameValuePair>
-    </configurationParameterSettings>
-    <typeSystemDescription/>
-    <typePriorities/>
-    <fsIndexCollection/>
-    <capabilities>
-      <capability>
-        <inputs/>
-        <outputs/>
-        <languagesSupported/>
-      </capability>
-    </capabilities>
-    <operationalProperties>
-      <modifiesCas>true</modifiesCas>
-      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
-      <outputsNewCASes>false</outputsNewCASes>
-    </operationalProperties>
-  </analysisEngineMetaData>
-  <resourceManagerConfiguration/>
+<frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+<primitive>true</primitive>
+<annotatorImplementationName>org.apache.uima.alchemy.annotator.AlchemyTextEntityExtractionAnnotator</annotatorImplementationName>
+<analysisEngineMetaData>
+<name>TextEntityExtractionAEDescriptor</name>
+<description></description>
+<version>1.0</version>
+<vendor></vendor>
+<configurationParameters>
+<configurationParameter>
+<name>apikey</name>
+<type>String</type>
+<multiValued>false</multiValued>
+<mandatory>true</mandatory>
+</configurationParameter>
+<configurationParameter>
+<name>outputMode</name>
+<type>String</type>
+<multiValued>false</multiValued>
+<mandatory>true</mandatory>
+</configurationParameter>
+<configurationParameter>
+<name>disambiguate</name>
+<type>Integer</type>
+<multiValued>false</multiValued>
+<mandatory>true</mandatory>
+</configurationParameter>
+<configurationParameter>
+<name>linkedData</name>
+<type>String</type>
+<multiValued>false</multiValued>
+<mandatory>false</mandatory>
+</configurationParameter>
+<configurationParameter>
+<name>showSourceText</name>
+<type>Integer</type>
+<multiValued>false</multiValued>
+<mandatory>true</mandatory>
+</configurationParameter>
+<configurationParameter>
+<name>baseUrl</name>
+<type>String</type>
+<multiValued>false</multiValued>
+<mandatory>false</mandatory>
+</configurationParameter>
+</configurationParameters>
+<configurationParameterSettings>
+<nameValuePair>
+<name>apikey</name>
+<value>
+<string></string>
+</value>
+</nameValuePair>
+<nameValuePair>
+<name>outputMode</name>
+<value>
+<string>xml</string>
+</value>
+</nameValuePair>
+<nameValuePair>
+<name>disambiguate</name>
+<value>
+<integer>1</integer>
+</value>
+</nameValuePair>
+<nameValuePair>
+<name>showSourceText</name>
+<value>
+<integer>1</integer>
+</value>
+</nameValuePair>
+</configurationParameterSettings>
+<typeSystemDescription>
+<types>
+<typeDescription>
+<name>org.apache.uima.alchemy.ts.Anniversary</name>
+<description/>
+<supertypeName>uima.cas.TOP</supertypeName>
+<features>
+<featureDescription>
+<name>text</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>count</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>relevance</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+</features>
+</typeDescription>
+<typeDescription>
+<name>org.apache.uima.alchemy.ts.City</name>
+<description/>
+<supertypeName>uima.cas.TOP</supertypeName>
+<features>
+<featureDescription>
+<name>text</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>count</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>relevance</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+</features>
+</typeDescription>
+<typeDescription>
+<name>org.apache.uima.alchemy.ts.Company</name>
+<description/>
+<supertypeName>uima.cas.TOP</supertypeName>
+<features>
+<featureDescription>
+<name>text</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>relevance</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>count</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+</features>
+</typeDescription>
+<typeDescription>
+<name>org.apache.uima.alchemy.ts.Continent</name>
+<description/>
+<supertypeName>uima.cas.TOP</supertypeName>
+<features>
+<featureDescription>
+<name>text</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>relevance</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+<featureDescription>
+<name>count</name>
+<description/>
+<rangeTypeName>uima.cas.String</rangeTypeName>
+</featureDescription>
+</features>
+</typeDescription>
+</types>
+</typeSystemDescription>
+<typePriorities/>
+<fsIndexCollection/>
+<capabilities>
+<capability>
+<inputs/>
+<outputs/>
+<languagesSupported/>
+</capability>
+</capabilities>
+<operationalProperties>
+<modifiesCas>true</modifiesCas>
+<multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+<outputsNewCASes>false</outputsNewCASes>
+</operationalProperties>
+</analysisEngineMetaData>
+<resourceManagerConfiguration/>
 </analysisEngineDescription>
