@@ -11,8 +11,6 @@ import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.commons.lang.Validate;
@@ -21,7 +19,6 @@ import org.apache.uima.alchemy.annotator.exception.AlchemyCallFailedException;
 import org.apache.uima.alchemy.annotator.exception.ResultDigestingException;
 import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
 import org.apache.uima.alchemy.digester.EntityExtractionDigester;
-import org.apache.uima.alchemy.digester.domain.Entity;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;

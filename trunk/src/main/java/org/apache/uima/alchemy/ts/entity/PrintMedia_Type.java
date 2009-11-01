@@ -1,6 +1,6 @@
 
-/* First created by JCasGen Thu Oct 29 09:51:01 CET 2009 */
-package org.apache.uima.alchemy.ts;
+/* First created by JCasGen Sun Nov 01 10:30:15 CET 2009 */
+package org.apache.uima.alchemy.ts.entity;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -14,32 +14,32 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** 
- * Updated by JCasGen Thu Oct 29 09:51:23 CET 2009
+ * Updated by JCasGen Sun Nov 01 10:33:38 CET 2009
  * @generated */
-public class Continent_Type extends TOP_Type {
+public class PrintMedia_Type extends TOP_Type {
   /** @generated */
   protected FSGenerator getFSGenerator() {return fsGenerator;}
   /** @generated */
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (Continent_Type.this.useExistingInstance) {
+  			 if (PrintMedia_Type.this.useExistingInstance) {
   			   // Return eq fs instance if already created
-  		     FeatureStructure fs = Continent_Type.this.jcas.getJfsFromCaddr(addr);
+  		     FeatureStructure fs = PrintMedia_Type.this.jcas.getJfsFromCaddr(addr);
   		     if (null == fs) {
-  		       fs = new Continent(addr, Continent_Type.this);
-  			   Continent_Type.this.jcas.putJfsFromCaddr(addr, fs);
+  		       fs = new PrintMedia(addr, PrintMedia_Type.this);
+  			   PrintMedia_Type.this.jcas.putJfsFromCaddr(addr, fs);
   			   return fs;
   		     }
   		     return fs;
-        } else return new Continent(addr, Continent_Type.this);
+        } else return new PrintMedia(addr, PrintMedia_Type.this);
   	  }
     };
   /** @generated */
-  public final static int typeIndexID = Continent.typeIndexID;
+  public final static int typeIndexID = PrintMedia.typeIndexID;
   /** @generated 
      @modifiable */
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.alchemy.ts.Continent");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.alchemy.ts.entity.PrintMedia");
  
   /** @generated */
   final Feature casFeat_text;
@@ -48,32 +48,14 @@ public class Continent_Type extends TOP_Type {
   /** @generated */ 
   public String getText(int addr) {
         if (featOkTst && casFeat_text == null)
-      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.Continent");
+      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.PrintMedia");
     return ll_cas.ll_getStringValue(addr, casFeatCode_text);
   }
   /** @generated */    
   public void setText(int addr, String v) {
         if (featOkTst && casFeat_text == null)
-      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.Continent");
+      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.PrintMedia");
     ll_cas.ll_setStringValue(addr, casFeatCode_text, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_relevance;
-  /** @generated */
-  final int     casFeatCode_relevance;
-  /** @generated */ 
-  public String getRelevance(int addr) {
-        if (featOkTst && casFeat_relevance == null)
-      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.Continent");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_relevance);
-  }
-  /** @generated */    
-  public void setRelevance(int addr, String v) {
-        if (featOkTst && casFeat_relevance == null)
-      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.Continent");
-    ll_cas.ll_setStringValue(addr, casFeatCode_relevance, v);}
     
   
  
@@ -84,14 +66,32 @@ public class Continent_Type extends TOP_Type {
   /** @generated */ 
   public String getCount(int addr) {
         if (featOkTst && casFeat_count == null)
-      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.Continent");
+      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.PrintMedia");
     return ll_cas.ll_getStringValue(addr, casFeatCode_count);
   }
   /** @generated */    
   public void setCount(int addr, String v) {
         if (featOkTst && casFeat_count == null)
-      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.Continent");
+      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.PrintMedia");
     ll_cas.ll_setStringValue(addr, casFeatCode_count, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_relevance;
+  /** @generated */
+  final int     casFeatCode_relevance;
+  /** @generated */ 
+  public String getRelevance(int addr) {
+        if (featOkTst && casFeat_relevance == null)
+      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.PrintMedia");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_relevance);
+  }
+  /** @generated */    
+  public void setRelevance(int addr, String v) {
+        if (featOkTst && casFeat_relevance == null)
+      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.PrintMedia");
+    ll_cas.ll_setStringValue(addr, casFeatCode_relevance, v);}
     
   
 
@@ -99,7 +99,7 @@ public class Continent_Type extends TOP_Type {
 
   /** initialize variables to correspond with Cas Type and Features
 	* @generated */
-  public Continent_Type(JCas jcas, Type casType) {
+  public PrintMedia_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
@@ -108,12 +108,12 @@ public class Continent_Type extends TOP_Type {
     casFeatCode_text  = (null == casFeat_text) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_text).getCode();
 
  
-    casFeat_relevance = jcas.getRequiredFeatureDE(casType, "relevance", "uima.cas.String", featOkTst);
-    casFeatCode_relevance  = (null == casFeat_relevance) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_relevance).getCode();
-
- 
     casFeat_count = jcas.getRequiredFeatureDE(casType, "count", "uima.cas.String", featOkTst);
     casFeatCode_count  = (null == casFeat_count) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_count).getCode();
+
+ 
+    casFeat_relevance = jcas.getRequiredFeatureDE(casType, "relevance", "uima.cas.String", featOkTst);
+    casFeatCode_relevance  = (null == casFeat_relevance) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_relevance).getCode();
 
   }
 }

@@ -15,7 +15,7 @@ public class Alchemy2TypeSystemMapper {
 			System.out.println("en:"+entity.getText()+"+"+entity.getType()+"+"+entity.getCount()+"+"+entity.getRelevance());
 			try {
 				//FIXME create type system classes first!
-				Object fsObject = ("org.apache.uima.alchemy.ts."+entity.getType()).getClass();
+				Object fsObject = ("org.apache.uima.alchemy.ts.entity."+entity.getType()).getClass();
 				FeatureStructure fs = (FeatureStructure) fsObject;
 				fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "count"), entity.getCount()); //count
 				fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "text"), entity.getText()); //text
