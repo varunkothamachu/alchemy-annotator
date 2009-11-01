@@ -1,6 +1,6 @@
 
-/* First created by JCasGen Thu Oct 29 09:49:54 CET 2009 */
-package org.apache.uima.alchemy.ts;
+/* First created by JCasGen Sun Nov 01 10:26:55 CET 2009 */
+package org.apache.uima.alchemy.ts.entity;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
@@ -14,32 +14,32 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** 
- * Updated by JCasGen Thu Oct 29 09:51:23 CET 2009
+ * Updated by JCasGen Sun Nov 01 10:33:37 CET 2009
  * @generated */
-public class City_Type extends TOP_Type {
+public class Anniversary_Type extends TOP_Type {
   /** @generated */
   protected FSGenerator getFSGenerator() {return fsGenerator;}
   /** @generated */
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (City_Type.this.useExistingInstance) {
+  			 if (Anniversary_Type.this.useExistingInstance) {
   			   // Return eq fs instance if already created
-  		     FeatureStructure fs = City_Type.this.jcas.getJfsFromCaddr(addr);
+  		     FeatureStructure fs = Anniversary_Type.this.jcas.getJfsFromCaddr(addr);
   		     if (null == fs) {
-  		       fs = new City(addr, City_Type.this);
-  			   City_Type.this.jcas.putJfsFromCaddr(addr, fs);
+  		       fs = new Anniversary(addr, Anniversary_Type.this);
+  			   Anniversary_Type.this.jcas.putJfsFromCaddr(addr, fs);
   			   return fs;
   		     }
   		     return fs;
-        } else return new City(addr, City_Type.this);
+        } else return new Anniversary(addr, Anniversary_Type.this);
   	  }
     };
   /** @generated */
-  public final static int typeIndexID = City.typeIndexID;
+  public final static int typeIndexID = Anniversary.typeIndexID;
   /** @generated 
      @modifiable */
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.alchemy.ts.City");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.alchemy.ts.entity.Anniversary");
  
   /** @generated */
   final Feature casFeat_text;
@@ -48,13 +48,13 @@ public class City_Type extends TOP_Type {
   /** @generated */ 
   public String getText(int addr) {
         if (featOkTst && casFeat_text == null)
-      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.City");
+      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.Anniversary");
     return ll_cas.ll_getStringValue(addr, casFeatCode_text);
   }
   /** @generated */    
   public void setText(int addr, String v) {
         if (featOkTst && casFeat_text == null)
-      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.City");
+      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.Anniversary");
     ll_cas.ll_setStringValue(addr, casFeatCode_text, v);}
     
   
@@ -66,13 +66,13 @@ public class City_Type extends TOP_Type {
   /** @generated */ 
   public String getCount(int addr) {
         if (featOkTst && casFeat_count == null)
-      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.City");
+      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.Anniversary");
     return ll_cas.ll_getStringValue(addr, casFeatCode_count);
   }
   /** @generated */    
   public void setCount(int addr, String v) {
         if (featOkTst && casFeat_count == null)
-      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.City");
+      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.Anniversary");
     ll_cas.ll_setStringValue(addr, casFeatCode_count, v);}
     
   
@@ -84,13 +84,13 @@ public class City_Type extends TOP_Type {
   /** @generated */ 
   public String getRelevance(int addr) {
         if (featOkTst && casFeat_relevance == null)
-      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.City");
+      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.Anniversary");
     return ll_cas.ll_getStringValue(addr, casFeatCode_relevance);
   }
   /** @generated */    
   public void setRelevance(int addr, String v) {
         if (featOkTst && casFeat_relevance == null)
-      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.City");
+      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.Anniversary");
     ll_cas.ll_setStringValue(addr, casFeatCode_relevance, v);}
     
   
@@ -99,7 +99,7 @@ public class City_Type extends TOP_Type {
 
   /** initialize variables to correspond with Cas Type and Features
 	* @generated */
-  public City_Type(JCas jcas, Type casType) {
+  public Anniversary_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 

@@ -1,7 +1,7 @@
 
 
-/* First created by JCasGen Thu Oct 29 09:49:54 CET 2009 */
-package org.apache.uima.alchemy.ts;
+/* First created by JCasGen Sun Nov 01 10:26:55 CET 2009 */
+package org.apache.uima.alchemy.ts.entity;
 
 import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
@@ -11,7 +11,7 @@ import org.apache.uima.jcas.cas.TOP;
 
 
 /** 
- * Updated by JCasGen Thu Oct 29 09:51:23 CET 2009
+ * Updated by JCasGen Sun Nov 01 10:33:37 CET 2009
  * XML source: /Users/tommasoteofili/Documents/workspaces/default_workspace/alchemy-annotator/src/main/resources/TextEntityExtractionAEDescriptor.xml
  * @generated */
 public class City extends TOP {
@@ -58,14 +58,14 @@ public class City extends TOP {
    * @generated */
   public String getText() {
     if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_text == null)
-      jcasType.jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.City");
+      jcasType.jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.City");
     return jcasType.ll_cas.ll_getStringValue(addr, ((City_Type)jcasType).casFeatCode_text);}
     
   /** setter for text - sets  
    * @generated */
   public void setText(String v) {
     if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_text == null)
-      jcasType.jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.City");
+      jcasType.jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.City");
     jcasType.ll_cas.ll_setStringValue(addr, ((City_Type)jcasType).casFeatCode_text, v);}    
    
     
@@ -76,14 +76,14 @@ public class City extends TOP {
    * @generated */
   public String getCount() {
     if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_count == null)
-      jcasType.jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.City");
+      jcasType.jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.City");
     return jcasType.ll_cas.ll_getStringValue(addr, ((City_Type)jcasType).casFeatCode_count);}
     
   /** setter for count - sets  
    * @generated */
   public void setCount(String v) {
     if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_count == null)
-      jcasType.jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.City");
+      jcasType.jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.City");
     jcasType.ll_cas.ll_setStringValue(addr, ((City_Type)jcasType).casFeatCode_count, v);}    
    
     
@@ -94,14 +94,14 @@ public class City extends TOP {
    * @generated */
   public String getRelevance() {
     if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_relevance == null)
-      jcasType.jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.City");
+      jcasType.jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.City");
     return jcasType.ll_cas.ll_getStringValue(addr, ((City_Type)jcasType).casFeatCode_relevance);}
     
   /** setter for relevance - sets  
    * @generated */
   public void setRelevance(String v) {
     if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_relevance == null)
-      jcasType.jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.City");
+      jcasType.jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.City");
     jcasType.ll_cas.ll_setStringValue(addr, ((City_Type)jcasType).casFeatCode_relevance, v);}    
   }
 
