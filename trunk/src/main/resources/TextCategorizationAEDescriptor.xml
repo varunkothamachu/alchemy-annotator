@@ -2,9 +2,9 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>true</primitive>
-  <annotatorImplementationName>org.apache.uima.alchemy.annotator.AlchemyTextAnnotatedNamedEntityExtractionAnnotator</annotatorImplementationName>
+  <annotatorImplementationName>org.apache.uima.alchemy.annotator.AlchemyTextCategorizationAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>TextAnnotatedEntityExtractionAEDescriptor</name>
+    <name>TextCategorizationAEDescriptor</name>
     <description/>
     <version>1.0</version>
     <vendor/>
@@ -22,31 +22,7 @@
         <mandatory>true</mandatory>
       </configurationParameter>
       <configurationParameter>
-        <name>disambiguate</name>
-        <type>Integer</type>
-        <multiValued>false</multiValued>
-        <mandatory>true</mandatory>
-      </configurationParameter>
-      <configurationParameter>
-        <name>showSourceText</name>
-        <type>Integer</type>
-        <multiValued>false</multiValued>
-        <mandatory>true</mandatory>
-      </configurationParameter>
-      <configurationParameter>
         <name>baseUrl</name>
-        <type>String</type>
-        <multiValued>false</multiValued>
-        <mandatory>false</mandatory>
-      </configurationParameter>
-      <configurationParameter>
-        <name>quotations</name>
-        <type>String</type>
-        <multiValued>false</multiValued>
-        <mandatory>false</mandatory>
-      </configurationParameter>
-      <configurationParameter>
-        <name>coreference</name>
         <type>String</type>
         <multiValued>false</multiValued>
         <mandatory>false</mandatory>
@@ -60,33 +36,9 @@
         </value>
       </nameValuePair>
       <nameValuePair>
-        <name>disambiguate</name>
-        <value>
-          <integer>1</integer>
-        </value>
-      </nameValuePair>
-      <nameValuePair>
-        <name>showSourceText</name>
-        <value>
-          <integer>1</integer>
-        </value>
-      </nameValuePair>
-      <nameValuePair>
         <name>apikey</name>
         <value>
           <string>04490000a72fe7ec5cb3497f14e77f338c86f2fe</string>
-        </value>
-      </nameValuePair>
-      <nameValuePair>
-        <name>quotations</name>
-        <value>
-          <string>0</string>
-        </value>
-      </nameValuePair>
-      <nameValuePair>
-        <name>coreference</name>
-        <value>
-          <string>1</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
