@@ -1,6 +1,7 @@
 package org.apache.uima.alchemy.utils;
 
 import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
+import org.apache.uima.alchemy.digester.domain.CategorizationResults;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
 import org.apache.uima.alchemy.utils.exception.MappingException;
@@ -30,6 +31,12 @@ public class Alchemy2TypeSystemMapper {
 
 	public static void mapAnnotatedEntities(AnnotatedResults results, JCas aJCas) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public static void mapCategorizationEntity(CategorizationResults results, JCas aJCas) {
+		// TODO Auto-generated method stub
+		
 		
 	}
 
