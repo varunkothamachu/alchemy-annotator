@@ -18,7 +18,6 @@ import org.apache.uima.UimaContext;
 import org.apache.uima.alchemy.annotator.exception.AlchemyCallFailedException;
 import org.apache.uima.alchemy.annotator.exception.ResultDigestingException;
 import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
-import org.apache.uima.alchemy.digester.EntityExtractionDigester;
 import org.apache.uima.alchemy.digester.TextCategorizationDigester;
 import org.apache.uima.alchemy.digester.domain.CategorizationResults;
 import org.apache.uima.alchemy.digester.domain.Results;
