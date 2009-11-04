@@ -19,6 +19,7 @@ import org.apache.uima.alchemy.annotator.exception.AlchemyCallFailedException;
 import org.apache.uima.alchemy.annotator.exception.ResultDigestingException;
 import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
 import org.apache.uima.alchemy.digester.EntityExtractionDigester;
+import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
@@ -27,7 +28,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.xml.sax.SAXException;
 
-public class AlchemyTextEntityExtractionAnnotator extends JCasAnnotator_ImplBase {
+public class AlchemyTextRankedNamedEntityExtractionAnnotator extends JCasAnnotator_ImplBase {
 
 	private static final String STATUS_OK = "OK";
 	private URL alchemyService;
@@ -103,7 +104,7 @@ public class AlchemyTextEntityExtractionAnnotator extends JCasAnnotator_ImplBase
 				Validate.notNull(results);
 				Validate.notNull(results.getStatus());
 				if (results.getStatus().equalsIgnoreCase(STATUS_OK)) {
-					Alchemy2TypeSystemMapper.mapEntities(results,aJCas); //create annotations from results
+					Alchemy2TypeSystemMapper.mapEntities((EntitiesResults)results,aJCas); //create annotations from results
 				}
 				else {
 					throw new AlchemyCallFailedException(results.getStatus());

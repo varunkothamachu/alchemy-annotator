@@ -1,14 +1,15 @@
 package org.apache.uima.alchemy.utils;
 
+import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
+import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
-import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.jcas.JCas;
 
 public class Alchemy2TypeSystemMapper {
 
-	public static void mapEntities(Results results, JCas aJCas) throws MappingException{
+	public static void mapEntities(EntitiesResults results, JCas aJCas) throws MappingException{
 		
 		for (Entity entity : results.getEntities().getEntities()) {
 			try {
@@ -24,6 +25,11 @@ public class Alchemy2TypeSystemMapper {
 				throw new MappingException(e);
 			}
 		}
+		
+	}
+
+	public static void mapAnnotatedEntities(AnnotatedResults results, JCas aJCas) {
+		// TODO Auto-generated method stub
 		
 	}
 

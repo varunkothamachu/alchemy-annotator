@@ -6,6 +6,7 @@ import java.net.URISyntaxException;
 
 import org.apache.commons.digester.Digester;
 import org.apache.uima.alchemy.digester.domain.Entities;
+import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.xml.sax.SAXException;
@@ -17,7 +18,7 @@ public class EntityExtractionDigester implements AlchemyOutputDigester{
 		Digester digester = new Digester();
 		digester.setValidating( false );
 
-		digester.addObjectCreate("results",Results.class);
+		digester.addObjectCreate("results",EntitiesResults.class);
 		digester.addBeanPropertySetter("results/status","status");
 		digester.addBeanPropertySetter("results/language","language");
 		digester.addObjectCreate("results/entities",Entities.class);
