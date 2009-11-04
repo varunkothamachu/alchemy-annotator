@@ -14,7 +14,7 @@ public class AlchemyTextRankedEntityExtractionAnnotatorTest {
 	@Test
 	public void testAnnotator() {
 		String doc = "Eight US soldiers die in attacks in south Afghanistan, making October the deadliest month for the US in the war there";
-		String xmlPath = "src/main/resources/TextAnnotatedEntityExtractionAEDescriptor.xml";
+		String xmlPath = "src/main/resources/TextRankedEntityExtractionAEDescriptor.xml";
 		try {
 			TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
 		} catch (Exception e) {
