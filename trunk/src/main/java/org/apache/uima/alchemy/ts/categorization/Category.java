@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Wed Nov 04 23:26:09 CET 2009 */
+/* First created by JCasGen Wed Nov 04 23:56:01 CET 2009 */
 package org.apache.uima.alchemy.ts.categorization;
 
 import org.apache.uima.jcas.JCas; 
@@ -11,7 +11,7 @@ import org.apache.uima.jcas.cas.TOP;
 
 
 /** 
- * Updated by JCasGen Wed Nov 04 23:26:09 CET 2009
+ * Updated by JCasGen Wed Nov 04 23:56:24 CET 2009
  * XML source: /Users/tommaso/Documents/workspaces/uima_ws/alchemy-annotator/src/main/resources/TextCategorizationAEDescriptor.xml
  * @generated */
 public class Category extends TOP {
@@ -67,6 +67,24 @@ public class Category extends TOP {
     if (Category_Type.featOkTst && ((Category_Type)jcasType).casFeat_score == null)
       jcasType.jcas.throwFeatMissing("score", "org.apache.uima.alchemy.ts.categorization.Category");
     jcasType.ll_cas.ll_setStringValue(addr, ((Category_Type)jcasType).casFeatCode_score, v);}    
+   
+    
+  //*--------------*
+  //* Feature: text
+
+  /** getter for text - gets 
+   * @generated */
+  public String getText() {
+    if (Category_Type.featOkTst && ((Category_Type)jcasType).casFeat_text == null)
+      jcasType.jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.categorization.Category");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Category_Type)jcasType).casFeatCode_text);}
+    
+  /** setter for text - sets  
+   * @generated */
+  public void setText(String v) {
+    if (Category_Type.featOkTst && ((Category_Type)jcasType).casFeat_text == null)
+      jcasType.jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.categorization.Category");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Category_Type)jcasType).casFeatCode_text, v);}    
   }
 
     

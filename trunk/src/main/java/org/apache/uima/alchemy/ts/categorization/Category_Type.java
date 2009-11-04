@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Wed Nov 04 23:26:10 CET 2009 */
+/* First created by JCasGen Wed Nov 04 23:56:01 CET 2009 */
 package org.apache.uima.alchemy.ts.categorization;
 
 import org.apache.uima.jcas.JCas;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** 
- * Updated by JCasGen Wed Nov 04 23:26:10 CET 2009
+ * Updated by JCasGen Wed Nov 04 23:56:24 CET 2009
  * @generated */
 public class Category_Type extends TOP_Type {
   /** @generated */
@@ -58,6 +58,24 @@ public class Category_Type extends TOP_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_score, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_text;
+  /** @generated */
+  final int     casFeatCode_text;
+  /** @generated */ 
+  public String getText(int addr) {
+        if (featOkTst && casFeat_text == null)
+      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.categorization.Category");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_text);
+  }
+  /** @generated */    
+  public void setText(int addr, String v) {
+        if (featOkTst && casFeat_text == null)
+      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.categorization.Category");
+    ll_cas.ll_setStringValue(addr, casFeatCode_text, v);}
+    
+  
 
 
 
@@ -70,6 +88,10 @@ public class Category_Type extends TOP_Type {
  
     casFeat_score = jcas.getRequiredFeatureDE(casType, "score", "uima.cas.String", featOkTst);
     casFeatCode_score  = (null == casFeat_score) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_score).getCode();
+
+ 
+    casFeat_text = jcas.getRequiredFeatureDE(casType, "text", "uima.cas.String", featOkTst);
+    casFeatCode_text  = (null == casFeat_text) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_text).getCode();
 
   }
 }

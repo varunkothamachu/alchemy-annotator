@@ -39,6 +39,7 @@ public class Alchemy2TypeSystemMapper {
 		try {
 			FeatureStructure fs = new Category(aJCas);
 			fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "score"), results.getScore());
+			fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "text"), results.getCategory());
 			aJCas.addFsToIndexes(fs);
 		} catch (Exception e) {
 			e.printStackTrace();
