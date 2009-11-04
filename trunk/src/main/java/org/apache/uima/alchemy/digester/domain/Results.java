@@ -4,7 +4,6 @@ public class Results {
 	
 	private String status;
 	private String language;
-	private Entities entities;
 	
 	public String getStatus() {
 		return status;
@@ -17,12 +16,6 @@ public class Results {
 	}
 	public void setLanguage(String language) {
 		this.language = language;
-	}
-	public Entities getEntities() {
-		return entities;
-	}
-	public void setEntities(Entities entities) {
-		this.entities = entities;
 	}
 
 }
