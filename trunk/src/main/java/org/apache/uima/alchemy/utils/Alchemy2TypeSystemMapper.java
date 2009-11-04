@@ -4,7 +4,10 @@ import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
 import org.apache.uima.alchemy.digester.domain.CategorizationResults;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
+import org.apache.uima.alchemy.ts.categorization.Category;
 import org.apache.uima.alchemy.utils.exception.MappingException;
+import org.apache.uima.cas.CASException;
+import org.apache.uima.cas.CASRuntimeException;
 import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.jcas.JCas;
 
@@ -34,10 +37,15 @@ public class Alchemy2TypeSystemMapper {
 		
 	}
 	
-	public static void mapCategorizationEntity(CategorizationResults results, JCas aJCas) {
-		// TODO Auto-generated method stub
-		
-		
+	public static void mapCategorizationEntity(CategorizationResults results, JCas aJCas) throws MappingException {
+		try {
+			FeatureStructure fs = new Category(aJCas);
+			fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "scoure"), results.getScore());
+			aJCas.addFsToIndexes(fs);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new MappingException(e);
+		} 
 	}
 
 }
