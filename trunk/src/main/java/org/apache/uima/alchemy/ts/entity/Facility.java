@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Sun Nov 01 10:26:55 CET 2009 */
+/* First created by JCasGen Fri Nov 06 23:49:06 CET 2009 */
 package org.apache.uima.alchemy.ts.entity;
 
 import org.apache.uima.jcas.JCas; 
@@ -11,8 +11,8 @@ import org.apache.uima.jcas.cas.TOP;
 
 
 /** 
- * Updated by JCasGen Sun Nov 01 10:33:38 CET 2009
- * XML source: /Users/tommasoteofili/Documents/workspaces/default_workspace/alchemy-annotator/src/main/resources/TextEntityExtractionAEDescriptor.xml
+ * Updated by JCasGen Fri Nov 06 23:49:06 CET 2009
+ * XML source: /Users/tommaso/Documents/workspaces/uima_ws/alchemy-annotator/src/main/resources/TextRankedEntityExtractionAEDescriptor.xml
  * @generated */
 public class Facility extends TOP {
   /** @generated
@@ -103,6 +103,240 @@ public class Facility extends TOP {
     if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_count == null)
       jcasType.jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.Facility");
     jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_count, v);}    
+   
+    
+  //*--------------*
+  //* Feature: disambiguation
+
+  /** getter for disambiguation - gets 
+   * @generated */
+  public String getDisambiguation() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_disambiguation == null)
+      jcasType.jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_disambiguation);}
+    
+  /** setter for disambiguation - sets  
+   * @generated */
+  public void setDisambiguation(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_disambiguation == null)
+      jcasType.jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_disambiguation, v);}    
+   
+    
+  //*--------------*
+  //* Feature: subType
+
+  /** getter for subType - gets 
+   * @generated */
+  public String getSubType() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_subType == null)
+      jcasType.jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_subType);}
+    
+  /** setter for subType - sets  
+   * @generated */
+  public void setSubType(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_subType == null)
+      jcasType.jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_subType, v);}    
+   
+    
+  //*--------------*
+  //* Feature: website
+
+  /** getter for website - gets 
+   * @generated */
+  public String getWebsite() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_website == null)
+      jcasType.jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_website);}
+    
+  /** setter for website - sets  
+   * @generated */
+  public void setWebsite(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_website == null)
+      jcasType.jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_website, v);}    
+   
+    
+  //*--------------*
+  //* Feature: geo
+
+  /** getter for geo - gets 
+   * @generated */
+  public String getGeo() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_geo == null)
+      jcasType.jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_geo);}
+    
+  /** setter for geo - sets  
+   * @generated */
+  public void setGeo(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_geo == null)
+      jcasType.jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_geo, v);}    
+   
+    
+  //*--------------*
+  //* Feature: dbpedia
+
+  /** getter for dbpedia - gets 
+   * @generated */
+  public String getDbpedia() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_dbpedia == null)
+      jcasType.jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_dbpedia);}
+    
+  /** setter for dbpedia - sets  
+   * @generated */
+  public void setDbpedia(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_dbpedia == null)
+      jcasType.jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_dbpedia, v);}    
+   
+    
+  //*--------------*
+  //* Feature: yago
+
+  /** getter for yago - gets 
+   * @generated */
+  public String getYago() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_yago == null)
+      jcasType.jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_yago);}
+    
+  /** setter for yago - sets  
+   * @generated */
+  public void setYago(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_yago == null)
+      jcasType.jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_yago, v);}    
+   
+    
+  //*--------------*
+  //* Feature: opencyc
+
+  /** getter for opencyc - gets 
+   * @generated */
+  public String getOpencyc() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_opencyc == null)
+      jcasType.jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_opencyc);}
+    
+  /** setter for opencyc - sets  
+   * @generated */
+  public void setOpencyc(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_opencyc == null)
+      jcasType.jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_opencyc, v);}    
+   
+    
+  //*--------------*
+  //* Feature: umbel
+
+  /** getter for umbel - gets 
+   * @generated */
+  public String getUmbel() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_umbel == null)
+      jcasType.jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_umbel);}
+    
+  /** setter for umbel - sets  
+   * @generated */
+  public void setUmbel(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_umbel == null)
+      jcasType.jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_umbel, v);}    
+   
+    
+  //*--------------*
+  //* Feature: freebase
+
+  /** getter for freebase - gets 
+   * @generated */
+  public String getFreebase() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_freebase == null)
+      jcasType.jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_freebase);}
+    
+  /** setter for freebase - sets  
+   * @generated */
+  public void setFreebase(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_freebase == null)
+      jcasType.jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_freebase, v);}    
+   
+    
+  //*--------------*
+  //* Feature: ciaFactbook
+
+  /** getter for ciaFactbook - gets 
+   * @generated */
+  public String getCiaFactbook() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_ciaFactbook == null)
+      jcasType.jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_ciaFactbook);}
+    
+  /** setter for ciaFactbook - sets  
+   * @generated */
+  public void setCiaFactbook(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_ciaFactbook == null)
+      jcasType.jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_ciaFactbook, v);}    
+   
+    
+  //*--------------*
+  //* Feature: census
+
+  /** getter for census - gets 
+   * @generated */
+  public String getCensus() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_census == null)
+      jcasType.jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_census);}
+    
+  /** setter for census - sets  
+   * @generated */
+  public void setCensus(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_census == null)
+      jcasType.jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_census, v);}    
+   
+    
+  //*--------------*
+  //* Feature: geonames
+
+  /** getter for geonames - gets 
+   * @generated */
+  public String getGeonames() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_geonames == null)
+      jcasType.jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_geonames);}
+    
+  /** setter for geonames - sets  
+   * @generated */
+  public void setGeonames(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_geonames == null)
+      jcasType.jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_geonames, v);}    
+   
+    
+  //*--------------*
+  //* Feature: musicBrainz
+
+  /** getter for musicBrainz - gets 
+   * @generated */
+  public String getMusicBrainz() {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_musicBrainz == null)
+      jcasType.jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.Facility");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Facility_Type)jcasType).casFeatCode_musicBrainz);}
+    
+  /** setter for musicBrainz - sets  
+   * @generated */
+  public void setMusicBrainz(String v) {
+    if (Facility_Type.featOkTst && ((Facility_Type)jcasType).casFeat_musicBrainz == null)
+      jcasType.jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.Facility");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Facility_Type)jcasType).casFeatCode_musicBrainz, v);}    
   }
 
     
