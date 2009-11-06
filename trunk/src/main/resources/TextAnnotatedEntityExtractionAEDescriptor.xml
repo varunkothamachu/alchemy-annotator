@@ -34,7 +34,7 @@
         <mandatory>true</mandatory>
       </configurationParameter>
       <configurationParameter>
-        <name>baseUrl</name>
+        <name>url</name>
         <type>String</type>
         <multiValued>false</multiValued>
         <mandatory>false</mandatory>
@@ -47,6 +47,12 @@
       </configurationParameter>
       <configurationParameter>
         <name>coreference</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>template</name>
         <type>String</type>
         <multiValued>false</multiValued>
         <mandatory>false</mandatory>
