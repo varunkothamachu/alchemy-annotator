@@ -11,7 +11,7 @@ import org.apache.uima.jcas.JCas;
 
 public class Alchemy2TypeSystemMapper {
 
-	public static void mapEntities(EntitiesResults results, JCas aJCas) throws MappingException{
+	public static void mapRankedEntities(EntitiesResults results, JCas aJCas) throws MappingException{
 		
 		for (Entity entity : results.getEntities().getEntities()) {
 			try {
