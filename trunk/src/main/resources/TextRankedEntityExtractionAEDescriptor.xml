@@ -71,6 +71,12 @@
 <integer>1</integer>
 </value>
 </nameValuePair>
+<nameValuePair>
+<name>linkedData</name>
+<value>
+<string>1</string>
+</value>
+</nameValuePair>
 </configurationParameterSettings>
 <typeSystemDescription>
 <types>

@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.net.URISyntaxException;
 
 import org.apache.commons.digester.Digester;
+import org.apache.uima.alchemy.digester.domain.Disambiguated;
 import org.apache.uima.alchemy.digester.domain.Entities;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
@@ -27,13 +28,21 @@ public class EntityExtractionDigester implements AlchemyOutputDigester{
 		digester.addBeanPropertySetter("results/entities/entity/relevance","relevance");
 		digester.addBeanPropertySetter("results/entities/entity/count","count");
 		digester.addBeanPropertySetter("results/entities/entity/text","text");
-		//TODO try to get the disambiguation results if any
-		try {
-			
-		}
-		catch (Exception e) {
-			
-		}
+		digester.addObjectCreate("results/entities/entity/disambiguated",Disambiguated.class);
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/name","name");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/subType","subType");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/website","website");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/geo","geo");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/dbpedia","dbpedia");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/yago","yago");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/opencyc","opencyc");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/umbel","umbel");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/freebase","freebase");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/ciaFactbook","ciaFactbook");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/census","census");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/geonames","geonames");
+		digester.addBeanPropertySetter("results/entities/entity/disambiguated/musicBrainz","musicBrainz");
+		digester.addSetNext("results/entities/entity/disambiguated","setDisambiguated");
 		digester.addSetNext("results/entities/entity", "addEntity" );
 		digester.addSetNext("results/entities","setEntities");
 		

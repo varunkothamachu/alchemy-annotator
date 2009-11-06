@@ -6,6 +6,7 @@ public class Entity {
 	private String relevance;
 	private String count;
 	private String text;
+	private Disambiguated disambiguated;
 	
 	
 	public String getType() {
@@ -32,6 +33,12 @@ public class Entity {
 	public void setText(String text) {
 		this.text = text;
 	}
+  public void setDisambiguated(Disambiguated disambiguated) {
+    this.disambiguated = disambiguated;
+  }
+  public Disambiguated getDisambiguated() {
+    return disambiguated;
+  }
 	
 
 }
