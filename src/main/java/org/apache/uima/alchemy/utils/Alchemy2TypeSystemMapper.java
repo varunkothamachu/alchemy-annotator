@@ -21,7 +21,9 @@ public class Alchemy2TypeSystemMapper {
 				fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "count"), entity.getCount()); //count
 				fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "text"), entity.getText()); //text
 				fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "relevance"), entity.getRelevance()); //relevance
-				//TODO handle disambiguation
+				if (entity.getDisambiguated()!=null) {
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "dbpedia"), entity.getDisambiguated().getDbpedia()); //relevance
+				}
 				aJCas.addFsToIndexes(fs);
 			} catch (Exception e) {
 				throw new MappingException(e);
