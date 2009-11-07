@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 
 import org.apache.uima.alchemy.digester.domain.Results;
 
-public class EntityExtractionDigesterTest extends TestCase {
+public class RankedEntityExtractionDigesterTest extends TestCase {
 
 	public void testParseAlchemyXML() {
 		try {
