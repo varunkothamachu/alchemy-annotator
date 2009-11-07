@@ -22,7 +22,20 @@ public class Alchemy2TypeSystemMapper {
 				fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "text"), entity.getText()); //text
 				fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "relevance"), entity.getRelevance()); //relevance
 				if (entity.getDisambiguated()!=null) {
-					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "dbpedia"), entity.getDisambiguated().getDbpedia()); //relevance
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "disambiguation"), entity.getDisambiguated().getName()); //disambiguation name
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "dbpedia"), entity.getDisambiguated().getDbpedia()); //dbpedia
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "website"), entity.getDisambiguated().getWebsite()); //website
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "subType"), entity.getDisambiguated().getSubType()); //subtype
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "geo"), entity.getDisambiguated().getGeo()); //geo
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "opencyc"), entity.getDisambiguated().getOpencyc()); //opencyc
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "yago"), entity.getDisambiguated().getYago()); //yago
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "umbel"), entity.getDisambiguated().getUmbel()); //umbel
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "feebase"), entity.getDisambiguated().getFreebase()); //freebase
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "ciaFactbook"), entity.getDisambiguated().getCiaFactbook()); //ciaFactbook
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "census"), entity.getDisambiguated().getCensus()); //census
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "geonames"), entity.getDisambiguated().getGeonames()); //geonames
+					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "musicBrainz"), entity.getDisambiguated().getMusicBrainz()); //musicBrainz
+					
 				}
 				aJCas.addFsToIndexes(fs);
 			} catch (Exception e) {
