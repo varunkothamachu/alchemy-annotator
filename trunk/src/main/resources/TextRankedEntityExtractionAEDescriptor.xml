@@ -60,7 +60,7 @@
       <configurationParameter>
         <name>quotations</name>
         <type>String</type>
-        <multiValued>false</multiValued>
+        <multiValued>true</multiValued>
         <mandatory>false</mandatory>
       </configurationParameter>
     </configurationParameters>
@@ -93,12 +93,6 @@
         <name>coreference</name>
         <value>
           <string>1</string>
-        </value>
-      </nameValuePair>
-      <nameValuePair>
-        <name>quotations</name>
-        <value>
-          <string>0</string>
         </value>
       </nameValuePair>
       <nameValuePair>

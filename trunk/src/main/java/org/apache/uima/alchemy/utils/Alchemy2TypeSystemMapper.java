@@ -8,6 +8,7 @@ import org.apache.uima.alchemy.ts.categorization.Category;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.cas.StringArray;
 
 public class Alchemy2TypeSystemMapper {
 
@@ -35,6 +36,15 @@ public class Alchemy2TypeSystemMapper {
 					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "census"), entity.getDisambiguated().getCensus()); //census
 					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "geonames"), entity.getDisambiguated().getGeonames()); //geonames
 					fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "musicBrainz"), entity.getDisambiguated().getMusicBrainz()); //musicBrainz
+				}
+				if (entity.getQuotations()!=null && entity.getQuotations().getQuotations()!=null && entity.getQuotations().getQuotations().size()>0) {
+					StringArray quotationsFeatureStructure = new StringArray(aJCas, entity.getQuotations().getQuotations().size());
+					int i=0;
+					for (String quotation : entity.getQuotations().getQuotations()) {
+						quotationsFeatureStructure.set(i, quotation);
+						i++;
+					}
+					fs.setFeatureValue(aJCas.getRequiredFeature(fs.getType(), "quotations"), quotationsFeatureStructure);
 				}
 				aJCas.addFsToIndexes(fs);
 			} catch (Exception e) {
