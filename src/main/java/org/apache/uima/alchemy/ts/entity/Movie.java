@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Fri Nov 06 23:49:06 CET 2009 */
+/* First created by JCasGen Sat Nov 07 16:35:42 CET 2009 */
 package org.apache.uima.alchemy.ts.entity;
 
 import org.apache.uima.jcas.JCas; 
@@ -8,10 +8,11 @@ import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 import org.apache.uima.jcas.cas.TOP;
+import org.apache.uima.jcas.cas.StringArray;
 
 
 /** 
- * Updated by JCasGen Fri Nov 06 23:49:06 CET 2009
+ * Updated by JCasGen Sat Nov 07 16:35:42 CET 2009
  * XML source: /Users/tommaso/Documents/workspaces/uima_ws/alchemy-annotator/src/main/resources/TextRankedEntityExtractionAEDescriptor.xml
  * @generated */
 public class Movie extends TOP {
@@ -337,6 +338,40 @@ public class Movie extends TOP {
     if (Movie_Type.featOkTst && ((Movie_Type)jcasType).casFeat_musicBrainz == null)
       jcasType.jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.Movie");
     jcasType.ll_cas.ll_setStringValue(addr, ((Movie_Type)jcasType).casFeatCode_musicBrainz, v);}    
+   
+    
+  //*--------------*
+  //* Feature: quotations
+
+  /** getter for quotations - gets 
+   * @generated */
+  public StringArray getQuotations() {
+    if (Movie_Type.featOkTst && ((Movie_Type)jcasType).casFeat_quotations == null)
+      jcasType.jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Movie");
+    return (StringArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Movie_Type)jcasType).casFeatCode_quotations)));}
+    
+  /** setter for quotations - sets  
+   * @generated */
+  public void setQuotations(StringArray v) {
+    if (Movie_Type.featOkTst && ((Movie_Type)jcasType).casFeat_quotations == null)
+      jcasType.jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Movie");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Movie_Type)jcasType).casFeatCode_quotations, jcasType.ll_cas.ll_getFSRef(v));}    
+    
+  /** indexed getter for quotations - gets an indexed value - 
+   * @generated */
+  public String getQuotations(int i) {
+    if (Movie_Type.featOkTst && ((Movie_Type)jcasType).casFeat_quotations == null)
+      jcasType.jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Movie");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Movie_Type)jcasType).casFeatCode_quotations), i);
+    return jcasType.ll_cas.ll_getStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Movie_Type)jcasType).casFeatCode_quotations), i);}
+
+  /** indexed setter for quotations - sets an indexed value - 
+   * @generated */
+  public void setQuotations(int i, String v) { 
+    if (Movie_Type.featOkTst && ((Movie_Type)jcasType).casFeat_quotations == null)
+      jcasType.jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Movie");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Movie_Type)jcasType).casFeatCode_quotations), i);
+    jcasType.ll_cas.ll_setStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Movie_Type)jcasType).casFeatCode_quotations), i, v);}
   }
 
     
