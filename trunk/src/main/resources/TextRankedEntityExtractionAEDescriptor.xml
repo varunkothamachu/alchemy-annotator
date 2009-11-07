@@ -45,6 +45,24 @@
         <multiValued>false</multiValued>
         <mandatory>false</mandatory>
       </configurationParameter>
+      <configurationParameter>
+        <name>url</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>coreference</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>quotations</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
     </configurationParameters>
     <configurationParameterSettings>
       <nameValuePair>
@@ -66,15 +84,27 @@
         </value>
       </nameValuePair>
       <nameValuePair>
-        <name>showSourceText</name>
-        <value>
-          <integer>1</integer>
-        </value>
-      </nameValuePair>
-      <nameValuePair>
         <name>linkedData</name>
         <value>
           <string>1</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>coreference</name>
+        <value>
+          <string>1</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>quotations</name>
+        <value>
+          <string>0</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>showSourceText</name>
+        <value>
+          <integer>0</integer>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
