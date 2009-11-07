@@ -13,7 +13,7 @@ import org.apache.uima.alchemy.digester.domain.Results;
 import org.xml.sax.SAXException;
 
 
-public class EntityExtractionDigester implements AlchemyOutputDigester{
+public class RankedEntityExtractionDigester implements AlchemyOutputDigester{
 	
 	public Results parseAlchemyXML(InputStream stream) throws IOException, SAXException, URISyntaxException {
 		Digester digester = new Digester();

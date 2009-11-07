@@ -18,7 +18,7 @@ import org.apache.uima.UimaContext;
 import org.apache.uima.alchemy.annotator.exception.AlchemyCallFailedException;
 import org.apache.uima.alchemy.annotator.exception.ResultDigestingException;
 import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
-import org.apache.uima.alchemy.digester.EntityExtractionDigester;
+import org.apache.uima.alchemy.digester.RankedEntityExtractionDigester;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
@@ -39,7 +39,7 @@ public class AlchemyTextRankedNamedEntityExtractionAnnotator extends JCasAnnotat
 	@Override
 	public void initialize(UimaContext aContext)
 	throws ResourceInitializationException {
-		this.digester = new EntityExtractionDigester();
+		this.digester = new RankedEntityExtractionDigester();
 
 		try {
 			this.alchemyService = createServiceURI();
