@@ -189,6 +189,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -275,6 +281,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -363,6 +375,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -449,6 +467,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -537,6 +561,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -623,6 +653,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -711,6 +747,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -797,6 +839,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -885,6 +933,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -971,6 +1025,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -1059,6 +1119,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -1145,6 +1211,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -1233,6 +1305,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -1319,6 +1397,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -1407,6 +1491,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -1493,6 +1583,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -1581,6 +1677,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -1667,6 +1769,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -1755,6 +1863,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -1841,6 +1955,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -1929,6 +2049,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -2015,6 +2141,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>
@@ -2103,6 +2235,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -2190,6 +2328,12 @@
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
+            </featureDescription>
           </features>
         </typeDescription>
         <typeDescription>
@@ -2276,6 +2420,12 @@
               <name>musicBrainz</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>quotations</name>
+              <description/>
+              <rangeTypeName>uima.cas.StringArray</rangeTypeName>
+              <multipleReferencesAllowed>true</multipleReferencesAllowed>
             </featureDescription>
           </features>
         </typeDescription>

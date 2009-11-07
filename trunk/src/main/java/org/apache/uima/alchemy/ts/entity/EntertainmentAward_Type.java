@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Fri Nov 06 23:49:06 CET 2009 */
+/* First created by JCasGen Sat Nov 07 16:35:42 CET 2009 */
 package org.apache.uima.alchemy.ts.entity;
 
 import org.apache.uima.jcas.JCas;
@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** 
- * Updated by JCasGen Fri Nov 06 23:49:06 CET 2009
+ * Updated by JCasGen Sat Nov 07 16:35:42 CET 2009
  * @generated */
 public class EntertainmentAward_Type extends TOP_Type {
   /** @generated */
@@ -328,6 +328,43 @@ public class EntertainmentAward_Type extends TOP_Type {
     ll_cas.ll_setStringValue(addr, casFeatCode_musicBrainz, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_quotations;
+  /** @generated */
+  final int     casFeatCode_quotations;
+  /** @generated */ 
+  public int getQuotations(int addr) {
+        if (featOkTst && casFeat_quotations == null)
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.EntertainmentAward");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_quotations);
+  }
+  /** @generated */    
+  public void setQuotations(int addr, int v) {
+        if (featOkTst && casFeat_quotations == null)
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.EntertainmentAward");
+    ll_cas.ll_setRefValue(addr, casFeatCode_quotations, v);}
+    
+   /** @generated */
+  public String getQuotations(int addr, int i) {
+        if (featOkTst && casFeat_quotations == null)
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.EntertainmentAward");
+    if (lowLevelTypeChecks)
+      return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
+	return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
+  }
+   
+  /** @generated */ 
+  public void setQuotations(int addr, int i, String v) {
+        if (featOkTst && casFeat_quotations == null)
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.EntertainmentAward");
+    if (lowLevelTypeChecks)
+      ll_cas.ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, v, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
+    ll_cas.ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, v);
+  }
+ 
 
 
 
@@ -400,6 +437,10 @@ public class EntertainmentAward_Type extends TOP_Type {
  
     casFeat_musicBrainz = jcas.getRequiredFeatureDE(casType, "musicBrainz", "uima.cas.String", featOkTst);
     casFeatCode_musicBrainz  = (null == casFeat_musicBrainz) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_musicBrainz).getCode();
+
+ 
+    casFeat_quotations = jcas.getRequiredFeatureDE(casType, "quotations", "uima.cas.StringArray", featOkTst);
+    casFeatCode_quotations  = (null == casFeat_quotations) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_quotations).getCode();
 
   }
 }
