@@ -9,6 +9,7 @@ import org.apache.uima.alchemy.digester.domain.Disambiguated;
 import org.apache.uima.alchemy.digester.domain.Entities;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
+import org.apache.uima.alchemy.digester.domain.Quotations;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.xml.sax.SAXException;
 
@@ -43,6 +44,9 @@ public class RankedEntityExtractionDigester implements AlchemyOutputDigester{
 		digester.addBeanPropertySetter("results/entities/entity/disambiguated/geonames","geonames");
 		digester.addBeanPropertySetter("results/entities/entity/disambiguated/musicBrainz","musicBrainz");
 		digester.addSetNext("results/entities/entity/disambiguated","setDisambiguated");
+		digester.addObjectCreate("results/entities/entity/quotations",Quotations.class);
+		digester.addBeanPropertySetter("results/entities/entity/quotations/quotation","quotation");
+		digester.addSetNext("results/entities/entity/quotations","setQuotations");
 		digester.addSetNext("results/entities/entity", "addEntity" );
 		digester.addSetNext("results/entities","setEntities");
 		

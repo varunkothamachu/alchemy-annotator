@@ -7,6 +7,7 @@ public class Entity {
 	private String count;
 	private String text;
 	private Disambiguated disambiguated;
+	private Quotations quotations;
 	
 	
 	public String getType() {
@@ -39,6 +40,12 @@ public class Entity {
   public Disambiguated getDisambiguated() {
     return disambiguated;
   }
+public void setQuotations(Quotations quotations) {
+	this.quotations = quotations;
+}
+public Quotations getQuotations() {
+	return quotations;
+}
 	
 
 }
