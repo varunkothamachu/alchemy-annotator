@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 
 public interface AlchemyOutputDigester {
 
-	public Results parseAlchemyXML(InputStream xmlReader) throws IOException, SAXException, URISyntaxException;
-	
+  public Results parseAlchemyXML(InputStream xmlReader) throws IOException, SAXException,
+          URISyntaxException;
+
 }
