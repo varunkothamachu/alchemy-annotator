@@ -16,36 +16,38 @@ import org.junit.Ignore;
 
 @Ignore
 public class TestUtils {
-	
-	public static AnalysisEngine getAE(String filePath) throws IOException, InvalidXMLException, ResourceInitializationException {
-		AnalysisEngine ae = null;
-		//get Resource Specifier from XML file
-		XMLInputSource in = new XMLInputSource(filePath);
-		ResourceSpecifier specifier = UIMAFramework.getXMLParser().parseResourceSpecifier(in);
 
-		//create AE here
-		ae =   UIMAFramework.produceAnalysisEngine(specifier);
-			
-		
-		return ae;
-	}
-	
-	public static void executeAE(AnalysisEngine ae, String docText) throws AnalysisEngineProcessException, ResourceInitializationException{
-		//create a JCas, given an Analysis Engine (ae)
-		JCas jcas = ae.newJCas();
+  public static AnalysisEngine getAE(String filePath) throws IOException, InvalidXMLException,
+          ResourceInitializationException {
+    AnalysisEngine ae = null;
+    // get Resource Specifier from XML file
+    XMLInputSource in = new XMLInputSource(filePath);
+    ResourceSpecifier specifier = UIMAFramework.getXMLParser().parseResourceSpecifier(in);
 
-		//analyze a document
-		jcas.setDocumentText(docText);
-		ProcessTrace pt = ae.process(jcas);
+    // create AE here
+    ae = UIMAFramework.produceAnalysisEngine(specifier);
 
-		//analyze results
-		for (Object eventObject :  pt.getEvents()) {
-			ProcessTraceEvent e = (ProcessTraceEvent) eventObject;
-			System.out.println(e.getComponentName()+" ("+e.getType()+") - "+e.getDescription()+" ("+e.getDuration()+") : "+e.getResultMessage());
-			if (e!=null && e.getResultMessage()!=null && e.getResultMessage().contains("error")) {
-				throw new AnalysisEngineProcessException();
-			}
-		}
-	}
+    return ae;
+  }
+
+  public static void executeAE(AnalysisEngine ae, String docText)
+          throws AnalysisEngineProcessException, ResourceInitializationException {
+    // create a JCas, given an Analysis Engine (ae)
+    JCas jcas = ae.newJCas();
+
+    // analyze a document
+    jcas.setDocumentText(docText);
+    ProcessTrace pt = ae.process(jcas);
+
+    // analyze results
+    for (Object eventObject : pt.getEvents()) {
+      ProcessTraceEvent e = (ProcessTraceEvent) eventObject;
+      System.out.println(e.getComponentName() + " (" + e.getType() + ") - " + e.getDescription()
+              + " (" + e.getDuration() + ") : " + e.getResultMessage());
+      if (e != null && e.getResultMessage() != null && e.getResultMessage().contains("error")) {
+        throw new AnalysisEngineProcessException();
+      }
+    }
+  }
 
 }

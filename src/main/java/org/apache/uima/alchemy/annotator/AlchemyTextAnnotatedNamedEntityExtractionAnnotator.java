@@ -30,115 +30,118 @@ import org.xml.sax.SAXException;
 
 public class AlchemyTextAnnotatedNamedEntityExtractionAnnotator extends JCasAnnotator_ImplBase {
 
-	private static final String STATUS_OK = "OK";
-	private URL alchemyService;
-	private String serviceParams;
-	private String[] charsToReplace = {"<", ">", "\"", "'", "&"};
-	private AlchemyOutputDigester digester;
+  private static final String STATUS_OK = "OK";
 
-	@Override
-	public void initialize(UimaContext aContext)
-	throws ResourceInitializationException {
-		this.digester = new AnnotatedEntityExtractionDigester();
+  private URL alchemyService;
 
-		try {
-			this.alchemyService = createServiceURI();
-		} catch (Exception e) {
-			throw new ResourceInitializationException(e);
-		}
-		StringBuffer serviceParamsBuf = new StringBuffer();
-		serviceParamsBuf.append("&apikey=");
-		serviceParamsBuf.append(aContext.getConfigParameterValue("apikey"));
-		// param url
-		serviceParamsBuf.append("&url=");
-		serviceParamsBuf.append(aContext.getConfigParameterValue("url"));
-		// param output mode (default xml)
-		serviceParamsBuf.append("&outputMode=");
-		serviceParamsBuf.append(aContext.getConfigParameterValue("outputMode"));
-		// param disambiguate (1 DEFAULT,0)
-		serviceParamsBuf.append("&disambiguate=");
-		serviceParamsBuf.append(aContext.getConfigParameterValue("disambiguate"));
-		// param quotations (0 DEFAULT, 1)
-		serviceParamsBuf.append("&quotations=");
-		serviceParamsBuf.append(aContext.getConfigParameterValue("quotations"));
-		// param show source text (0 DEFAULT, 1)
-		serviceParamsBuf.append("&showSourceText=");
-		serviceParamsBuf.append(aContext.getConfigParameterValue("showSourceText"));
-		// param coreference (1 DEFAULT, 0)
-		serviceParamsBuf.append("&coreference=");
-		serviceParamsBuf.append(aContext.getConfigParameterValue("coreference"));
-		
-		//TODO : handle template parameter
-		
-		
-		this.serviceParams = serviceParamsBuf.toString();
-	}
+  private String serviceParams;
 
-	private void initializeRuntimeParameters(JCas aJCas) {
-		// create service parameter string
-		StringBuffer serviceParamsBuf = new StringBuffer();
-		// param text to analyze
-		serviceParamsBuf.append("&text=");
-		serviceParamsBuf.append(aJCas.getDocumentText());
-		this.serviceParams+=(serviceParamsBuf.toString());
-	}
+  private String[] charsToReplace = { "<", ">", "\"", "'", "&" };
 
-	public void process(JCas aJCas) throws AnalysisEngineProcessException {
-		//initialize service parameters 
-		initializeRuntimeParameters(aJCas);
-		try {
-			// open connection and send data
-			URLConnection connection = this.alchemyService.openConnection();
-			connection.setDoOutput(true);
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection.getOutputStream(), "UTF-8"));
-			writer.write(this.serviceParams);
-			String modifiedText = aJCas.getDocumentText();
-			for(int i = 0; i < this.charsToReplace.length; i++) {
-				modifiedText = modifiedText.replaceAll(this.charsToReplace[i], "");
-			}
-			modifiedText = modifiedText.replaceAll("\n", " ");
-			modifiedText = modifiedText.replaceAll("\r", " ");
+  private AlchemyOutputDigester digester;
 
-			writer.write(modifiedText);
-			writer.flush();
-			writer.close();
+  @Override
+  public void initialize(UimaContext aContext) throws ResourceInitializationException {
+    this.digester = new AnnotatedEntityExtractionDigester();
 
-			InputStream bufByteIn = parseOutput(connection);
+    try {
+      this.alchemyService = createServiceURI();
+    } catch (Exception e) {
+      throw new ResourceInitializationException(e);
+    }
+    StringBuffer serviceParamsBuf = new StringBuffer();
+    serviceParamsBuf.append("&apikey=");
+    serviceParamsBuf.append(aContext.getConfigParameterValue("apikey"));
+    // param url
+    serviceParamsBuf.append("&url=");
+    serviceParamsBuf.append(aContext.getConfigParameterValue("url"));
+    // param output mode (default xml)
+    serviceParamsBuf.append("&outputMode=");
+    serviceParamsBuf.append(aContext.getConfigParameterValue("outputMode"));
+    // param disambiguate (1 DEFAULT,0)
+    serviceParamsBuf.append("&disambiguate=");
+    serviceParamsBuf.append(aContext.getConfigParameterValue("disambiguate"));
+    // param quotations (0 DEFAULT, 1)
+    serviceParamsBuf.append("&quotations=");
+    serviceParamsBuf.append(aContext.getConfigParameterValue("quotations"));
+    // param show source text (0 DEFAULT, 1)
+    serviceParamsBuf.append("&showSourceText=");
+    serviceParamsBuf.append(aContext.getConfigParameterValue("showSourceText"));
+    // param coreference (1 DEFAULT, 0)
+    serviceParamsBuf.append("&coreference=");
+    serviceParamsBuf.append(aContext.getConfigParameterValue("coreference"));
 
-			// map alchemy api results to UIMA type system
-			try {
-				Results results = this.digester.parseAlchemyXML(bufByteIn);
-				Validate.notNull(results);
-				Validate.notNull(results.getStatus());
-				if (results.getStatus().equalsIgnoreCase(STATUS_OK)) {
-					Alchemy2TypeSystemMapper.mapAnnotatedEntities((AnnotatedResults)results,aJCas); //create annotations from results
-				}
-				else {
-					throw new AlchemyCallFailedException(results.getStatus());
-				}
-				
-			} catch (Exception e) {
-				throw new ResultDigestingException(e);
-			}
-			finally{
-				bufByteIn.close();
-			}
-		}
-		catch (Exception e) {
-			throw new AnalysisEngineProcessException(e);
-		}
+    // TODO : handle template parameter
 
-	}
+    this.serviceParams = serviceParamsBuf.toString();
+  }
 
-	private InputStream parseOutput(URLConnection connection)
-	throws ParserConfigurationException, IOException, SAXException,
-	UnsupportedEncodingException {
-		BufferedInputStream in = new BufferedInputStream(connection.getInputStream());
-		return in;
-	}
+  private void initializeRuntimeParameters(JCas aJCas) {
+    // create service parameter string
+    StringBuffer serviceParamsBuf = new StringBuffer();
+    // param text to analyze
+    serviceParamsBuf.append("&text=");
+    serviceParamsBuf.append(aJCas.getDocumentText());
+    this.serviceParams += (serviceParamsBuf.toString());
+  }
 
-	private URL createServiceURI() throws MalformedURLException {
-		return URI.create("http://access.alchemyapi.com/calls/text/TextGetAnnotatedNamedEntityText").toURL();
-	}
+  public void process(JCas aJCas) throws AnalysisEngineProcessException {
+    // initialize service parameters
+    initializeRuntimeParameters(aJCas);
+    try {
+      // open connection and send data
+      URLConnection connection = this.alchemyService.openConnection();
+      connection.setDoOutput(true);
+      BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection
+              .getOutputStream(), "UTF-8"));
+      writer.write(this.serviceParams);
+      String modifiedText = aJCas.getDocumentText();
+      for (int i = 0; i < this.charsToReplace.length; i++) {
+        modifiedText = modifiedText.replaceAll(this.charsToReplace[i], "");
+      }
+      modifiedText = modifiedText.replaceAll("\n", " ");
+      modifiedText = modifiedText.replaceAll("\r", " ");
+
+      writer.write(modifiedText);
+      writer.flush();
+      writer.close();
+
+      InputStream bufByteIn = parseOutput(connection);
+
+      // map alchemy api results to UIMA type system
+      try {
+        Results results = this.digester.parseAlchemyXML(bufByteIn);
+        Validate.notNull(results);
+        Validate.notNull(results.getStatus());
+        if (results.getStatus().equalsIgnoreCase(STATUS_OK)) {
+          Alchemy2TypeSystemMapper.mapAnnotatedEntities((AnnotatedResults) results, aJCas); // create
+                                                                                            // annotations
+                                                                                            // from
+                                                                                            // results
+        } else {
+          throw new AlchemyCallFailedException(results.getStatus());
+        }
+
+      } catch (Exception e) {
+        throw new ResultDigestingException(e);
+      } finally {
+        bufByteIn.close();
+      }
+    } catch (Exception e) {
+      throw new AnalysisEngineProcessException(e);
+    }
+
+  }
+
+  private InputStream parseOutput(URLConnection connection) throws ParserConfigurationException,
+          IOException, SAXException, UnsupportedEncodingException {
+    BufferedInputStream in = new BufferedInputStream(connection.getInputStream());
+    return in;
+  }
+
+  private URL createServiceURI() throws MalformedURLException {
+    return URI.create("http://access.alchemyapi.com/calls/text/TextGetAnnotatedNamedEntityText")
+            .toURL();
+  }
 
 }

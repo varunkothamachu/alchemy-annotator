@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Quotations {
-	
-	private List<String> quotations = new ArrayList<String>();
 
-	public void setQuotations(List<String> quotations) {
-		this.quotations = quotations;
-	}
+  private List<String> quotations = new ArrayList<String>();
 
-	public List<String> getQuotations() {
-		return quotations;
-	}
+  public void setQuotations(List<String> quotations) {
+    this.quotations = quotations;
+  }
 
-	public void setQuotation(String quotation) {
-		this.quotations.add(quotation);
-	}
+  public List<String> getQuotations() {
+    return quotations;
+  }
+
+  public void setQuotation(String quotation) {
+    this.quotations.add(quotation);
+  }
 
 }

@@ -3,12 +3,11 @@
 /* First created by JCasGen Sat Nov 07 16:35:42 CET 2009 */
 package org.apache.uima.alchemy.ts.entity;
 
-import org.apache.uima.jcas.JCas; 
+import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
-import org.apache.uima.jcas.cas.TOP_Type;
-
-import org.apache.uima.jcas.cas.TOP;
 import org.apache.uima.jcas.cas.StringArray;
+import org.apache.uima.jcas.cas.TOP;
+import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
