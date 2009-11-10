@@ -1,4 +1,3 @@
-
 /* First created by JCasGen Mon Nov 09 23:02:37 CET 2009 */
 package org.apache.uima.alchemy.ts.entity;
 
@@ -13,438 +12,498 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
-/** 
+/**
  * Updated by JCasGen Mon Nov 09 23:02:37 CET 2009
- * @generated */
+ * 
+ * @generated
+ */
 public class FinancialMarketIndex_Type extends TOP_Type {
   /** @generated */
-  protected FSGenerator getFSGenerator() {return fsGenerator;}
+  protected FSGenerator getFSGenerator() {
+    return fsGenerator;
+  }
+
   /** @generated */
-  private final FSGenerator fsGenerator = 
-    new FSGenerator() {
-      public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (FinancialMarketIndex_Type.this.useExistingInstance) {
-  			   // Return eq fs instance if already created
-  		     FeatureStructure fs = FinancialMarketIndex_Type.this.jcas.getJfsFromCaddr(addr);
-  		     if (null == fs) {
-  		       fs = new FinancialMarketIndex(addr, FinancialMarketIndex_Type.this);
-  			   FinancialMarketIndex_Type.this.jcas.putJfsFromCaddr(addr, fs);
-  			   return fs;
-  		     }
-  		     return fs;
-        } else return new FinancialMarketIndex(addr, FinancialMarketIndex_Type.this);
-  	  }
-    };
+  private final FSGenerator fsGenerator = new FSGenerator() {
+    public FeatureStructure createFS(int addr, CASImpl cas) {
+      if (FinancialMarketIndex_Type.this.useExistingInstance) {
+        // Return eq fs instance if already created
+        FeatureStructure fs = FinancialMarketIndex_Type.this.jcas.getJfsFromCaddr(addr);
+        if (null == fs) {
+          fs = new FinancialMarketIndex(addr, FinancialMarketIndex_Type.this);
+          FinancialMarketIndex_Type.this.jcas.putJfsFromCaddr(addr, fs);
+          return fs;
+        }
+        return fs;
+      } else
+        return new FinancialMarketIndex(addr, FinancialMarketIndex_Type.this);
+    }
+  };
+
   /** @generated */
   public final static int typeIndexID = FinancialMarketIndex.typeIndexID;
-  /** @generated 
-     @modifiable */
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
- 
+
+  /**
+   * @generated
+   * @modifiable
+   */
+  public final static boolean featOkTst = JCasRegistry
+          .getFeatOkTst("org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
+
   /** @generated */
   final Feature casFeat_text;
+
   /** @generated */
-  final int     casFeatCode_text;
-  /** @generated */ 
+  final int casFeatCode_text;
+
+  /** @generated */
   public String getText(int addr) {
-        if (featOkTst && casFeat_text == null)
+    if (featOkTst && casFeat_text == null)
       jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_text);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setText(int addr, String v) {
-        if (featOkTst && casFeat_text == null)
+    if (featOkTst && casFeat_text == null)
       jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_text, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_text, v);
+  }
+
   /** @generated */
   final Feature casFeat_count;
+
   /** @generated */
-  final int     casFeatCode_count;
-  /** @generated */ 
+  final int casFeatCode_count;
+
+  /** @generated */
   public String getCount(int addr) {
-        if (featOkTst && casFeat_count == null)
+    if (featOkTst && casFeat_count == null)
       jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_count);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setCount(int addr, String v) {
-        if (featOkTst && casFeat_count == null)
+    if (featOkTst && casFeat_count == null)
       jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_count, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_count, v);
+  }
+
   /** @generated */
   final Feature casFeat_relevance;
+
   /** @generated */
-  final int     casFeatCode_relevance;
-  /** @generated */ 
+  final int casFeatCode_relevance;
+
+  /** @generated */
   public String getRelevance(int addr) {
-        if (featOkTst && casFeat_relevance == null)
+    if (featOkTst && casFeat_relevance == null)
       jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_relevance);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setRelevance(int addr, String v) {
-        if (featOkTst && casFeat_relevance == null)
+    if (featOkTst && casFeat_relevance == null)
       jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_relevance, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_relevance, v);
+  }
+
   /** @generated */
   final Feature casFeat_disambiguation;
+
   /** @generated */
-  final int     casFeatCode_disambiguation;
-  /** @generated */ 
+  final int casFeatCode_disambiguation;
+
+  /** @generated */
   public String getDisambiguation(int addr) {
-        if (featOkTst && casFeat_disambiguation == null)
-      jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
+    if (featOkTst && casFeat_disambiguation == null)
+      jcas.throwFeatMissing("disambiguation",
+              "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_disambiguation);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setDisambiguation(int addr, String v) {
-        if (featOkTst && casFeat_disambiguation == null)
-      jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_disambiguation, v);}
-    
-  
- 
+    if (featOkTst && casFeat_disambiguation == null)
+      jcas.throwFeatMissing("disambiguation",
+              "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
+    ll_cas.ll_setStringValue(addr, casFeatCode_disambiguation, v);
+  }
+
   /** @generated */
   final Feature casFeat_subType;
+
   /** @generated */
-  final int     casFeatCode_subType;
-  /** @generated */ 
+  final int casFeatCode_subType;
+
+  /** @generated */
   public String getSubType(int addr) {
-        if (featOkTst && casFeat_subType == null)
+    if (featOkTst && casFeat_subType == null)
       jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_subType);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setSubType(int addr, String v) {
-        if (featOkTst && casFeat_subType == null)
+    if (featOkTst && casFeat_subType == null)
       jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_subType, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_subType, v);
+  }
+
   /** @generated */
   final Feature casFeat_website;
+
   /** @generated */
-  final int     casFeatCode_website;
-  /** @generated */ 
+  final int casFeatCode_website;
+
+  /** @generated */
   public String getWebsite(int addr) {
-        if (featOkTst && casFeat_website == null)
+    if (featOkTst && casFeat_website == null)
       jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_website);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setWebsite(int addr, String v) {
-        if (featOkTst && casFeat_website == null)
+    if (featOkTst && casFeat_website == null)
       jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_website, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_website, v);
+  }
+
   /** @generated */
   final Feature casFeat_geo;
+
   /** @generated */
-  final int     casFeatCode_geo;
-  /** @generated */ 
+  final int casFeatCode_geo;
+
+  /** @generated */
   public String getGeo(int addr) {
-        if (featOkTst && casFeat_geo == null)
+    if (featOkTst && casFeat_geo == null)
       jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_geo);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setGeo(int addr, String v) {
-        if (featOkTst && casFeat_geo == null)
+    if (featOkTst && casFeat_geo == null)
       jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_geo, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_geo, v);
+  }
+
   /** @generated */
   final Feature casFeat_dbpedia;
+
   /** @generated */
-  final int     casFeatCode_dbpedia;
-  /** @generated */ 
+  final int casFeatCode_dbpedia;
+
+  /** @generated */
   public String getDbpedia(int addr) {
-        if (featOkTst && casFeat_dbpedia == null)
+    if (featOkTst && casFeat_dbpedia == null)
       jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_dbpedia);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setDbpedia(int addr, String v) {
-        if (featOkTst && casFeat_dbpedia == null)
+    if (featOkTst && casFeat_dbpedia == null)
       jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_dbpedia, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_dbpedia, v);
+  }
+
   /** @generated */
   final Feature casFeat_yago;
+
   /** @generated */
-  final int     casFeatCode_yago;
-  /** @generated */ 
+  final int casFeatCode_yago;
+
+  /** @generated */
   public String getYago(int addr) {
-        if (featOkTst && casFeat_yago == null)
+    if (featOkTst && casFeat_yago == null)
       jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_yago);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setYago(int addr, String v) {
-        if (featOkTst && casFeat_yago == null)
+    if (featOkTst && casFeat_yago == null)
       jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_yago, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_yago, v);
+  }
+
   /** @generated */
   final Feature casFeat_opencyc;
+
   /** @generated */
-  final int     casFeatCode_opencyc;
-  /** @generated */ 
+  final int casFeatCode_opencyc;
+
+  /** @generated */
   public String getOpencyc(int addr) {
-        if (featOkTst && casFeat_opencyc == null)
+    if (featOkTst && casFeat_opencyc == null)
       jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_opencyc);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setOpencyc(int addr, String v) {
-        if (featOkTst && casFeat_opencyc == null)
+    if (featOkTst && casFeat_opencyc == null)
       jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_opencyc, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_opencyc, v);
+  }
+
   /** @generated */
   final Feature casFeat_umbel;
+
   /** @generated */
-  final int     casFeatCode_umbel;
-  /** @generated */ 
+  final int casFeatCode_umbel;
+
+  /** @generated */
   public String getUmbel(int addr) {
-        if (featOkTst && casFeat_umbel == null)
+    if (featOkTst && casFeat_umbel == null)
       jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_umbel);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setUmbel(int addr, String v) {
-        if (featOkTst && casFeat_umbel == null)
+    if (featOkTst && casFeat_umbel == null)
       jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_umbel, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_umbel, v);
+  }
+
   /** @generated */
   final Feature casFeat_freebase;
+
   /** @generated */
-  final int     casFeatCode_freebase;
-  /** @generated */ 
+  final int casFeatCode_freebase;
+
+  /** @generated */
   public String getFreebase(int addr) {
-        if (featOkTst && casFeat_freebase == null)
+    if (featOkTst && casFeat_freebase == null)
       jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_freebase);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setFreebase(int addr, String v) {
-        if (featOkTst && casFeat_freebase == null)
+    if (featOkTst && casFeat_freebase == null)
       jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_freebase, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_freebase, v);
+  }
+
   /** @generated */
   final Feature casFeat_ciaFactbook;
+
   /** @generated */
-  final int     casFeatCode_ciaFactbook;
-  /** @generated */ 
+  final int casFeatCode_ciaFactbook;
+
+  /** @generated */
   public String getCiaFactbook(int addr) {
-        if (featOkTst && casFeat_ciaFactbook == null)
-      jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
+    if (featOkTst && casFeat_ciaFactbook == null)
+      jcas
+              .throwFeatMissing("ciaFactbook",
+                      "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_ciaFactbook);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setCiaFactbook(int addr, String v) {
-        if (featOkTst && casFeat_ciaFactbook == null)
-      jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_ciaFactbook, v);}
-    
-  
- 
+    if (featOkTst && casFeat_ciaFactbook == null)
+      jcas
+              .throwFeatMissing("ciaFactbook",
+                      "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
+    ll_cas.ll_setStringValue(addr, casFeatCode_ciaFactbook, v);
+  }
+
   /** @generated */
   final Feature casFeat_census;
+
   /** @generated */
-  final int     casFeatCode_census;
-  /** @generated */ 
+  final int casFeatCode_census;
+
+  /** @generated */
   public String getCensus(int addr) {
-        if (featOkTst && casFeat_census == null)
+    if (featOkTst && casFeat_census == null)
       jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_census);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setCensus(int addr, String v) {
-        if (featOkTst && casFeat_census == null)
+    if (featOkTst && casFeat_census == null)
       jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_census, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_census, v);
+  }
+
   /** @generated */
   final Feature casFeat_geonames;
+
   /** @generated */
-  final int     casFeatCode_geonames;
-  /** @generated */ 
+  final int casFeatCode_geonames;
+
+  /** @generated */
   public String getGeonames(int addr) {
-        if (featOkTst && casFeat_geonames == null)
+    if (featOkTst && casFeat_geonames == null)
       jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_geonames);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setGeonames(int addr, String v) {
-        if (featOkTst && casFeat_geonames == null)
+    if (featOkTst && casFeat_geonames == null)
       jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_geonames, v);}
-    
-  
- 
+    ll_cas.ll_setStringValue(addr, casFeatCode_geonames, v);
+  }
+
   /** @generated */
   final Feature casFeat_musicBrainz;
+
   /** @generated */
-  final int     casFeatCode_musicBrainz;
-  /** @generated */ 
+  final int casFeatCode_musicBrainz;
+
+  /** @generated */
   public String getMusicBrainz(int addr) {
-        if (featOkTst && casFeat_musicBrainz == null)
-      jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
+    if (featOkTst && casFeat_musicBrainz == null)
+      jcas
+              .throwFeatMissing("musicBrainz",
+                      "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getStringValue(addr, casFeatCode_musicBrainz);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setMusicBrainz(int addr, String v) {
-        if (featOkTst && casFeat_musicBrainz == null)
-      jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setStringValue(addr, casFeatCode_musicBrainz, v);}
-    
-  
- 
+    if (featOkTst && casFeat_musicBrainz == null)
+      jcas
+              .throwFeatMissing("musicBrainz",
+                      "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
+    ll_cas.ll_setStringValue(addr, casFeatCode_musicBrainz, v);
+  }
+
   /** @generated */
   final Feature casFeat_quotations;
+
   /** @generated */
-  final int     casFeatCode_quotations;
-  /** @generated */ 
+  final int casFeatCode_quotations;
+
+  /** @generated */
   public int getQuotations(int addr) {
-        if (featOkTst && casFeat_quotations == null)
+    if (featOkTst && casFeat_quotations == null)
       jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     return ll_cas.ll_getRefValue(addr, casFeatCode_quotations);
   }
-  /** @generated */    
+
+  /** @generated */
   public void setQuotations(int addr, int v) {
-        if (featOkTst && casFeat_quotations == null)
+    if (featOkTst && casFeat_quotations == null)
       jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    ll_cas.ll_setRefValue(addr, casFeatCode_quotations, v);}
-    
-   /** @generated */
-  public String getQuotations(int addr, int i) {
-        if (featOkTst && casFeat_quotations == null)
-      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
-    if (lowLevelTypeChecks)
-      return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, true);
-    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
-	return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
+    ll_cas.ll_setRefValue(addr, casFeatCode_quotations, v);
   }
-   
-  /** @generated */ 
-  public void setQuotations(int addr, int i, String v) {
-        if (featOkTst && casFeat_quotations == null)
+
+  /** @generated */
+  public String getQuotations(int addr, int i) {
+    if (featOkTst && casFeat_quotations == null)
       jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
     if (lowLevelTypeChecks)
-      ll_cas.ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, v, true);
+      return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i,
+              true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
+    return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
+  }
+
+  /** @generated */
+  public void setQuotations(int addr, int i, String v) {
+    if (featOkTst && casFeat_quotations == null)
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.FinancialMarketIndex");
+    if (lowLevelTypeChecks)
+      ll_cas
+              .ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, v,
+                      true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
     ll_cas.ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, v);
   }
- 
 
-
-
-  /** initialize variables to correspond with Cas Type and Features
-	* @generated */
+  /**
+   * initialize variables to correspond with Cas Type and Features
+   * 
+   * @generated
+   */
   public FinancialMarketIndex_Type(JCas jcas, Type casType) {
     super(jcas, casType);
-    casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
+    casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl) this.casType, getFSGenerator());
 
- 
     casFeat_text = jcas.getRequiredFeatureDE(casType, "text", "uima.cas.String", featOkTst);
-    casFeatCode_text  = (null == casFeat_text) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_text).getCode();
+    casFeatCode_text = (null == casFeat_text) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_text).getCode();
 
- 
     casFeat_count = jcas.getRequiredFeatureDE(casType, "count", "uima.cas.String", featOkTst);
-    casFeatCode_count  = (null == casFeat_count) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_count).getCode();
+    casFeatCode_count = (null == casFeat_count) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_count).getCode();
 
- 
-    casFeat_relevance = jcas.getRequiredFeatureDE(casType, "relevance", "uima.cas.String", featOkTst);
-    casFeatCode_relevance  = (null == casFeat_relevance) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_relevance).getCode();
+    casFeat_relevance = jcas.getRequiredFeatureDE(casType, "relevance", "uima.cas.String",
+            featOkTst);
+    casFeatCode_relevance = (null == casFeat_relevance) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_relevance).getCode();
 
- 
-    casFeat_disambiguation = jcas.getRequiredFeatureDE(casType, "disambiguation", "uima.cas.String", featOkTst);
-    casFeatCode_disambiguation  = (null == casFeat_disambiguation) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_disambiguation).getCode();
+    casFeat_disambiguation = jcas.getRequiredFeatureDE(casType, "disambiguation",
+            "uima.cas.String", featOkTst);
+    casFeatCode_disambiguation = (null == casFeat_disambiguation) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_disambiguation).getCode();
 
- 
     casFeat_subType = jcas.getRequiredFeatureDE(casType, "subType", "uima.cas.String", featOkTst);
-    casFeatCode_subType  = (null == casFeat_subType) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_subType).getCode();
+    casFeatCode_subType = (null == casFeat_subType) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_subType).getCode();
 
- 
     casFeat_website = jcas.getRequiredFeatureDE(casType, "website", "uima.cas.String", featOkTst);
-    casFeatCode_website  = (null == casFeat_website) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_website).getCode();
+    casFeatCode_website = (null == casFeat_website) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_website).getCode();
 
- 
     casFeat_geo = jcas.getRequiredFeatureDE(casType, "geo", "uima.cas.String", featOkTst);
-    casFeatCode_geo  = (null == casFeat_geo) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_geo).getCode();
+    casFeatCode_geo = (null == casFeat_geo) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_geo).getCode();
 
- 
     casFeat_dbpedia = jcas.getRequiredFeatureDE(casType, "dbpedia", "uima.cas.String", featOkTst);
-    casFeatCode_dbpedia  = (null == casFeat_dbpedia) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_dbpedia).getCode();
+    casFeatCode_dbpedia = (null == casFeat_dbpedia) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_dbpedia).getCode();
 
- 
     casFeat_yago = jcas.getRequiredFeatureDE(casType, "yago", "uima.cas.String", featOkTst);
-    casFeatCode_yago  = (null == casFeat_yago) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_yago).getCode();
+    casFeatCode_yago = (null == casFeat_yago) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_yago).getCode();
 
- 
     casFeat_opencyc = jcas.getRequiredFeatureDE(casType, "opencyc", "uima.cas.String", featOkTst);
-    casFeatCode_opencyc  = (null == casFeat_opencyc) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_opencyc).getCode();
+    casFeatCode_opencyc = (null == casFeat_opencyc) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_opencyc).getCode();
 
- 
     casFeat_umbel = jcas.getRequiredFeatureDE(casType, "umbel", "uima.cas.String", featOkTst);
-    casFeatCode_umbel  = (null == casFeat_umbel) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_umbel).getCode();
+    casFeatCode_umbel = (null == casFeat_umbel) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_umbel).getCode();
 
- 
     casFeat_freebase = jcas.getRequiredFeatureDE(casType, "freebase", "uima.cas.String", featOkTst);
-    casFeatCode_freebase  = (null == casFeat_freebase) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_freebase).getCode();
+    casFeatCode_freebase = (null == casFeat_freebase) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_freebase).getCode();
 
- 
-    casFeat_ciaFactbook = jcas.getRequiredFeatureDE(casType, "ciaFactbook", "uima.cas.String", featOkTst);
-    casFeatCode_ciaFactbook  = (null == casFeat_ciaFactbook) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_ciaFactbook).getCode();
+    casFeat_ciaFactbook = jcas.getRequiredFeatureDE(casType, "ciaFactbook", "uima.cas.String",
+            featOkTst);
+    casFeatCode_ciaFactbook = (null == casFeat_ciaFactbook) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_ciaFactbook).getCode();
 
- 
     casFeat_census = jcas.getRequiredFeatureDE(casType, "census", "uima.cas.String", featOkTst);
-    casFeatCode_census  = (null == casFeat_census) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_census).getCode();
+    casFeatCode_census = (null == casFeat_census) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_census).getCode();
 
- 
     casFeat_geonames = jcas.getRequiredFeatureDE(casType, "geonames", "uima.cas.String", featOkTst);
-    casFeatCode_geonames  = (null == casFeat_geonames) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_geonames).getCode();
+    casFeatCode_geonames = (null == casFeat_geonames) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_geonames).getCode();
 
- 
-    casFeat_musicBrainz = jcas.getRequiredFeatureDE(casType, "musicBrainz", "uima.cas.String", featOkTst);
-    casFeatCode_musicBrainz  = (null == casFeat_musicBrainz) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_musicBrainz).getCode();
+    casFeat_musicBrainz = jcas.getRequiredFeatureDE(casType, "musicBrainz", "uima.cas.String",
+            featOkTst);
+    casFeatCode_musicBrainz = (null == casFeat_musicBrainz) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_musicBrainz).getCode();
 
- 
-    casFeat_quotations = jcas.getRequiredFeatureDE(casType, "quotations", "uima.cas.StringArray", featOkTst);
-    casFeatCode_quotations  = (null == casFeat_quotations) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_quotations).getCode();
+    casFeat_quotations = jcas.getRequiredFeatureDE(casType, "quotations", "uima.cas.StringArray",
+            featOkTst);
+    casFeatCode_quotations = (null == casFeat_quotations) ? JCas.INVALID_FEATURE_CODE
+            : ((FeatureImpl) casFeat_quotations).getCode();
 
   }
 }
-
-
-
-    

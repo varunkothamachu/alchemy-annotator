@@ -42,8 +42,6 @@ public class TestUtils {
     // analyze results
     for (Object eventObject : pt.getEvents()) {
       ProcessTraceEvent e = (ProcessTraceEvent) eventObject;
-      System.out.println(e.getComponentName() + " (" + e.getType() + ") - " + e.getDescription()
-              + " (" + e.getDuration() + ") : " + e.getResultMessage());
       if (e != null && e.getResultMessage() != null && e.getResultMessage().contains("error")) {
         throw new AnalysisEngineProcessException();
       }

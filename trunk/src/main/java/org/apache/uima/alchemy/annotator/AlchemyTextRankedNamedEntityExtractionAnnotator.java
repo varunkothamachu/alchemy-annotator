@@ -109,9 +109,9 @@ public class AlchemyTextRankedNamedEntityExtractionAnnotator extends JCasAnnotat
         Validate.notNull(results.getStatus());
         if (results.getStatus().equalsIgnoreCase(STATUS_OK)) {
           Alchemy2TypeSystemMapper.mapRankedEntities((EntitiesResults) results, aJCas); // create
-                                                                                        // annotations
-                                                                                        // from
-                                                                                        // results
+          // annotations
+          // from
+          // results
         } else {
           throw new AlchemyCallFailedException(results.getStatus());
         }

@@ -104,9 +104,9 @@ public class AlchemyTextCategorizationAnnotator extends JCasAnnotator_ImplBase {
         Validate.notNull(results.getStatus());
         if (results.getStatus().equalsIgnoreCase(STATUS_OK)) {
           Alchemy2TypeSystemMapper.mapCategorizationEntity((CategorizationResults) results, aJCas); // create
-                                                                                                    // annotations
-                                                                                                    // from
-                                                                                                    // results
+          // annotations
+          // from
+          // results
         } else {
           throw new AlchemyCallFailedException(results.getStatus());
         }
