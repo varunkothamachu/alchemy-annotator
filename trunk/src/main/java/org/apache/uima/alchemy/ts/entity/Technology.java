@@ -1,18 +1,19 @@
 
 
-/* First created by JCasGen Sat Nov 07 16:35:42 CET 2009 */
+/* First created by JCasGen Mon Nov 09 23:02:37 CET 2009 */
 package org.apache.uima.alchemy.ts.entity;
 
-import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.JCas; 
 import org.apache.uima.jcas.JCasRegistry;
-import org.apache.uima.jcas.cas.StringArray;
-import org.apache.uima.jcas.cas.TOP;
 import org.apache.uima.jcas.cas.TOP_Type;
+
+import org.apache.uima.jcas.cas.TOP;
+import org.apache.uima.jcas.cas.StringArray;
 
 
 /** 
- * Updated by JCasGen Sat Nov 07 16:35:42 CET 2009
- * XML source: /Users/tommaso/Documents/workspaces/uima_ws/alchemy-annotator/src/main/resources/TextRankedEntityExtractionAEDescriptor.xml
+ * Updated by JCasGen Mon Nov 09 23:02:37 CET 2009
+ * XML source: /Users/tommasoteofili/Documents/workspaces/uima_workspace/alchemy-annotator/src/main/resources/TextRankedEntityExtractionAEDescriptor.xml
  * @generated */
 public class Technology extends TOP {
   /** @generated

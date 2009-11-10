@@ -1,45 +1,45 @@
 
-/* First created by JCasGen Sat Nov 07 16:35:42 CET 2009 */
+/* First created by JCasGen Mon Nov 09 23:02:37 CET 2009 */
 package org.apache.uima.alchemy.ts.entity;
 
-import org.apache.uima.cas.Feature;
-import org.apache.uima.cas.FeatureStructure;
-import org.apache.uima.cas.Type;
-import org.apache.uima.cas.impl.CASImpl;
-import org.apache.uima.cas.impl.FSGenerator;
-import org.apache.uima.cas.impl.FeatureImpl;
-import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
+import org.apache.uima.cas.impl.CASImpl;
+import org.apache.uima.cas.impl.FSGenerator;
+import org.apache.uima.cas.FeatureStructure;
+import org.apache.uima.cas.impl.TypeImpl;
+import org.apache.uima.cas.Type;
+import org.apache.uima.cas.impl.FeatureImpl;
+import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** 
- * Updated by JCasGen Sat Nov 07 16:35:42 CET 2009
+ * Updated by JCasGen Mon Nov 09 23:02:37 CET 2009
  * @generated */
-public class StateOrCountry_Type extends TOP_Type {
+public class StateOrCounty_Type extends TOP_Type {
   /** @generated */
   protected FSGenerator getFSGenerator() {return fsGenerator;}
   /** @generated */
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (StateOrCountry_Type.this.useExistingInstance) {
+  			 if (StateOrCounty_Type.this.useExistingInstance) {
   			   // Return eq fs instance if already created
-  		     FeatureStructure fs = StateOrCountry_Type.this.jcas.getJfsFromCaddr(addr);
+  		     FeatureStructure fs = StateOrCounty_Type.this.jcas.getJfsFromCaddr(addr);
   		     if (null == fs) {
-  		       fs = new StateOrCountry(addr, StateOrCountry_Type.this);
-  			   StateOrCountry_Type.this.jcas.putJfsFromCaddr(addr, fs);
+  		       fs = new StateOrCounty(addr, StateOrCounty_Type.this);
+  			   StateOrCounty_Type.this.jcas.putJfsFromCaddr(addr, fs);
   			   return fs;
   		     }
   		     return fs;
-        } else return new StateOrCountry(addr, StateOrCountry_Type.this);
+        } else return new StateOrCounty(addr, StateOrCounty_Type.this);
   	  }
     };
   /** @generated */
-  public final static int typeIndexID = StateOrCountry.typeIndexID;
+  public final static int typeIndexID = StateOrCounty.typeIndexID;
   /** @generated 
      @modifiable */
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.alchemy.ts.entity.StateOrCountry");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.alchemy.ts.entity.StateOrCounty");
  
   /** @generated */
   final Feature casFeat_text;
@@ -48,13 +48,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getText(int addr) {
         if (featOkTst && casFeat_text == null)
-      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_text);
   }
   /** @generated */    
   public void setText(int addr, String v) {
         if (featOkTst && casFeat_text == null)
-      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_text, v);}
     
   
@@ -66,13 +66,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getRelevance(int addr) {
         if (featOkTst && casFeat_relevance == null)
-      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_relevance);
   }
   /** @generated */    
   public void setRelevance(int addr, String v) {
         if (featOkTst && casFeat_relevance == null)
-      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_relevance, v);}
     
   
@@ -84,13 +84,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getCount(int addr) {
         if (featOkTst && casFeat_count == null)
-      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_count);
   }
   /** @generated */    
   public void setCount(int addr, String v) {
         if (featOkTst && casFeat_count == null)
-      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_count, v);}
     
   
@@ -102,13 +102,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getDisambiguation(int addr) {
         if (featOkTst && casFeat_disambiguation == null)
-      jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_disambiguation);
   }
   /** @generated */    
   public void setDisambiguation(int addr, String v) {
         if (featOkTst && casFeat_disambiguation == null)
-      jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_disambiguation, v);}
     
   
@@ -120,13 +120,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getSubType(int addr) {
         if (featOkTst && casFeat_subType == null)
-      jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_subType);
   }
   /** @generated */    
   public void setSubType(int addr, String v) {
         if (featOkTst && casFeat_subType == null)
-      jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_subType, v);}
     
   
@@ -138,13 +138,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getWebsite(int addr) {
         if (featOkTst && casFeat_website == null)
-      jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_website);
   }
   /** @generated */    
   public void setWebsite(int addr, String v) {
         if (featOkTst && casFeat_website == null)
-      jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_website, v);}
     
   
@@ -156,13 +156,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getGeo(int addr) {
         if (featOkTst && casFeat_geo == null)
-      jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_geo);
   }
   /** @generated */    
   public void setGeo(int addr, String v) {
         if (featOkTst && casFeat_geo == null)
-      jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_geo, v);}
     
   
@@ -174,13 +174,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getDbpedia(int addr) {
         if (featOkTst && casFeat_dbpedia == null)
-      jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_dbpedia);
   }
   /** @generated */    
   public void setDbpedia(int addr, String v) {
         if (featOkTst && casFeat_dbpedia == null)
-      jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_dbpedia, v);}
     
   
@@ -192,13 +192,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getYago(int addr) {
         if (featOkTst && casFeat_yago == null)
-      jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_yago);
   }
   /** @generated */    
   public void setYago(int addr, String v) {
         if (featOkTst && casFeat_yago == null)
-      jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_yago, v);}
     
   
@@ -210,13 +210,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getOpencyc(int addr) {
         if (featOkTst && casFeat_opencyc == null)
-      jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_opencyc);
   }
   /** @generated */    
   public void setOpencyc(int addr, String v) {
         if (featOkTst && casFeat_opencyc == null)
-      jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_opencyc, v);}
     
   
@@ -228,13 +228,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getUmbel(int addr) {
         if (featOkTst && casFeat_umbel == null)
-      jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_umbel);
   }
   /** @generated */    
   public void setUmbel(int addr, String v) {
         if (featOkTst && casFeat_umbel == null)
-      jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_umbel, v);}
     
   
@@ -246,13 +246,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getFreebase(int addr) {
         if (featOkTst && casFeat_freebase == null)
-      jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_freebase);
   }
   /** @generated */    
   public void setFreebase(int addr, String v) {
         if (featOkTst && casFeat_freebase == null)
-      jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_freebase, v);}
     
   
@@ -264,13 +264,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getCiaFactbook(int addr) {
         if (featOkTst && casFeat_ciaFactbook == null)
-      jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_ciaFactbook);
   }
   /** @generated */    
   public void setCiaFactbook(int addr, String v) {
         if (featOkTst && casFeat_ciaFactbook == null)
-      jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_ciaFactbook, v);}
     
   
@@ -282,13 +282,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getCensus(int addr) {
         if (featOkTst && casFeat_census == null)
-      jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_census);
   }
   /** @generated */    
   public void setCensus(int addr, String v) {
         if (featOkTst && casFeat_census == null)
-      jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_census, v);}
     
   
@@ -300,13 +300,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getGeonames(int addr) {
         if (featOkTst && casFeat_geonames == null)
-      jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_geonames);
   }
   /** @generated */    
   public void setGeonames(int addr, String v) {
         if (featOkTst && casFeat_geonames == null)
-      jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_geonames, v);}
     
   
@@ -318,13 +318,13 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public String getMusicBrainz(int addr) {
         if (featOkTst && casFeat_musicBrainz == null)
-      jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getStringValue(addr, casFeatCode_musicBrainz);
   }
   /** @generated */    
   public void setMusicBrainz(int addr, String v) {
         if (featOkTst && casFeat_musicBrainz == null)
-      jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setStringValue(addr, casFeatCode_musicBrainz, v);}
     
   
@@ -336,19 +336,19 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public int getQuotations(int addr) {
         if (featOkTst && casFeat_quotations == null)
-      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     return ll_cas.ll_getRefValue(addr, casFeatCode_quotations);
   }
   /** @generated */    
   public void setQuotations(int addr, int v) {
         if (featOkTst && casFeat_quotations == null)
-      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     ll_cas.ll_setRefValue(addr, casFeatCode_quotations, v);}
     
    /** @generated */
   public String getQuotations(int addr, int i) {
         if (featOkTst && casFeat_quotations == null)
-      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     if (lowLevelTypeChecks)
       return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
@@ -358,7 +358,7 @@ public class StateOrCountry_Type extends TOP_Type {
   /** @generated */ 
   public void setQuotations(int addr, int i, String v) {
         if (featOkTst && casFeat_quotations == null)
-      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.StateOrCountry");
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.StateOrCounty");
     if (lowLevelTypeChecks)
       ll_cas.ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, v, true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
@@ -370,7 +370,7 @@ public class StateOrCountry_Type extends TOP_Type {
 
   /** initialize variables to correspond with Cas Type and Features
 	* @generated */
-  public StateOrCountry_Type(JCas jcas, Type casType) {
+  public StateOrCounty_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 

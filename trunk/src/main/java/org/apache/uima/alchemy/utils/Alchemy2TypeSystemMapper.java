@@ -7,6 +7,7 @@ import org.apache.uima.alchemy.digester.domain.Entity;
 import org.apache.uima.alchemy.ts.categorization.Category;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.cas.FeatureStructure;
+import org.apache.uima.cas.Type;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.StringArray;
 
@@ -17,42 +18,48 @@ public class Alchemy2TypeSystemMapper {
     for (Entity entity : results.getEntities().getEntities()) {
       try {
         // use reflection to instantiate classes of the proper type in the type system
-        Object fsObject = Class.forName("org.apache.uima.alchemy.ts.entity." + entity.getType())
-                .getConstructors()[1].newInstance(aJCas);
+        Object fsObject;
+        try {
+          fsObject = Class.forName("org.apache.uima.alchemy.ts.entity." + entity.getType())
+                  .getConstructors()[1].newInstance(aJCas);
+        } catch (Exception e) {
+          fsObject = Class.forName("org.apache.uima.alchemy.ts.entity." + entity.getType())
+                  .getConstructors()[0].newInstance(aJCas);
+        }
         FeatureStructure fs = (FeatureStructure) fsObject;
-        fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "count"), entity
-                .getCount()); // count
-        fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "text"), entity
-                .getText()); // text
-        fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "relevance"), entity
-                .getRelevance()); // relevance
+
+        Type type = fs.getType();
+
+        fs.setFeatureValueFromString(type.getFeatureByBaseName("count"), entity.getCount()); // count
+        fs.setFeatureValueFromString(type.getFeatureByBaseName("text"), entity.getText()); // text
+        fs.setFeatureValueFromString(type.getFeatureByBaseName("relevance"), entity.getRelevance()); // relevance
         if (entity.getDisambiguated() != null) {
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "disambiguation"),
-                  entity.getDisambiguated().getName()); // disambiguation name
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "dbpedia"), entity
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("disambiguation"), entity
+                  .getDisambiguated().getName()); // disambiguation name
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("dbpedia"), entity
                   .getDisambiguated().getDbpedia()); // dbpedia
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "website"), entity
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("website"), entity
                   .getDisambiguated().getWebsite()); // website
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "subType"), entity
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("subType"), entity
                   .getDisambiguated().getSubType()); // subtype
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "geo"), entity
-                  .getDisambiguated().getGeo()); // geo
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "opencyc"), entity
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("geo"), entity.getDisambiguated()
+                  .getGeo()); // geo
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("opencyc"), entity
                   .getDisambiguated().getOpencyc()); // opencyc
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "yago"), entity
-                  .getDisambiguated().getYago()); // yago
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "umbel"), entity
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("yago"), entity.getDisambiguated()
+                  .getYago()); // yago
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("umbel"), entity
                   .getDisambiguated().getUmbel()); // umbel
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "freebase"), entity
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("freebase"), entity
                   .getDisambiguated().getFreebase()); // freebase
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "ciaFactbook"),
-                  entity.getDisambiguated().getCiaFactbook()); // ciaFactbook
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "census"), entity
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("ciaFactbook"), entity
+                  .getDisambiguated().getCiaFactbook()); // ciaFactbook
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("census"), entity
                   .getDisambiguated().getCensus()); // census
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "geonames"), entity
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("geonames"), entity
                   .getDisambiguated().getGeonames()); // geonames
-          fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "musicBrainz"),
-                  entity.getDisambiguated().getMusicBrainz()); // musicBrainz
+          fs.setFeatureValueFromString(type.getFeatureByBaseName("musicBrainz"), entity
+                  .getDisambiguated().getMusicBrainz()); // musicBrainz
         }
         if (entity.getQuotations() != null && entity.getQuotations().getQuotations() != null
                 && entity.getQuotations().getQuotations().size() > 0) {
@@ -63,11 +70,11 @@ public class Alchemy2TypeSystemMapper {
             quotationsFeatureStructure.set(i, quotation);
             i++;
           }
-          fs.setFeatureValue(aJCas.getRequiredFeature(fs.getType(), "quotations"),
-                  quotationsFeatureStructure);
+          fs.setFeatureValue(type.getFeatureByBaseName("quotatiotans"), quotationsFeatureStructure);
         }
         aJCas.addFsToIndexes(fs);
       } catch (Exception e) {
+        System.err.println("error: " + entity.getType());
         throw new MappingException(e);
       }
     }
