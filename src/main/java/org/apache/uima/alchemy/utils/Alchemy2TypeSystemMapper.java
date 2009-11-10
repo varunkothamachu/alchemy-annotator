@@ -20,10 +20,11 @@ public class Alchemy2TypeSystemMapper {
       try {
         // use reflection to instantiate classes of the proper type in the type system
         Object fsObject;
-        try {
+        try {// usually jcas gen creates the constructor with jcas argument as the second one
           fsObject = Class.forName("org.apache.uima.alchemy.ts.entity." + entity.getType())
                   .getConstructors()[1].newInstance(aJCas);
-        } catch (Exception e) {
+        } catch (Exception e) { // for exceptional cases in which jcas parameter constructor is the
+          // first
           fsObject = Class.forName("org.apache.uima.alchemy.ts.entity." + entity.getType())
                   .getConstructors()[0].newInstance(aJCas);
         }
@@ -88,7 +89,7 @@ public class Alchemy2TypeSystemMapper {
   public static void mapAnnotatedEntities(AnnotatedResults results, JCas aJCas) {
     setLanaguage(results, aJCas);
     // TODO Auto-generated method stub
-
+    // results.getAnnotatedText()
   }
 
   public static void mapCategorizationEntity(CategorizationResults results, JCas aJCas)
