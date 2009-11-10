@@ -4,6 +4,7 @@ import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
 import org.apache.uima.alchemy.digester.domain.CategorizationResults;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
+import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.ts.categorization.Category;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.cas.FeatureStructure;
@@ -14,7 +15,7 @@ import org.apache.uima.jcas.cas.StringArray;
 public class Alchemy2TypeSystemMapper {
 
   public static void mapRankedEntities(EntitiesResults results, JCas aJCas) throws MappingException {
-
+    setLanaguage(results, aJCas);
     for (Entity entity : results.getEntities().getEntities()) {
       try {
         // use reflection to instantiate classes of the proper type in the type system
@@ -74,26 +75,30 @@ public class Alchemy2TypeSystemMapper {
         }
         aJCas.addFsToIndexes(fs);
       } catch (Exception e) {
-        System.err.println("error: " + entity.getType());
         throw new MappingException(e);
       }
     }
 
   }
 
+  private static void setLanaguage(Results results, JCas aJCas) {
+    aJCas.setDocumentLanguage(results.getLanguage());
+  }
+
   public static void mapAnnotatedEntities(AnnotatedResults results, JCas aJCas) {
+    setLanaguage(results, aJCas);
     // TODO Auto-generated method stub
 
   }
 
   public static void mapCategorizationEntity(CategorizationResults results, JCas aJCas)
           throws MappingException {
+    setLanaguage(results, aJCas);
     try {
       FeatureStructure fs = new Category(aJCas);
-      fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "score"), results
-              .getScore());
-      fs.setFeatureValueFromString(aJCas.getRequiredFeature(fs.getType(), "text"), results
-              .getCategory());
+      Type type = fs.getType();
+      fs.setFeatureValueFromString(type.getFeatureByBaseName("score"), results.getScore());
+      fs.setFeatureValueFromString(type.getFeatureByBaseName("text"), results.getCategory());
       aJCas.addFsToIndexes(fs);
     } catch (Exception e) {
       e.printStackTrace();
