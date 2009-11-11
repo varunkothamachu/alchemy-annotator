@@ -16,7 +16,8 @@
  * 	specific language governing permissions and limitations
  * 	under the License.
  */
-/* First created by JCasGen Mon Nov 09 23:02:37 CET 2009 */
+
+/* First created by JCasGen Wed Nov 11 15:21:12 CET 2009 */
 package org.apache.uima.alchemy.ts.entity;
 
 import org.apache.uima.jcas.JCas;
@@ -31,389 +32,351 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** 
- * Updated by JCasGen Wed Nov 11 16:33:05 CET 2009
+ * Updated by JCasGen Wed Nov 11 16:33:06 CET 2009
  * @generated */
-public class Person_Type extends TOP_Type {
+public class OperatingSystem_Type extends TOP_Type {
   /** @generated */
   protected FSGenerator getFSGenerator() {return fsGenerator;}
   /** @generated */
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (Person_Type.this.useExistingInstance) {
+  			 if (OperatingSystem_Type.this.useExistingInstance) {
   			   // Return eq fs instance if already created
-  		     FeatureStructure fs = Person_Type.this.jcas.getJfsFromCaddr(addr);
+  		     FeatureStructure fs = OperatingSystem_Type.this.jcas.getJfsFromCaddr(addr);
   		     if (null == fs) {
-  		       fs = new Person(addr, Person_Type.this);
-  			   Person_Type.this.jcas.putJfsFromCaddr(addr, fs);
+  		       fs = new OperatingSystem(addr, OperatingSystem_Type.this);
+  			   OperatingSystem_Type.this.jcas.putJfsFromCaddr(addr, fs);
   			   return fs;
   		     }
   		     return fs;
-        } else return new Person(addr, Person_Type.this);
+        } else return new OperatingSystem(addr, OperatingSystem_Type.this);
   	  }
     };
-
   /** @generated */
-  public final static int typeIndexID = Person.typeIndexID;
-
-  /**
-   * @generated
-   * @modifiable
-   */
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.alchemy.ts.entity.Person");
-
+  public final static int typeIndexID = OperatingSystem.typeIndexID;
+  /** @generated 
+     @modifiable */
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("org.apache.uima.alchemy.ts.entity.OperatingSystem");
+ 
   /** @generated */
   final Feature casFeat_text;
-
   /** @generated */
-  final int casFeatCode_text;
-
-  /** @generated */
+  final int     casFeatCode_text;
+  /** @generated */ 
   public String getText(int addr) {
         if (featOkTst && casFeat_text == null)
-      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_text);
   }
-  /** @generated */
+  /** @generated */    
   public void setText(int addr, String v) {
         if (featOkTst && casFeat_text == null)
-      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_text, v);}
     
   
  
   /** @generated */
-  final Feature casFeat_relevance;
-
-  /** @generated */
-  final int casFeatCode_relevance;
-
-  /** @generated */
-  public String getRelevance(int addr) {
-        if (featOkTst && casFeat_relevance == null)
-      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.Person");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_relevance);
-  }
-  /** @generated */
-  public void setRelevance(int addr, String v) {
-        if (featOkTst && casFeat_relevance == null)
-      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.Person");
-    ll_cas.ll_setStringValue(addr, casFeatCode_relevance, v);}
-    
-  
- 
-  /** @generated */
   final Feature casFeat_count;
-
   /** @generated */
-  final int casFeatCode_count;
-
-  /** @generated */
+  final int     casFeatCode_count;
+  /** @generated */ 
   public String getCount(int addr) {
         if (featOkTst && casFeat_count == null)
-      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_count);
   }
-  /** @generated */
+  /** @generated */    
   public void setCount(int addr, String v) {
         if (featOkTst && casFeat_count == null)
-      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_count, v);}
     
   
  
   /** @generated */
+  final Feature casFeat_relevance;
+  /** @generated */
+  final int     casFeatCode_relevance;
+  /** @generated */ 
+  public String getRelevance(int addr) {
+        if (featOkTst && casFeat_relevance == null)
+      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_relevance);
+  }
+  /** @generated */    
+  public void setRelevance(int addr, String v) {
+        if (featOkTst && casFeat_relevance == null)
+      jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
+    ll_cas.ll_setStringValue(addr, casFeatCode_relevance, v);}
+    
+  
+ 
+  /** @generated */
   final Feature casFeat_disambiguation;
-
   /** @generated */
-  final int casFeatCode_disambiguation;
-
-  /** @generated */
+  final int     casFeatCode_disambiguation;
+  /** @generated */ 
   public String getDisambiguation(int addr) {
         if (featOkTst && casFeat_disambiguation == null)
-      jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_disambiguation);
   }
-  /** @generated */
+  /** @generated */    
   public void setDisambiguation(int addr, String v) {
         if (featOkTst && casFeat_disambiguation == null)
-      jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_disambiguation, v);}
     
   
  
   /** @generated */
   final Feature casFeat_subType;
-
   /** @generated */
-  final int casFeatCode_subType;
-
-  /** @generated */
+  final int     casFeatCode_subType;
+  /** @generated */ 
   public String getSubType(int addr) {
         if (featOkTst && casFeat_subType == null)
-      jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_subType);
   }
-  /** @generated */
+  /** @generated */    
   public void setSubType(int addr, String v) {
         if (featOkTst && casFeat_subType == null)
-      jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_subType, v);}
     
   
  
   /** @generated */
   final Feature casFeat_website;
-
   /** @generated */
-  final int casFeatCode_website;
-
-  /** @generated */
+  final int     casFeatCode_website;
+  /** @generated */ 
   public String getWebsite(int addr) {
         if (featOkTst && casFeat_website == null)
-      jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_website);
   }
-  /** @generated */
+  /** @generated */    
   public void setWebsite(int addr, String v) {
         if (featOkTst && casFeat_website == null)
-      jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_website, v);}
     
   
  
   /** @generated */
   final Feature casFeat_geo;
-
   /** @generated */
-  final int casFeatCode_geo;
-
-  /** @generated */
+  final int     casFeatCode_geo;
+  /** @generated */ 
   public String getGeo(int addr) {
         if (featOkTst && casFeat_geo == null)
-      jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_geo);
   }
-  /** @generated */
+  /** @generated */    
   public void setGeo(int addr, String v) {
         if (featOkTst && casFeat_geo == null)
-      jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_geo, v);}
     
   
  
   /** @generated */
   final Feature casFeat_dbpedia;
-
   /** @generated */
-  final int casFeatCode_dbpedia;
-
-  /** @generated */
+  final int     casFeatCode_dbpedia;
+  /** @generated */ 
   public String getDbpedia(int addr) {
         if (featOkTst && casFeat_dbpedia == null)
-      jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_dbpedia);
   }
-  /** @generated */
+  /** @generated */    
   public void setDbpedia(int addr, String v) {
         if (featOkTst && casFeat_dbpedia == null)
-      jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_dbpedia, v);}
     
   
  
   /** @generated */
   final Feature casFeat_yago;
-
   /** @generated */
-  final int casFeatCode_yago;
-
-  /** @generated */
+  final int     casFeatCode_yago;
+  /** @generated */ 
   public String getYago(int addr) {
         if (featOkTst && casFeat_yago == null)
-      jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_yago);
   }
-  /** @generated */
+  /** @generated */    
   public void setYago(int addr, String v) {
         if (featOkTst && casFeat_yago == null)
-      jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_yago, v);}
     
   
  
   /** @generated */
   final Feature casFeat_opencyc;
-
   /** @generated */
-  final int casFeatCode_opencyc;
-
-  /** @generated */
+  final int     casFeatCode_opencyc;
+  /** @generated */ 
   public String getOpencyc(int addr) {
         if (featOkTst && casFeat_opencyc == null)
-      jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_opencyc);
   }
-  /** @generated */
+  /** @generated */    
   public void setOpencyc(int addr, String v) {
         if (featOkTst && casFeat_opencyc == null)
-      jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_opencyc, v);}
     
   
  
   /** @generated */
   final Feature casFeat_umbel;
-
   /** @generated */
-  final int casFeatCode_umbel;
-
-  /** @generated */
+  final int     casFeatCode_umbel;
+  /** @generated */ 
   public String getUmbel(int addr) {
         if (featOkTst && casFeat_umbel == null)
-      jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_umbel);
   }
-  /** @generated */
+  /** @generated */    
   public void setUmbel(int addr, String v) {
         if (featOkTst && casFeat_umbel == null)
-      jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_umbel, v);}
     
   
  
   /** @generated */
   final Feature casFeat_freebase;
-
   /** @generated */
-  final int casFeatCode_freebase;
-
-  /** @generated */
+  final int     casFeatCode_freebase;
+  /** @generated */ 
   public String getFreebase(int addr) {
         if (featOkTst && casFeat_freebase == null)
-      jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_freebase);
   }
-  /** @generated */
+  /** @generated */    
   public void setFreebase(int addr, String v) {
         if (featOkTst && casFeat_freebase == null)
-      jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_freebase, v);}
     
   
  
   /** @generated */
   final Feature casFeat_ciaFactbook;
-
   /** @generated */
-  final int casFeatCode_ciaFactbook;
-
-  /** @generated */
+  final int     casFeatCode_ciaFactbook;
+  /** @generated */ 
   public String getCiaFactbook(int addr) {
         if (featOkTst && casFeat_ciaFactbook == null)
-      jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_ciaFactbook);
   }
-  /** @generated */
+  /** @generated */    
   public void setCiaFactbook(int addr, String v) {
         if (featOkTst && casFeat_ciaFactbook == null)
-      jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_ciaFactbook, v);}
     
   
  
   /** @generated */
   final Feature casFeat_census;
-
   /** @generated */
-  final int casFeatCode_census;
-
-  /** @generated */
+  final int     casFeatCode_census;
+  /** @generated */ 
   public String getCensus(int addr) {
         if (featOkTst && casFeat_census == null)
-      jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_census);
   }
-  /** @generated */
+  /** @generated */    
   public void setCensus(int addr, String v) {
         if (featOkTst && casFeat_census == null)
-      jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_census, v);}
     
   
  
   /** @generated */
   final Feature casFeat_geonames;
-
   /** @generated */
-  final int casFeatCode_geonames;
-
-  /** @generated */
+  final int     casFeatCode_geonames;
+  /** @generated */ 
   public String getGeonames(int addr) {
         if (featOkTst && casFeat_geonames == null)
-      jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_geonames);
   }
-  /** @generated */
+  /** @generated */    
   public void setGeonames(int addr, String v) {
         if (featOkTst && casFeat_geonames == null)
-      jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_geonames, v);}
     
   
  
   /** @generated */
   final Feature casFeat_musicBrainz;
-
   /** @generated */
-  final int casFeatCode_musicBrainz;
-
-  /** @generated */
+  final int     casFeatCode_musicBrainz;
+  /** @generated */ 
   public String getMusicBrainz(int addr) {
         if (featOkTst && casFeat_musicBrainz == null)
-      jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getStringValue(addr, casFeatCode_musicBrainz);
   }
-  /** @generated */
+  /** @generated */    
   public void setMusicBrainz(int addr, String v) {
         if (featOkTst && casFeat_musicBrainz == null)
-      jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setStringValue(addr, casFeatCode_musicBrainz, v);}
     
   
  
   /** @generated */
   final Feature casFeat_quotations;
-
   /** @generated */
-  final int casFeatCode_quotations;
-
-  /** @generated */
+  final int     casFeatCode_quotations;
+  /** @generated */ 
   public int getQuotations(int addr) {
         if (featOkTst && casFeat_quotations == null)
-      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     return ll_cas.ll_getRefValue(addr, casFeatCode_quotations);
   }
-  /** @generated */
+  /** @generated */    
   public void setQuotations(int addr, int v) {
         if (featOkTst && casFeat_quotations == null)
-      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     ll_cas.ll_setRefValue(addr, casFeatCode_quotations, v);}
     
-  /** @generated */
+   /** @generated */
   public String getQuotations(int addr, int i) {
         if (featOkTst && casFeat_quotations == null)
-      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     if (lowLevelTypeChecks)
       return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
   return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
   }
    
-  /** @generated */
+  /** @generated */ 
   public void setQuotations(int addr, int i, String v) {
         if (featOkTst && casFeat_quotations == null)
-      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Person");
+      jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.OperatingSystem");
     if (lowLevelTypeChecks)
       ll_cas.ll_setStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, v, true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
@@ -423,12 +386,9 @@ public class Person_Type extends TOP_Type {
 
 
 
-  /**
-   * initialize variables to correspond with Cas Type and Features
-   * 
-   * @generated
-   */
-  public Person_Type(JCas jcas, Type casType) {
+  /** initialize variables to correspond with Cas Type and Features
+	* @generated */
+  public OperatingSystem_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
@@ -437,12 +397,12 @@ public class Person_Type extends TOP_Type {
     casFeatCode_text  = (null == casFeat_text) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_text).getCode();
 
  
-    casFeat_relevance = jcas.getRequiredFeatureDE(casType, "relevance", "uima.cas.String", featOkTst);
-    casFeatCode_relevance  = (null == casFeat_relevance) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_relevance).getCode();
-
- 
     casFeat_count = jcas.getRequiredFeatureDE(casType, "count", "uima.cas.String", featOkTst);
     casFeatCode_count  = (null == casFeat_count) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_count).getCode();
+
+ 
+    casFeat_relevance = jcas.getRequiredFeatureDE(casType, "relevance", "uima.cas.String", featOkTst);
+    casFeatCode_relevance  = (null == casFeat_relevance) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_relevance).getCode();
 
  
     casFeat_disambiguation = jcas.getRequiredFeatureDE(casType, "disambiguation", "uima.cas.String", featOkTst);
@@ -502,3 +462,7 @@ public class Person_Type extends TOP_Type {
 
   }
 }
+
+
+
+    
