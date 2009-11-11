@@ -31,7 +31,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** 
- * Updated by JCasGen Wed Nov 11 16:33:05 CET 2009
+ * Updated by JCasGen Wed Nov 11 17:11:02 CET 2009
  * @generated */
 public class Country_Type extends TOP_Type {
   /** @generated */

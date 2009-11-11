@@ -27,7 +27,7 @@ import org.apache.uima.jcas.cas.TOP;
 import org.apache.uima.jcas.cas.StringArray;
 
 /** 
- * Updated by JCasGen Wed Nov 11 16:33:06 CET 2009
+ * Updated by JCasGen Wed Nov 11 17:11:03 CET 2009
  * XML source: /Users/tommasoteofili/Documents/workspaces/uima_workspace/alchemy-annotator/src/main/resources/TextRankedEntityExtractionAEDescriptor.xml
  * @generated */
 public class TelevisionStation extends TOP {
