@@ -32,7 +32,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.TOP_Type;
 
 /** 
- * Updated by JCasGen Wed Nov 11 17:11:04 CET 2009
+ * Updated by JCasGen Sun Nov 15 23:15:41 CET 2009
  * @generated */
 public class SportingEvent_Type extends TOP_Type {
   /** @generated */
@@ -370,7 +370,7 @@ public class SportingEvent_Type extends TOP_Type {
     if (lowLevelTypeChecks)
       return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i, true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
-	return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
+  return ll_cas.ll_getStringArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_quotations), i);
   }
    
   /** @generated */ 
