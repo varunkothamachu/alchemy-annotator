@@ -30,7 +30,7 @@ import org.apache.uima.jcas.cas.StringArray;
 
 
 /** 
- * Updated by JCasGen Wed Nov 11 17:11:04 CET 2009
+ * Updated by JCasGen Sun Nov 15 23:15:41 CET 2009
  * XML source: /Users/tommasoteofili/Documents/workspaces/uima_workspace/alchemy-annotator/src/main/resources/TextRankedEntityExtractionAEDescriptor.xml
  * @generated */
 public class SportingEvent extends TOP {
