@@ -18,28 +18,22 @@
  */
 package org.apache.uima.alchemy.digester;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
+import junit.framework.TestCase;
 
-import org.apache.commons.digester.Digester;
-import org.apache.uima.alchemy.digester.domain.CategorizationResults;
 import org.apache.uima.alchemy.digester.domain.Results;
-import org.xml.sax.SAXException;
 
-public class TextCategorizationDigester implements AlchemyOutputDigester {
+public class CategorizationJsonDigesterTest extends TestCase {
 
-  public Results parseAlchemyXML(InputStream stream) throws IOException, SAXException,
-          URISyntaxException {
-    Digester digester = new Digester();
-    digester.setValidating(false);
-
-    digester.addObjectCreate("results", CategorizationResults.class);
-    digester.addBeanPropertySetter("results/status", "status");
-    digester.addBeanPropertySetter("results/url", "url");
-    digester.addBeanPropertySetter("results/category", "category");
-    digester.addBeanPropertySetter("results/score", "score");
-    return (Results) digester.parse(stream);
+  public void testParseAlchemyXML() {
+    try {
+      JsonTextCategorizationDigester digester = new JsonTextCategorizationDigester();
+      Results results = digester.parseAlchemyXML(this.getClass().getResourceAsStream(
+              "/jsonCategorizationResult.js"));
+      assertTrue(results != null);
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail();
+    }
   }
 
 }
