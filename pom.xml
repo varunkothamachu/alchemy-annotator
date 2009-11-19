@@ -25,7 +25,10 @@
 	<modelVersion>4.0.0</modelVersion>
   <groupId>org.apache.uima</groupId>
   <artifactId>alchemy-annotator</artifactId>
+  <name>alchemy-annotator</name>
   <version>0.0.2-SNAPSHOT</version>
+  <description>A UIMA set of AEs that wrap Alchemy API services from Orchestr8</description>
+  <url>http://code.google.com/p/alchemy-annotator/</url>
   <scm>
   	<url>http://alchemy-annotator.googlecode.com/svn/trunk/</url>
   </scm>
