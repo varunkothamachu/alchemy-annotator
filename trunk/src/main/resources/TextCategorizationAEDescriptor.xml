@@ -52,7 +52,7 @@
       <nameValuePair>
         <name>outputMode</name>
         <value>
-          <string>xml</string>
+          <string>json</string>
         </value>
       </nameValuePair>
       <nameValuePair>
