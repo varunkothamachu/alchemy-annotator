@@ -27,7 +27,7 @@ import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.xml.sax.SAXException;
 
-public class AnnotatedEntityExtractionDigester implements AlchemyOutputDigester {
+public class XMLAnnotatedEntityExtractionDigester implements AlchemyOutputDigester {
 
   public Results parseAlchemyXML(InputStream stream) throws IOException, SAXException,
           URISyntaxException {
