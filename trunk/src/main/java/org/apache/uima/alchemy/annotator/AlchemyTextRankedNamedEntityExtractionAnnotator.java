@@ -23,7 +23,7 @@ import java.net.URI;
 import java.net.URL;
 
 import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
-import org.apache.uima.alchemy.digester.RankedEntityExtractionDigester;
+import org.apache.uima.alchemy.digester.XMLRankedEntityExtractionDigester;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
@@ -37,7 +37,7 @@ public class AlchemyTextRankedNamedEntityExtractionAnnotator extends AbstractAlc
   }
 
   protected AlchemyOutputDigester getDigester() {
-    return new RankedEntityExtractionDigester();
+    return new XMLRankedEntityExtractionDigester();
   }
 
   protected String[] getServiceParameters() {

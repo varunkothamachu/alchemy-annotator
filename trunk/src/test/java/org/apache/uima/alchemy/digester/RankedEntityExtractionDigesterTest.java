@@ -37,7 +37,7 @@ public class RankedEntityExtractionDigesterTest extends TestCase {
               + "<ciaFactbook>LINKED_DATA_FACTBOOK</ciaFactbook><census>LINKED_DATA_CENSUS</census><geonames>LINKED_DATA_GEONAMES</geonames>"
               + "<musicBrainz>LINKED_DATA_MUSICBRAINZ</musicBrainz></disambiguated><quotations><quotation>ENTITY_QUOTATION</quotation>"
               + "</quotations></entity></entities></results>";
-      RankedEntityExtractionDigester digester = new RankedEntityExtractionDigester();
+      XMLRankedEntityExtractionDigester digester = new XMLRankedEntityExtractionDigester();
       Results results = digester.parseAlchemyXML(new ByteArrayInputStream(xmlString.getBytes()));
       assertTrue(results != null);
     } catch (Exception e) {

@@ -23,7 +23,7 @@ import java.net.URI;
 import java.net.URL;
 
 import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
-import org.apache.uima.alchemy.digester.AnnotatedEntityExtractionDigester;
+import org.apache.uima.alchemy.digester.XMLAnnotatedEntityExtractionDigester;
 import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
@@ -38,7 +38,7 @@ public class AlchemyTextAnnotatedNamedEntityExtractionAnnotator extends Abstract
   }
 
   protected AlchemyOutputDigester getDigester() {
-    return new AnnotatedEntityExtractionDigester();
+    return new XMLAnnotatedEntityExtractionDigester();
   }
 
   protected String[] getServiceParameters() {

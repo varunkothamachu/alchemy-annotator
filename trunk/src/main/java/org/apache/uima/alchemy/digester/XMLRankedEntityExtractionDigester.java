@@ -31,7 +31,7 @@ import org.apache.uima.alchemy.digester.domain.Quotations;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.xml.sax.SAXException;
 
-public class RankedEntityExtractionDigester implements AlchemyOutputDigester {
+public class XMLRankedEntityExtractionDigester implements AlchemyOutputDigester {
 
   public Results parseAlchemyXML(InputStream stream) throws IOException, SAXException,
           URISyntaxException {
