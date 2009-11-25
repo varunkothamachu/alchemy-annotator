@@ -22,23 +22,19 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 
-import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
-import org.apache.uima.alchemy.digester.XMLAnnotatedEntityExtractionDigester;
+import org.apache.uima.alchemy.digester.DigesterProvider;
 import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
 import org.apache.uima.alchemy.digester.domain.Results;
+import org.apache.uima.alchemy.digester.entity.annotated.AnnotatedEntityDigesterProvider;
 import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.jcas.JCas;
 
-public class AlchemyTextAnnotatedNamedEntityExtractionAnnotator extends AbstractAlchemyAnnotator {
+public class TextAnnotatedNamedEntityExtractionAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
     return URI.create("http://access.alchemyapi.com/calls/text/TextGetAnnotatedNamedEntityText")
             .toURL();
-  }
-
-  protected AlchemyOutputDigester getDigester() {
-    return new XMLAnnotatedEntityExtractionDigester();
   }
 
   protected String[] getServiceParameters() {
@@ -49,6 +45,10 @@ public class AlchemyTextAnnotatedNamedEntityExtractionAnnotator extends Abstract
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {
     Alchemy2TypeSystemMapper.mapAnnotatedEntities((AnnotatedResults) results, aJCas); // create
+  }
+
+  protected DigesterProvider createDigester() {
+    return new AnnotatedEntityDigesterProvider();
   }
 
 }

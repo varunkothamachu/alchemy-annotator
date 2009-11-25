@@ -18,16 +18,15 @@
  */
 package org.apache.uima.alchemy.digester;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URISyntaxException;
+public class ResultDigestingException extends Exception {
 
-import org.apache.uima.alchemy.digester.domain.Results;
-import org.xml.sax.SAXException;
+  /**
+	 * 
+	 */
+  private static final long serialVersionUID = 1L;
 
-public interface AlchemyOutputDigester {
-
-  public Results parseAlchemyXML(InputStream xmlReader) throws IOException, SAXException,
-          URISyntaxException;
+  public ResultDigestingException(Exception e) {
+    super(e);
+  }
 
 }
