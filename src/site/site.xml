@@ -18,10 +18,21 @@
     	under the License.
 
 -->
-<project name="My Site Title">
+<project name="alchemy-annotator">
   <skin>
     <groupId>com.fluido</groupId>
     <artifactId>fluido-skin</artifactId>
     <version>1.1</version>
   </skin>
+  <publishDate position="right"/>
+  <version position="right"/>
+  <poweredBy>
+    <logo name="Maven" href="http://maven.apache.org/"
+          img="http://maven.apache.org/images/logos/maven-feather.png"/>
+  </poweredBy>
+  <body>
+    <menu ref="modules" />
+    <menu ref="reports" />
+    <menu ref="parent" />
+  </body>
 </project>

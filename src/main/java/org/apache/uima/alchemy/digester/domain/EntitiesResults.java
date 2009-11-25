@@ -20,7 +20,7 @@ package org.apache.uima.alchemy.digester.domain;
 
 public class EntitiesResults extends Results {
 
-  private Entities entities;
+  private Entities entities = new Entities();
 
   public Entities getEntities() {
     return entities;
@@ -28,6 +28,10 @@ public class EntitiesResults extends Results {
 
   public void setEntities(Entities entities) {
     this.entities = entities;
+  }
+
+  public void addEntity(Entity entity) {
+    this.getEntities().addEntity(entity);
   }
 
 }

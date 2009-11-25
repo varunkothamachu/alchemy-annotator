@@ -24,6 +24,8 @@ public class Results {
 
   private String language;
 
+  private String url;
+
   public String getStatus() {
     return status;
   }
@@ -38,6 +40,14 @@ public class Results {
 
   public void setLanguage(String language) {
     this.language = language;
+  }
+
+  public String getUrl() {
+    return url;
+  }
+
+  public void setUrl(String url) {
+    this.url = url;
   }
 
 }
