@@ -148,6 +148,14 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
     return in;
   }
 
+  public void setDigesterProvider(DigesterProvider digesterProvider) {
+    this.digesterProvider = digesterProvider;
+  }
+
+  public DigesterProvider getDigesterProvider() {
+    return digesterProvider;
+  }
+
   protected abstract DigesterProvider createDigester();
 
   protected abstract URL createServiceURI() throws MalformedURLException;
@@ -156,13 +164,5 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
 
   protected abstract void mapResultsToTypeSystem(Results results, JCas aJCas)
           throws MappingException;
-
-  public void setDigesterProvider(DigesterProvider digesterProvider) {
-    this.digesterProvider = digesterProvider;
-  }
-
-  public DigesterProvider getDigesterProvider() {
-    return digesterProvider;
-  }
 
 }
