@@ -26,10 +26,13 @@ import org.apache.uima.jcas.cas.TOP_Type;
 import org.apache.uima.jcas.cas.TOP;
 import org.apache.uima.jcas.cas.StringArray;
 
-/** 
- * Updated by JCasGen Sun Nov 15 23:15:41 CET 2009
- * XML source: /Users/tommasoteofili/Documents/workspaces/uima_workspace/alchemy-annotator/src/main/resources/TextRankedEntityExtractionAEDescriptor.xml
- * @generated */
+/**
+ * Updated by JCasGen Sun Nov 15 23:15:41 CET 2009 XML source:
+ * /Users/tommasoteofili/Documents/workspaces
+ * /uima_workspace/alchemy-annotator/src/main/resources/TextRankedEntityExtractionAEDescriptor.xml
+ * 
+ * @generated
+ */
 public class Organization extends TOP {
   /**
    * @generated
@@ -44,15 +47,18 @@ public class Organization extends TOP {
   public final static int type = typeIndexID;
 
   /** @generated */
-  public int getTypeIndexID() {return typeIndexID;}
- 
+  public int getTypeIndexID() {
+    return typeIndexID;
+  }
+
   /**
    * Never called. Disable default constructor
    * 
    * @generated
    */
-  protected Organization() {}
-    
+  protected Organization() {
+  }
+
   /**
    * Internal - constructor used by generator
    * 
@@ -62,15 +68,18 @@ public class Organization extends TOP {
     super(addr, type);
     readObject();
   }
-  
+
   /** @generated */
   public Organization(JCas jcas) {
     super(jcas);
-    readObject();   
-  } 
+    readObject();
+  }
 
-  /** <!-- begin-user-doc --> Write your own initialization here <!-- end-user-doc -->
-  @generated modifiable */
+  /**
+   * <!-- begin-user-doc --> Write your own initialization here <!-- end-user-doc -->
+   * 
+   * @generated modifiable
+   */
   private void readObject() {
   }
 
@@ -83,21 +92,22 @@ public class Organization extends TOP {
    * @generated
    */
   public String getText() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_text == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_text == null)
       jcasType.jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_text);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type) jcasType).casFeatCode_text);
+  }
+
   /**
    * setter for text - sets
    * 
    * @generated
    */
   public void setText(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_text == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_text == null)
       jcasType.jcas.throwFeatMissing("text", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_text, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_text, v);
+  }
+
   // *--------------*
   // * Feature: count
 
@@ -107,21 +117,23 @@ public class Organization extends TOP {
    * @generated
    */
   public String getCount() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_count == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_count == null)
       jcasType.jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_count);}
-    
+    return jcasType.ll_cas
+            .ll_getStringValue(addr, ((Organization_Type) jcasType).casFeatCode_count);
+  }
+
   /**
    * setter for count - sets
    * 
    * @generated
    */
   public void setCount(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_count == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_count == null)
       jcasType.jcas.throwFeatMissing("count", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_count, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_count, v);
+  }
+
   // *--------------*
   // * Feature: relevance
 
@@ -131,21 +143,24 @@ public class Organization extends TOP {
    * @generated
    */
   public String getRelevance() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_relevance == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_relevance == null)
       jcasType.jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_relevance);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_relevance);
+  }
+
   /**
    * setter for relevance - sets
    * 
    * @generated
    */
   public void setRelevance(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_relevance == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_relevance == null)
       jcasType.jcas.throwFeatMissing("relevance", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_relevance, v);}    
-   
-    
+    jcasType.ll_cas
+            .ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_relevance, v);
+  }
+
   // *--------------*
   // * Feature: disambiguation
 
@@ -155,21 +170,28 @@ public class Organization extends TOP {
    * @generated
    */
   public String getDisambiguation() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_disambiguation == null)
-      jcasType.jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_disambiguation);}
-    
+    if (Organization_Type.featOkTst
+            && ((Organization_Type) jcasType).casFeat_disambiguation == null)
+      jcasType.jcas.throwFeatMissing("disambiguation",
+              "org.apache.uima.alchemy.ts.entity.Organization");
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_disambiguation);
+  }
+
   /**
    * setter for disambiguation - sets
    * 
    * @generated
    */
   public void setDisambiguation(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_disambiguation == null)
-      jcasType.jcas.throwFeatMissing("disambiguation", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_disambiguation, v);}    
-   
-    
+    if (Organization_Type.featOkTst
+            && ((Organization_Type) jcasType).casFeat_disambiguation == null)
+      jcasType.jcas.throwFeatMissing("disambiguation",
+              "org.apache.uima.alchemy.ts.entity.Organization");
+    jcasType.ll_cas.ll_setStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_disambiguation, v);
+  }
+
   // *--------------*
   // * Feature: subType
 
@@ -179,21 +201,23 @@ public class Organization extends TOP {
    * @generated
    */
   public String getSubType() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_subType == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_subType == null)
       jcasType.jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_subType);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_subType);
+  }
+
   /**
    * setter for subType - sets
    * 
    * @generated
    */
   public void setSubType(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_subType == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_subType == null)
       jcasType.jcas.throwFeatMissing("subType", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_subType, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_subType, v);
+  }
+
   // *--------------*
   // * Feature: website
 
@@ -203,21 +227,23 @@ public class Organization extends TOP {
    * @generated
    */
   public String getWebsite() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_website == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_website == null)
       jcasType.jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_website);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_website);
+  }
+
   /**
    * setter for website - sets
    * 
    * @generated
    */
   public void setWebsite(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_website == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_website == null)
       jcasType.jcas.throwFeatMissing("website", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_website, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_website, v);
+  }
+
   // *--------------*
   // * Feature: geo
 
@@ -227,21 +253,22 @@ public class Organization extends TOP {
    * @generated
    */
   public String getGeo() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_geo == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_geo == null)
       jcasType.jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_geo);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type) jcasType).casFeatCode_geo);
+  }
+
   /**
    * setter for geo - sets
    * 
    * @generated
    */
   public void setGeo(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_geo == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_geo == null)
       jcasType.jcas.throwFeatMissing("geo", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_geo, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_geo, v);
+  }
+
   // *--------------*
   // * Feature: dbpedia
 
@@ -251,21 +278,23 @@ public class Organization extends TOP {
    * @generated
    */
   public String getDbpedia() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_dbpedia == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_dbpedia == null)
       jcasType.jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_dbpedia);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_dbpedia);
+  }
+
   /**
    * setter for dbpedia - sets
    * 
    * @generated
    */
   public void setDbpedia(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_dbpedia == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_dbpedia == null)
       jcasType.jcas.throwFeatMissing("dbpedia", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_dbpedia, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_dbpedia, v);
+  }
+
   // *--------------*
   // * Feature: yago
 
@@ -275,21 +304,22 @@ public class Organization extends TOP {
    * @generated
    */
   public String getYago() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_yago == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_yago == null)
       jcasType.jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_yago);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type) jcasType).casFeatCode_yago);
+  }
+
   /**
    * setter for yago - sets
    * 
    * @generated
    */
   public void setYago(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_yago == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_yago == null)
       jcasType.jcas.throwFeatMissing("yago", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_yago, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_yago, v);
+  }
+
   // *--------------*
   // * Feature: opencyc
 
@@ -299,21 +329,23 @@ public class Organization extends TOP {
    * @generated
    */
   public String getOpencyc() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_opencyc == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_opencyc == null)
       jcasType.jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_opencyc);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_opencyc);
+  }
+
   /**
    * setter for opencyc - sets
    * 
    * @generated
    */
   public void setOpencyc(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_opencyc == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_opencyc == null)
       jcasType.jcas.throwFeatMissing("opencyc", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_opencyc, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_opencyc, v);
+  }
+
   // *--------------*
   // * Feature: umbel
 
@@ -323,21 +355,23 @@ public class Organization extends TOP {
    * @generated
    */
   public String getUmbel() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_umbel == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_umbel == null)
       jcasType.jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_umbel);}
-    
+    return jcasType.ll_cas
+            .ll_getStringValue(addr, ((Organization_Type) jcasType).casFeatCode_umbel);
+  }
+
   /**
    * setter for umbel - sets
    * 
    * @generated
    */
   public void setUmbel(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_umbel == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_umbel == null)
       jcasType.jcas.throwFeatMissing("umbel", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_umbel, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_umbel, v);
+  }
+
   // *--------------*
   // * Feature: freebase
 
@@ -347,21 +381,23 @@ public class Organization extends TOP {
    * @generated
    */
   public String getFreebase() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_freebase == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_freebase == null)
       jcasType.jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_freebase);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_freebase);
+  }
+
   /**
    * setter for freebase - sets
    * 
    * @generated
    */
   public void setFreebase(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_freebase == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_freebase == null)
       jcasType.jcas.throwFeatMissing("freebase", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_freebase, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_freebase, v);
+  }
+
   // *--------------*
   // * Feature: ciaFactbook
 
@@ -371,21 +407,26 @@ public class Organization extends TOP {
    * @generated
    */
   public String getCiaFactbook() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_ciaFactbook == null)
-      jcasType.jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_ciaFactbook);}
-    
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_ciaFactbook == null)
+      jcasType.jcas.throwFeatMissing("ciaFactbook",
+              "org.apache.uima.alchemy.ts.entity.Organization");
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_ciaFactbook);
+  }
+
   /**
    * setter for ciaFactbook - sets
    * 
    * @generated
    */
   public void setCiaFactbook(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_ciaFactbook == null)
-      jcasType.jcas.throwFeatMissing("ciaFactbook", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_ciaFactbook, v);}    
-   
-    
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_ciaFactbook == null)
+      jcasType.jcas.throwFeatMissing("ciaFactbook",
+              "org.apache.uima.alchemy.ts.entity.Organization");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_ciaFactbook,
+            v);
+  }
+
   // *--------------*
   // * Feature: census
 
@@ -395,21 +436,23 @@ public class Organization extends TOP {
    * @generated
    */
   public String getCensus() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_census == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_census == null)
       jcasType.jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_census);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_census);
+  }
+
   /**
    * setter for census - sets
    * 
    * @generated
    */
   public void setCensus(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_census == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_census == null)
       jcasType.jcas.throwFeatMissing("census", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_census, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_census, v);
+  }
+
   // *--------------*
   // * Feature: geonames
 
@@ -419,21 +462,23 @@ public class Organization extends TOP {
    * @generated
    */
   public String getGeonames() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_geonames == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_geonames == null)
       jcasType.jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_geonames);}
-    
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_geonames);
+  }
+
   /**
    * setter for geonames - sets
    * 
    * @generated
    */
   public void setGeonames(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_geonames == null)
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_geonames == null)
       jcasType.jcas.throwFeatMissing("geonames", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_geonames, v);}    
-   
-    
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_geonames, v);
+  }
+
   // *--------------*
   // * Feature: musicBrainz
 
@@ -443,21 +488,26 @@ public class Organization extends TOP {
    * @generated
    */
   public String getMusicBrainz() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_musicBrainz == null)
-      jcasType.jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.Organization");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Organization_Type)jcasType).casFeatCode_musicBrainz);}
-    
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_musicBrainz == null)
+      jcasType.jcas.throwFeatMissing("musicBrainz",
+              "org.apache.uima.alchemy.ts.entity.Organization");
+    return jcasType.ll_cas.ll_getStringValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_musicBrainz);
+  }
+
   /**
    * setter for musicBrainz - sets
    * 
    * @generated
    */
   public void setMusicBrainz(String v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_musicBrainz == null)
-      jcasType.jcas.throwFeatMissing("musicBrainz", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type)jcasType).casFeatCode_musicBrainz, v);}    
-   
-    
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_musicBrainz == null)
+      jcasType.jcas.throwFeatMissing("musicBrainz",
+              "org.apache.uima.alchemy.ts.entity.Organization");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Organization_Type) jcasType).casFeatCode_musicBrainz,
+            v);
+  }
+
   // *--------------*
   // * Feature: quotations
 
@@ -467,39 +517,53 @@ public class Organization extends TOP {
    * @generated
    */
   public StringArray getQuotations() {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_quotations == null)
-      jcasType.jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Organization");
-    return (StringArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Organization_Type)jcasType).casFeatCode_quotations)));}
-    
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_quotations == null)
+      jcasType.jcas
+              .throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Organization");
+    return (StringArray) (jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_quotations)));
+  }
+
   /**
    * setter for quotations - sets
    * 
    * @generated
    */
   public void setQuotations(StringArray v) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_quotations == null)
-      jcasType.jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.ll_cas.ll_setRefValue(addr, ((Organization_Type)jcasType).casFeatCode_quotations, jcasType.ll_cas.ll_getFSRef(v));}    
-    
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_quotations == null)
+      jcasType.jcas
+              .throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Organization");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Organization_Type) jcasType).casFeatCode_quotations,
+            jcasType.ll_cas.ll_getFSRef(v));
+  }
+
   /**
    * indexed getter for quotations - gets an indexed value -
    * 
    * @generated
    */
   public String getQuotations(int i) {
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_quotations == null)
-      jcasType.jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Organization_Type)jcasType).casFeatCode_quotations), i);
-    return jcasType.ll_cas.ll_getStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Organization_Type)jcasType).casFeatCode_quotations), i);}
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_quotations == null)
+      jcasType.jcas
+              .throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Organization");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_quotations), i);
+    return jcasType.ll_cas.ll_getStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_quotations), i);
+  }
 
   /**
    * indexed setter for quotations - sets an indexed value -
    * 
    * @generated
    */
-  public void setQuotations(int i, String v) { 
-    if (Organization_Type.featOkTst && ((Organization_Type)jcasType).casFeat_quotations == null)
-      jcasType.jcas.throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Organization");
-    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Organization_Type)jcasType).casFeatCode_quotations), i);
-    jcasType.ll_cas.ll_setStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Organization_Type)jcasType).casFeatCode_quotations), i, v);}
+  public void setQuotations(int i, String v) {
+    if (Organization_Type.featOkTst && ((Organization_Type) jcasType).casFeat_quotations == null)
+      jcasType.jcas
+              .throwFeatMissing("quotations", "org.apache.uima.alchemy.ts.entity.Organization");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_quotations), i);
+    jcasType.ll_cas.ll_setStringArrayValue(jcasType.ll_cas.ll_getRefValue(addr,
+            ((Organization_Type) jcasType).casFeatCode_quotations), i, v);
   }
+}

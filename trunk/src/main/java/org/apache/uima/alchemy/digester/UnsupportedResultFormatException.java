@@ -18,23 +18,19 @@
  */
 package org.apache.uima.alchemy.digester;
 
-import junit.framework.TestCase;
+public class UnsupportedResultFormatException extends Exception {
 
-import org.apache.uima.alchemy.digester.categorization.JsonTextCategorizationDigester;
-import org.apache.uima.alchemy.digester.domain.Results;
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
 
-public class CategorizationJsonDigesterTest extends TestCase {
+  public UnsupportedResultFormatException(Throwable e) {
+    super(e);
+  }
 
-  public void testParseAlchemyXML() {
-    try {
-      JsonTextCategorizationDigester digester = new JsonTextCategorizationDigester();
-      Results results = digester.parseAlchemyXML(this.getClass().getResourceAsStream(
-              "/jsonCategorizationResult.js"));
-      assertTrue(results != null);
-    } catch (Exception e) {
-      e.printStackTrace();
-      fail();
-    }
+  public UnsupportedResultFormatException(String type) {
+    super(type + " outputs not suppoted");
   }
 
 }

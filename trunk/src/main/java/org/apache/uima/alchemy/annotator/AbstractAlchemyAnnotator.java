@@ -33,8 +33,10 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.apache.commons.lang.Validate;
 import org.apache.uima.UimaContext;
 import org.apache.uima.alchemy.annotator.exception.AlchemyCallFailedException;
-import org.apache.uima.alchemy.annotator.exception.ResultDigestingException;
-import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
+import org.apache.uima.alchemy.digester.DigesterProvider;
+import org.apache.uima.alchemy.digester.OutputDigester;
+import org.apache.uima.alchemy.digester.ResultDigestingException;
+import org.apache.uima.alchemy.digester.UnsupportedResultFormatException;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
@@ -53,11 +55,21 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
 
   private String[] charsToReplace = { "<", ">", "\"", "'", "&" };
 
-  private AlchemyOutputDigester digester;
+  private OutputDigester digester;
+
+  private DigesterProvider digesterProvider;
 
   @Override
   public void initialize(UimaContext aContext) throws ResourceInitializationException {
-    this.digester = getDigester();
+
+    digesterProvider = createDigester();
+
+    try {
+      this.digester = digesterProvider.getDigester(String.valueOf(aContext
+              .getConfigParameterValue("outputMode")));
+    } catch (UnsupportedResultFormatException e1) {
+      throw new ResourceInitializationException(e1);
+    }
 
     try {
       this.alchemyService = createServiceURI();
@@ -136,7 +148,7 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
     return in;
   }
 
-  protected abstract AlchemyOutputDigester getDigester();
+  protected abstract DigesterProvider createDigester();
 
   protected abstract URL createServiceURI() throws MalformedURLException;
 
@@ -144,5 +156,13 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
 
   protected abstract void mapResultsToTypeSystem(Results results, JCas aJCas)
           throws MappingException;
+
+  public void setDigesterProvider(DigesterProvider digesterProvider) {
+    this.digesterProvider = digesterProvider;
+  }
+
+  public DigesterProvider getDigesterProvider() {
+    return digesterProvider;
+  }
 
 }

@@ -16,29 +16,30 @@
  * 	specific language governing permissions and limitations
  * 	under the License.
  */
-package org.apache.uima.alchemy.digester;
+package org.apache.uima.alchemy.digester.categorization;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 
 import org.apache.commons.digester.Digester;
-import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
+import org.apache.uima.alchemy.digester.OutputDigester;
+import org.apache.uima.alchemy.digester.domain.CategorizationResults;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.xml.sax.SAXException;
 
-public class XMLAnnotatedEntityExtractionDigester implements AlchemyOutputDigester {
+public class XMLTextCategorizationDigester implements OutputDigester {
 
   public Results parseAlchemyXML(InputStream stream) throws IOException, SAXException,
           URISyntaxException {
     Digester digester = new Digester();
     digester.setValidating(false);
 
-    digester.addObjectCreate("results", AnnotatedResults.class);
+    digester.addObjectCreate("results", CategorizationResults.class);
     digester.addBeanPropertySetter("results/status", "status");
-    digester.addBeanPropertySetter("results/language", "language");
-    digester.addBeanPropertySetter("results/text", "text");
-    digester.addBeanPropertySetter("results/annotatedText", "annotatedText");
+    digester.addBeanPropertySetter("results/url", "url");
+    digester.addBeanPropertySetter("results/category", "category");
+    digester.addBeanPropertySetter("results/score", "score");
     return (Results) digester.parse(stream);
   }
 

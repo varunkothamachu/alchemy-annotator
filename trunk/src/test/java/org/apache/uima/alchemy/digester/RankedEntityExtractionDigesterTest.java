@@ -23,6 +23,7 @@ import java.io.ByteArrayInputStream;
 import junit.framework.TestCase;
 
 import org.apache.uima.alchemy.digester.domain.Results;
+import org.apache.uima.alchemy.digester.entity.ranked.XMLRankedEntityExtractionDigester;
 
 public class RankedEntityExtractionDigesterTest extends TestCase {
 

@@ -22,32 +22,31 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 
-import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
-import org.apache.uima.alchemy.digester.XMLRankedEntityExtractionDigester;
-import org.apache.uima.alchemy.digester.domain.EntitiesResults;
+import org.apache.uima.alchemy.digester.DigesterProvider;
+import org.apache.uima.alchemy.digester.categorization.CategorizationDigesterProvider;
+import org.apache.uima.alchemy.digester.domain.CategorizationResults;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.jcas.JCas;
 
-public class AlchemyTextRankedNamedEntityExtractionAnnotator extends AbstractAlchemyAnnotator {
+public class TextCategorizationAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities").toURL();
-  }
-
-  protected AlchemyOutputDigester getDigester() {
-    return new XMLRankedEntityExtractionDigester();
+    return URI.create("http://access.alchemyapi.com/calls/text/TextGetCategory").toURL();
   }
 
   protected String[] getServiceParameters() {
-    String[] parameters = new String[] { "outputMode", "baseUrl", "disambiguate", "linkedData",
-        "showSourceText" };
+    String[] parameters = new String[] { "outputMode", "baseUrl", "url" };
     return parameters;
   }
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {
-    Alchemy2TypeSystemMapper.mapRankedEntities((EntitiesResults) results, aJCas); // create
+    Alchemy2TypeSystemMapper.mapCategorizationEntity((CategorizationResults) results, aJCas);
+  }
+
+  protected DigesterProvider createDigester() {
+    return new CategorizationDigesterProvider();
   }
 
 }

@@ -16,13 +16,14 @@
  * 	specific language governing permissions and limitations
  * 	under the License.
  */
-package org.apache.uima.alchemy.digester;
+package org.apache.uima.alchemy.digester.entity.ranked;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 
 import org.apache.commons.digester.Digester;
+import org.apache.uima.alchemy.digester.OutputDigester;
 import org.apache.uima.alchemy.digester.domain.Disambiguated;
 import org.apache.uima.alchemy.digester.domain.Entities;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
@@ -31,7 +32,7 @@ import org.apache.uima.alchemy.digester.domain.Quotations;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.xml.sax.SAXException;
 
-public class XMLRankedEntityExtractionDigester implements AlchemyOutputDigester {
+public class XMLRankedEntityExtractionDigester implements OutputDigester {
 
   public Results parseAlchemyXML(InputStream stream) throws IOException, SAXException,
           URISyntaxException {

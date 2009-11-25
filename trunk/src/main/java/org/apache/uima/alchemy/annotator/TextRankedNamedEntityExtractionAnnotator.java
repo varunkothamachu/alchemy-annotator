@@ -22,38 +22,32 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 
-import org.apache.uima.alchemy.digester.AlchemyOutputDigester;
-import org.apache.uima.alchemy.digester.JsonTextCategorizationDigester;
-import org.apache.uima.alchemy.digester.domain.CategorizationResults;
+import org.apache.uima.alchemy.digester.DigesterProvider;
+import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Results;
+import org.apache.uima.alchemy.digester.entity.ranked.RankedEntityDigesterProvider;
 import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.jcas.JCas;
 
-public class AlchemyTextCategorizationAnnotator extends AbstractAlchemyAnnotator {
-
-
+public class TextRankedNamedEntityExtractionAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/text/TextGetCategory").toURL();
+    return URI.create("http://access.alchemyapi.com/calls/text/TextGetRankedNamedEntities").toURL();
   }
 
+  protected String[] getServiceParameters() {
+    String[] parameters = new String[] { "outputMode", "baseUrl", "disambiguate", "linkedData",
+        "showSourceText" };
+    return parameters;
+  }
 
-	protected AlchemyOutputDigester getDigester() {
-		return new JsonTextCategorizationDigester();
-	}
-	
-	
-	
-	protected String[] getServiceParameters() {
-		String[] parameters = new String[] {"outputMode","baseUrl","url"};
-		return parameters;
-	}
-	
-	
-	
-	protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {
-		Alchemy2TypeSystemMapper.mapCategorizationEntity((CategorizationResults) results, aJCas);
-	}
+  protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {
+    Alchemy2TypeSystemMapper.mapRankedEntities((EntitiesResults) results, aJCas); // create
+  }
+
+  protected DigesterProvider createDigester() {
+    return new RankedEntityDigesterProvider();
+  }
 
 }

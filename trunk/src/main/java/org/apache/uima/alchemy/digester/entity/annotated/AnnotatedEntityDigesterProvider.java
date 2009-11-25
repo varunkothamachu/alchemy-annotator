@@ -16,25 +16,23 @@
  * 	specific language governing permissions and limitations
  * 	under the License.
  */
-package org.apache.uima.alchemy.digester;
+package org.apache.uima.alchemy.digester.entity.annotated;
 
-import junit.framework.TestCase;
+import org.apache.commons.lang.Validate;
+import org.apache.uima.alchemy.digester.DigesterProvider;
+import org.apache.uima.alchemy.digester.OutputDigester;
+import org.apache.uima.alchemy.digester.UnsupportedResultFormatException;
 
-import org.apache.uima.alchemy.digester.categorization.JsonTextCategorizationDigester;
-import org.apache.uima.alchemy.digester.domain.Results;
+public class AnnotatedEntityDigesterProvider implements DigesterProvider {
 
-public class CategorizationJsonDigesterTest extends TestCase {
-
-  public void testParseAlchemyXML() {
-    try {
-      JsonTextCategorizationDigester digester = new JsonTextCategorizationDigester();
-      Results results = digester.parseAlchemyXML(this.getClass().getResourceAsStream(
-              "/jsonCategorizationResult.js"));
-      assertTrue(results != null);
-    } catch (Exception e) {
-      e.printStackTrace();
-      fail();
-    }
+  public OutputDigester getDigester(String type) throws UnsupportedResultFormatException {
+    Validate.notEmpty(type);
+    OutputDigester digester = null;
+    if (type.equals("xml")) {
+      digester = new XMLAnnotatedEntityExtractionDigester();
+    } else
+      throw new UnsupportedResultFormatException(type);
+    return digester;
   }
 
 }
