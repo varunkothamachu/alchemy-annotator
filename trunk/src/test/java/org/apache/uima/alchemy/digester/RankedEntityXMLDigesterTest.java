@@ -25,7 +25,7 @@ import junit.framework.TestCase;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.digester.entity.ranked.XMLRankedEntityExtractionDigester;
 
-public class RankedEntityExtractionDigesterTest extends TestCase {
+public class RankedEntityXMLDigesterTest extends TestCase {
 
   public void testParseAlchemyXML() {
     try {
