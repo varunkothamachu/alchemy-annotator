@@ -44,7 +44,7 @@ public class TextAnnotatedNamedEntityExtractionAnnotator extends AbstractAlchemy
   }
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {
-    Alchemy2TypeSystemMapper.mapAnnotatedEntities((AnnotatedResults) results, aJCas); // create
+    Alchemy2TypeSystemMapper.mapAnnotatedEntities((AnnotatedResults) results, aJCas);
   }
 
   protected DigesterProvider createDigester() {
