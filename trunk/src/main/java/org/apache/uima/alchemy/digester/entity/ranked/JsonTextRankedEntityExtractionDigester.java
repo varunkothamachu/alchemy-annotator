@@ -48,26 +48,26 @@ public class JsonTextRankedEntityExtractionDigester implements OutputDigester {
     digester.addBeanPropertySetter("$/entities[]/relevance");
     digester.addBeanPropertySetter("$/entities[]/count");
     digester.addBeanPropertySetter("$/entities[]/text");
-//    digester.addObjectCreate("$/entities[]/disambiguated", Disambiguated.class);
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/name", "name");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/subType", "subType");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/website", "website");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/geo", "geo");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/dbpedia", "dbpedia");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/yago", "yago");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/opencyc", "opencyc");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/umbel", "umbel");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/freebase", "freebase");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/ciaFactbook",
+//    digester.addObjectCreate("$/entities[]/disambiguated[]", Disambiguated.class);
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/name", "name");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/subType", "subType");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/website", "website");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/geo", "geo");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/dbpedia", "dbpedia");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/yago", "yago");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/opencyc", "opencyc");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/umbel", "umbel");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/freebase", "freebase");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/ciaFactbook",
 //            "ciaFactbook");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/census", "census");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/geonames", "geonames");
-//    digester.addBeanPropertySetter("$/entities[]/disambiguated/musicBrainz",
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/census", "census");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/geonames", "geonames");
+//    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/musicBrainz",
 //            "musicBrainz");
-//    digester.addSetNext("$/entities[]/disambiguated", "setDisambiguated");
-//    digester.addObjectCreate("$/entities[]/quotations", Quotations.class);
+//    digester.addSetNext("$/entities[]/disambiguated[]", "setDisambiguated");
+//    digester.addObjectCreate("$/entities[]/quotations[]", Quotations.class);
 //    digester.addBeanPropertySetter("$/entities[]/quotations/quotation", "quotation");
-//    digester.addSetNext("$/entities[]/quotations", "setQuotations");
+//    digester.addSetNext("$/entities[]/quotations[]", "setQuotations");
     digester.addSetNext("$/entities[]", "addEntity");
     return (Results) digester.parse(stream);
   }
