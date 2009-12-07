@@ -7,7 +7,7 @@
             "type": "Country",
             "relevance": "0.33",
             "count": "1",
-            "text": "Afghanistan",
+            "text": "Afghanistan"
         },
         {
             "type": "Country",
