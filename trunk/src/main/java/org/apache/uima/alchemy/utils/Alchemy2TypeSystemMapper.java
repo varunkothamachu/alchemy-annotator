@@ -120,7 +120,7 @@ public class Alchemy2TypeSystemMapper {
     String patternString = ".*(\\[\\w+\\[.+\\]\\])+.*";
     Pattern pattern = Pattern.compile(patternString);
     
-    Matcher matcher = pattern.matcher(annotatedText);
+    Matcher matcher = pattern.matcher(annotatedText.replaceAll("\\[", "(").replaceAll("\\]", ")"));
     
     boolean matchFound = matcher.find();
     
