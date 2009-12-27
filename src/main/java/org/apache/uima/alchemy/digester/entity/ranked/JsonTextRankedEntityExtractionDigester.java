@@ -23,14 +23,13 @@ import java.io.InputStream;
 import java.net.URISyntaxException;
 
 import org.apache.commons.digester.Digester;
-import org.apache.commons.digester.json.JsonDigester;
 import org.apache.uima.alchemy.digester.OutputDigester;
-import org.apache.uima.alchemy.digester.domain.Disambiguated;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
-import org.apache.uima.alchemy.digester.domain.Quotations;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.xml.sax.SAXException;
+
+import com.digestertools.json.JsonDigester;
 
 public class JsonTextRankedEntityExtractionDigester implements OutputDigester {
 
