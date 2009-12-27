@@ -20,6 +20,8 @@ package org.apache.uima.alchemy.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
 import org.apache.uima.alchemy.digester.domain.CategorizationResults;
@@ -109,30 +111,27 @@ public class Alchemy2TypeSystemMapper {
 
   public static void mapAnnotatedEntities(AnnotatedResults results, JCas aJCas) {
     setLanaguage(results, aJCas);
-    int i = 0;
     String annotatedText = results.getAnnotatedText();
     String currentToken = "";
     List<String> tokens = new ArrayList<String>();
-    while (annotatedText.length()>i) {
-      int index = annotatedText.indexOf('[');
-      if (index > 0) {
-        try {
-          currentToken = annotatedText.substring(index+1, annotatedText.indexOf("]]")+1);
-          if (!currentToken.equals("")) {
-            tokens.add(currentToken);
-            i += currentToken.length();
-          } else {
-            i++;
-          }
-        } catch (Exception e) {
-          i++;
+    
+    System.err.println(annotatedText);
+    
+    String patternString = ".*(\\[\\w+\\[.+\\]\\])+.*";
+    Pattern pattern = Pattern.compile(patternString);
+    
+    Matcher matcher = pattern.matcher(annotatedText);
+    
+    boolean matchFound = matcher.find();
+    
+    if (matchFound) {
+        // Get all groups for this match
+        for (int i=0; i<=matcher.groupCount(); i++) {
+        	String text = matcher.group(i);
+        	System.err.println("gruppo :"+text);
         }
-      }
-      else {
-        break;
-      }
-      annotatedText = annotatedText.substring(i);
     }
+
     
 //    for (String token : tokens) {
 //      System.out.println(token);
