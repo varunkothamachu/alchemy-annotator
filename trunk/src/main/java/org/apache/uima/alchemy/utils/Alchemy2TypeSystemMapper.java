@@ -114,30 +114,28 @@ public class Alchemy2TypeSystemMapper {
     String annotatedText = results.getAnnotatedText();
     String currentToken = "";
     List<String> tokens = new ArrayList<String>();
-    
+
     System.err.println(annotatedText);
-    
+
     String patternString = ".*(\\[\\w+\\[.+\\]\\])+.*";
     Pattern pattern = Pattern.compile(patternString);
-    
-    Matcher matcher = pattern.matcher(annotatedText.replaceAll("\\[", "(").replaceAll("\\]", ")"));
-    
+
+    Matcher matcher = pattern.matcher(annotatedText);
+
     boolean matchFound = matcher.find();
-    
+
     if (matchFound) {
-        // Get all groups for this match
-        for (int i=0; i<=matcher.groupCount(); i++) {
-        	String text = matcher.group(i);
-        	System.err.println("gruppo :"+text);
-        }
+      // Get all groups for this match
+      for (int i = 0; i <= matcher.groupCount(); i++) {
+        String text = matcher.group(i);
+        System.err.println("gruppo :" + text);
+      }
     }
 
-    
-//    for (String token : tokens) {
-//      System.out.println(token);
-//    }
-    
-    
+    // for (String token : tokens) {
+    // System.out.println(token);
+    // }
+
     // TODO Auto-generated method stub
     // results.getAnnotatedText()
   }
