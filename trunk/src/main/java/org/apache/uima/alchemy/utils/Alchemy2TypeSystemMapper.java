@@ -18,11 +18,6 @@
  */
 package org.apache.uima.alchemy.utils;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import org.apache.commons.lang.StringUtils;
 import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
 import org.apache.uima.alchemy.digester.domain.CategorizationResults;
@@ -36,7 +31,6 @@ import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.Type;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.StringArray;
-import org.apache.uima.pear.util.StringUtil;
 
 public class Alchemy2TypeSystemMapper {
 
