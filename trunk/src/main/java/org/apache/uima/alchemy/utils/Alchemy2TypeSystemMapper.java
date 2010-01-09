@@ -30,6 +30,7 @@ import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.ts.categorization.Category;
+import org.apache.uima.alchemy.ts.entity.AlchemyAnnotation;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.Type;
@@ -115,12 +116,26 @@ public class Alchemy2TypeSystemMapper {
     setLanaguage(results, aJCas);
     String annotatedText = results.getAnnotatedText();
 
-    System.err.println(annotatedText);
 
     //find strings of pattern 'TYPE[TEXT'
     String[] ants = StringUtils.substringsBetween(annotatedText, "[","]");
     
-    //TODO map the ants to UIMA CAS
+    //map the ants to UIMA CAS
+    for (String ant : ants) {
+      AlchemyAnnotation alchemyAnnotation = new AlchemyAnnotation(aJCas);
+      
+      int indexOfAnt = annotatedText.indexOf(ant);
+      alchemyAnnotation.setBegin(indexOfAnt-1);
+
+      String antText = ant.substring(ant.indexOf("[")+1);
+      alchemyAnnotation.setEnd(indexOfAnt+antText.length()-1);
+      
+      String antType = ant.substring(0,ant.indexOf("["));
+      alchemyAnnotation.setAlchemyType(antType);
+      alchemyAnnotation.addToIndexes();
+      
+      annotatedText = annotatedText.replaceFirst("\\["+ant.replace("[", "\\[")+"\\]\\]",antText);
+    }
     
   }
 
