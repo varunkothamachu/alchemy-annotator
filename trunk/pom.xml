@@ -48,7 +48,6 @@
 			<groupId>commons-digester</groupId>
 			<artifactId>commons-digester</artifactId>
 			<version>2.1-SNAPSHOT</version>
-			<type>jar</type>
 		</dependency>
 		<dependency>
 			<groupId>commons-lang</groupId>

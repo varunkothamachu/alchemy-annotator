@@ -42,11 +42,11 @@ public class JsonTextRankedEntityExtractionDigester implements OutputDigester {
     digester.addBeanPropertySetter("$/status");
     digester.addBeanPropertySetter("$/url");
     digester.addBeanPropertySetter("$/language");
-    digester.addObjectCreate("$/entities[]", Entity.class);
-    digester.addBeanPropertySetter("$/entities[]/type");
-    digester.addBeanPropertySetter("$/entities[]/relevance");
-    digester.addBeanPropertySetter("$/entities[]/count");
-    digester.addBeanPropertySetter("$/entities[]/text");
+    digester.addObjectCreate("$/entities", Entity.class);
+    digester.addBeanPropertySetter("$/entities/type");
+    digester.addBeanPropertySetter("$/entities/relevance");
+    digester.addBeanPropertySetter("$/entities/count");
+    digester.addBeanPropertySetter("$/entities/text");
 //    digester.addObjectCreate("$/entities[]/disambiguated[]", Disambiguated.class);
 //    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/name", "name");
 //    digester.addBeanPropertySetter("$/entities[]/disambiguated[]/subType", "subType");
@@ -67,7 +67,7 @@ public class JsonTextRankedEntityExtractionDigester implements OutputDigester {
 //    digester.addObjectCreate("$/entities[]/quotations[]", Quotations.class);
 //    digester.addBeanPropertySetter("$/entities[]/quotations/quotation", "quotation");
 //    digester.addSetNext("$/entities[]/quotations[]", "setQuotations");
-    digester.addSetNext("$/entities[]", "addEntity");
+    digester.addSetNext("$/entities", "addEntity");
     return (Results) digester.parse(stream);
   }
 
