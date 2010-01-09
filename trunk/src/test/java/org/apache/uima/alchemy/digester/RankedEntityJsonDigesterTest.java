@@ -39,8 +39,8 @@ public class RankedEntityJsonDigesterTest extends TestCase {
       assertTrue(results.getEntities().getEntities() != null);
       assertTrue(results.getEntities().getEntities().size()>0);
       assertTrue(results.getEntities().getEntities().size()==2);
-//      assertTrue(results.getEntities().getEntities().get(1).getDisambiguated()!=null);
-//      assertTrue(results.getEntities().getEntities().get(1).getDisambiguated().getDbpedia().equals("http://dbpedia.org/resource/Afghanistan"));
+      assertTrue(results.getEntities().getEntities().get(1).getDisambiguated()!=null);
+      assertTrue(results.getEntities().getEntities().get(1).getDisambiguated().getDbpedia().equals("http://dbpedia.org/resource/United_States"));
     } catch (Exception e) {
       e.printStackTrace();
       fail();
