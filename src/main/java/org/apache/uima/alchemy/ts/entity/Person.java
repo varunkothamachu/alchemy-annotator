@@ -21,10 +21,9 @@ package org.apache.uima.alchemy.ts.entity;
 
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
-import org.apache.uima.jcas.cas.TOP_Type;
-
-import org.apache.uima.jcas.cas.TOP;
 import org.apache.uima.jcas.cas.StringArray;
+import org.apache.uima.jcas.cas.TOP;
+import org.apache.uima.jcas.cas.TOP_Type;
 
 /**
  * Updated by JCasGen Sun Nov 15 23:15:41 CET 2009 XML source:
