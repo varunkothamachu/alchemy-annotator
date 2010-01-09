@@ -22,7 +22,7 @@ import java.io.ByteArrayInputStream;
 
 import junit.framework.TestCase;
 
-import org.apache.uima.alchemy.digester.domain.Results;
+import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.entity.ranked.XMLRankedEntityExtractionDigester;
 
 public class RankedEntityXMLDigesterTest extends TestCase {
@@ -39,8 +39,15 @@ public class RankedEntityXMLDigesterTest extends TestCase {
               + "<musicBrainz>LINKED_DATA_MUSICBRAINZ</musicBrainz></disambiguated><quotations><quotation>ENTITY_QUOTATION</quotation>"
               + "</quotations></entity></entities></results>";
       XMLRankedEntityExtractionDigester digester = new XMLRankedEntityExtractionDigester();
-      Results results = digester.parseAlchemyXML(new ByteArrayInputStream(xmlString.getBytes()));
+      EntitiesResults results = (EntitiesResults) digester.parseAlchemyXML(new ByteArrayInputStream(xmlString.getBytes()));
       assertTrue(results != null);
+      assertTrue(results.getLanguage() != null);
+      assertTrue(results.getStatus() != null);
+      assertTrue(results.getUrl() != null);
+      assertTrue(results.getEntities() != null);
+      assertTrue(results.getEntities().getEntities() != null);
+      assertTrue(results.getEntities().getEntities().size()>0);
+      assertTrue(results.getEntities().getEntities().size()==1);
     } catch (Exception e) {
       e.printStackTrace();
       fail();
