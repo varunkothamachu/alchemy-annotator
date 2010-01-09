@@ -28,6 +28,7 @@ public class AlchemyTextAnnotatedEntityExtractionAnnotatorTest {
   @Test
   public void testAnnotator() {
     String doc = "Eight US soldiers die in attacks in south Afghanistan, making October the deadliest month for the US in the war there";
+    String toc = "Eight [Country[US]] soldiers die in attacks in south [Country[Afghanistan,]] making October the deadliest month for the [Country[US]] in the war there";
     String xmlPath = "src/main/resources/TextAnnotatedEntityExtractionAEDescriptor.xml";
     try {
       TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
