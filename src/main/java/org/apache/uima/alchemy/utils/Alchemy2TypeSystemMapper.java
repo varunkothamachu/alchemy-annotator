@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
 import org.apache.uima.alchemy.digester.domain.CategorizationResults;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
@@ -34,6 +35,7 @@ import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.Type;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.StringArray;
+import org.apache.uima.pear.util.StringUtil;
 
 public class Alchemy2TypeSystemMapper {
 
@@ -112,32 +114,14 @@ public class Alchemy2TypeSystemMapper {
   public static void mapAnnotatedEntities(AnnotatedResults results, JCas aJCas) {
     setLanaguage(results, aJCas);
     String annotatedText = results.getAnnotatedText();
-    String currentToken = "";
-    List<String> tokens = new ArrayList<String>();
 
     System.err.println(annotatedText);
 
-    String patternString = ".*(\\[\\w+\\[.+\\]\\])+.*";
-    Pattern pattern = Pattern.compile(patternString);
-
-    Matcher matcher = pattern.matcher(annotatedText);
-
-    boolean matchFound = matcher.find();
-
-    if (matchFound) {
-      // Get all groups for this match
-      for (int i = 0; i <= matcher.groupCount(); i++) {
-        String text = matcher.group(i);
-        System.err.println("gruppo :" + text);
-      }
-    }
-
-    // for (String token : tokens) {
-    // System.out.println(token);
-    // }
-
-    // TODO Auto-generated method stub
-    // results.getAnnotatedText()
+    //find strings of pattern 'TYPE[TEXT'
+    String[] ants = StringUtils.substringsBetween(annotatedText, "[","]");
+    
+    //TODO map the ants to UIMA CAS
+    
   }
 
   public static void mapCategorizationEntity(CategorizationResults results, JCas aJCas)
