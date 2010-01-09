@@ -25,7 +25,7 @@ import org.apache.uima.alchemy.digester.entity.ranked.JsonTextRankedEntityExtrac
 
 public class RankedEntityJsonDigesterTest extends TestCase {
 
-  public void testParseAlchemyXML() {
+  public void testParseAlchemyJson() {
     try {
       JsonTextRankedEntityExtractionDigester digester = new JsonTextRankedEntityExtractionDigester();
       

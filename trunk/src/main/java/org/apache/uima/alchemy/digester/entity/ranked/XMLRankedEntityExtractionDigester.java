@@ -42,6 +42,7 @@ public class XMLRankedEntityExtractionDigester implements OutputDigester {
     digester.addObjectCreate("results", EntitiesResults.class);
     digester.addBeanPropertySetter("results/status", "status");
     digester.addBeanPropertySetter("results/language", "language");
+    digester.addBeanPropertySetter("results/url", "url");
     digester.addObjectCreate("results/entities", Entities.class);
     digester.addObjectCreate("results/entities/entity", Entity.class);
     digester.addBeanPropertySetter("results/entities/entity/type", "type");
