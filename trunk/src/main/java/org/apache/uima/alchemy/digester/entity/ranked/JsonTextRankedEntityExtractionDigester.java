@@ -59,12 +59,10 @@ public class JsonTextRankedEntityExtractionDigester implements OutputDigester {
     digester.addBeanPropertySetter("$/entities/disambiguated/opencyc", "opencyc");
     digester.addBeanPropertySetter("$/entities/disambiguated/umbel", "umbel");
     digester.addBeanPropertySetter("$/entities/disambiguated/freebase", "freebase");
-    digester.addBeanPropertySetter("$/entities/disambiguated/ciaFactbook",
-            "ciaFactbook");
+    digester.addBeanPropertySetter("$/entities/disambiguated/ciaFactbook", "ciaFactbook");
     digester.addBeanPropertySetter("$/entities/disambiguated/census", "census");
     digester.addBeanPropertySetter("$/entities/disambiguated/geonames", "geonames");
-    digester.addBeanPropertySetter("$/entities/disambiguated/musicBrainz",
-            "musicBrainz");
+    digester.addBeanPropertySetter("$/entities/disambiguated/musicBrainz", "musicBrainz");
     digester.addSetNext("$/entities/disambiguated", "setDisambiguated");
     digester.addObjectCreate("$/entities/quotations", Quotations.class);
     digester.addBeanPropertySetter("$/entities/quotations/quotation", "quotation");

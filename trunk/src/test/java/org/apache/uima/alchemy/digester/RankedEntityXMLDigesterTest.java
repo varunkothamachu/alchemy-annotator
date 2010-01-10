@@ -39,15 +39,16 @@ public class RankedEntityXMLDigesterTest extends TestCase {
               + "<musicBrainz>LINKED_DATA_MUSICBRAINZ</musicBrainz></disambiguated><quotations><quotation>ENTITY_QUOTATION</quotation>"
               + "</quotations></entity></entities></results>";
       XMLRankedEntityExtractionDigester digester = new XMLRankedEntityExtractionDigester();
-      EntitiesResults results = (EntitiesResults) digester.parseAlchemyXML(new ByteArrayInputStream(xmlString.getBytes()));
+      EntitiesResults results = (EntitiesResults) digester
+              .parseAlchemyXML(new ByteArrayInputStream(xmlString.getBytes()));
       assertTrue(results != null);
       assertTrue(results.getLanguage() != null);
       assertTrue(results.getStatus() != null);
       assertTrue(results.getUrl() != null);
       assertTrue(results.getEntities() != null);
       assertTrue(results.getEntities().getEntities() != null);
-      assertTrue(results.getEntities().getEntities().size()>0);
-      assertTrue(results.getEntities().getEntities().size()==1);
+      assertTrue(results.getEntities().getEntities().size() > 0);
+      assertTrue(results.getEntities().getEntities().size() == 1);
     } catch (Exception e) {
       e.printStackTrace();
       fail();

@@ -118,7 +118,6 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
       BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection
               .getOutputStream(), "UTF-8"));
       writer.write(this.serviceParams);
-     
 
       writer.flush();
       writer.close();

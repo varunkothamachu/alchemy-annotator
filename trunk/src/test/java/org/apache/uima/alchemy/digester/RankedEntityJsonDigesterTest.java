@@ -28,19 +28,20 @@ public class RankedEntityJsonDigesterTest extends TestCase {
   public void testParseAlchemyJson() {
     try {
       JsonTextRankedEntityExtractionDigester digester = new JsonTextRankedEntityExtractionDigester();
-      
-      EntitiesResults results = (EntitiesResults)digester.parseAlchemyXML(this.getClass().getResourceAsStream(
-              "/jsonTextRankedEntityResult.js"));
+
+      EntitiesResults results = (EntitiesResults) digester.parseAlchemyXML(this.getClass()
+              .getResourceAsStream("/jsonTextRankedEntityResult.js"));
       assertTrue(results != null);
       assertTrue(results.getLanguage() != null);
       assertTrue(results.getStatus() != null);
       assertTrue(results.getUrl() != null);
       assertTrue(results.getEntities() != null);
       assertTrue(results.getEntities().getEntities() != null);
-      assertTrue(results.getEntities().getEntities().size()>0);
-      assertTrue(results.getEntities().getEntities().size()==2);
-      assertTrue(results.getEntities().getEntities().get(1).getDisambiguated()!=null);
-      assertTrue(results.getEntities().getEntities().get(1).getDisambiguated().getDbpedia().equals("http://dbpedia.org/resource/United_States"));
+      assertTrue(results.getEntities().getEntities().size() > 0);
+      assertTrue(results.getEntities().getEntities().size() == 2);
+      assertTrue(results.getEntities().getEntities().get(1).getDisambiguated() != null);
+      assertTrue(results.getEntities().getEntities().get(1).getDisambiguated().getDbpedia().equals(
+              "http://dbpedia.org/resource/United_States"));
     } catch (Exception e) {
       e.printStackTrace();
       fail();
