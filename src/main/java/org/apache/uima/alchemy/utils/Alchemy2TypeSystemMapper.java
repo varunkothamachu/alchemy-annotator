@@ -110,26 +110,27 @@ public class Alchemy2TypeSystemMapper {
     setLanaguage(results, aJCas);
     String annotatedText = results.getAnnotatedText();
 
-    //find strings of pattern 'TYPE[TEXT'
-    String[] ants = StringUtils.substringsBetween(annotatedText, "[","]");
-    
-    //map the ants to UIMA CAS
+    // find strings of pattern 'TYPE[TEXT'
+    String[] ants = StringUtils.substringsBetween(annotatedText, "[", "]");
+
+    // map the ants to UIMA CAS
     for (String ant : ants) {
       AlchemyAnnotation alchemyAnnotation = new AlchemyAnnotation(aJCas);
-      
-      int indexOfAnt = annotatedText.indexOf(ant);
-      alchemyAnnotation.setBegin(indexOfAnt-1);
 
-      String antText = ant.substring(ant.indexOf("[")+1);
-      alchemyAnnotation.setEnd(indexOfAnt+antText.length()-1);
-      
-      String antType = ant.substring(0,ant.indexOf("["));
+      int indexOfAnt = annotatedText.indexOf(ant);
+      alchemyAnnotation.setBegin(indexOfAnt - 1);
+
+      String antText = ant.substring(ant.indexOf("[") + 1);
+      alchemyAnnotation.setEnd(indexOfAnt + antText.length() - 1);
+
+      String antType = ant.substring(0, ant.indexOf("["));
       alchemyAnnotation.setAlchemyType(antType);
       alchemyAnnotation.addToIndexes();
-      
-      annotatedText = annotatedText.replaceFirst("\\["+ant.replace("[", "\\[")+"\\]\\]",antText);
+
+      annotatedText = annotatedText.replaceFirst("\\[" + ant.replace("[", "\\[") + "\\]\\]",
+              antText);
     }
-    
+
   }
 
   public static void mapCategorizationEntity(CategorizationResults results, JCas aJCas)
