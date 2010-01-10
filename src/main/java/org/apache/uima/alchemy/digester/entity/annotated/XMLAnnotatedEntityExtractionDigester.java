@@ -39,6 +39,7 @@ public class XMLAnnotatedEntityExtractionDigester implements OutputDigester {
     digester.addBeanPropertySetter("results/status", "status");
     digester.addBeanPropertySetter("results/language", "language");
     digester.addBeanPropertySetter("results/text", "text");
+    digester.addBeanPropertySetter("results/url", "url");
     digester.addBeanPropertySetter("results/annotatedText", "annotatedText");
     return (Results) digester.parse(stream);
   }

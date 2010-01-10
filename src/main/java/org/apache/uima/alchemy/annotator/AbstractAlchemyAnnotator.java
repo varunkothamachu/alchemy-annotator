@@ -93,8 +93,19 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
     // create parameters string
     StringBuffer serviceParamsBuf = new StringBuffer();
     serviceParamsBuf.append("&text=");
-    serviceParamsBuf.append(aJCas.getDocumentText());
+    String modifiedText = cleanText(aJCas);
+    serviceParamsBuf.append(modifiedText);
     this.serviceParams += (serviceParamsBuf.toString());
+  }
+
+  private String cleanText(JCas aJCas) {
+    String modifiedText = aJCas.getDocumentText();
+    for (int i = 0; i < this.charsToReplace.length; i++) {
+      modifiedText = modifiedText.replaceAll(this.charsToReplace[i], "");
+    }
+    modifiedText = modifiedText.replaceAll("\n", " ");
+    modifiedText = modifiedText.replaceAll("\r", " ");
+    return modifiedText;
   }
 
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
@@ -107,14 +118,8 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
       BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection
               .getOutputStream(), "UTF-8"));
       writer.write(this.serviceParams);
-      String modifiedText = aJCas.getDocumentText();
-      for (int i = 0; i < this.charsToReplace.length; i++) {
-        modifiedText = modifiedText.replaceAll(this.charsToReplace[i], "");
-      }
-      modifiedText = modifiedText.replaceAll("\n", " ");
-      modifiedText = modifiedText.replaceAll("\r", " ");
+     
 
-      writer.write(modifiedText);
       writer.flush();
       writer.close();
 

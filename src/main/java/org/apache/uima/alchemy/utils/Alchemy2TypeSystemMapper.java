@@ -110,7 +110,6 @@ public class Alchemy2TypeSystemMapper {
     setLanaguage(results, aJCas);
     String annotatedText = results.getAnnotatedText();
 
-
     //find strings of pattern 'TYPE[TEXT'
     String[] ants = StringUtils.substringsBetween(annotatedText, "[","]");
     
@@ -129,6 +128,7 @@ public class Alchemy2TypeSystemMapper {
       alchemyAnnotation.addToIndexes();
       
       annotatedText = annotatedText.replaceFirst("\\["+ant.replace("[", "\\[")+"\\]\\]",antText);
+      System.err.println("AA:"+alchemyAnnotation.getAlchemyType()+" - "+alchemyAnnotation.getCoveredText());
     }
     
   }
