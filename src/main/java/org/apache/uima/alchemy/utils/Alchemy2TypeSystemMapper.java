@@ -128,7 +128,6 @@ public class Alchemy2TypeSystemMapper {
       alchemyAnnotation.addToIndexes();
       
       annotatedText = annotatedText.replaceFirst("\\["+ant.replace("[", "\\[")+"\\]\\]",antText);
-      System.err.println("AA:"+alchemyAnnotation.getAlchemyType()+" - "+alchemyAnnotation.getCoveredText());
     }
     
   }
