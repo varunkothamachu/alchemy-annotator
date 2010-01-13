@@ -115,20 +115,22 @@ public class Alchemy2TypeSystemMapper {
 
     // map the ants to UIMA CAS
     for (String ant : ants) {
-      AlchemyAnnotation alchemyAnnotation = new AlchemyAnnotation(aJCas);
+      if (ant.indexOf("[") > 0) {
+        AlchemyAnnotation alchemyAnnotation = new AlchemyAnnotation(aJCas);
 
-      int indexOfAnt = annotatedText.indexOf(ant);
-      alchemyAnnotation.setBegin(indexOfAnt - 1);
+        int indexOfAnt = annotatedText.indexOf(ant);
+        alchemyAnnotation.setBegin(indexOfAnt - 1);
 
-      String antText = ant.substring(ant.indexOf("[") + 1);
-      alchemyAnnotation.setEnd(indexOfAnt + antText.length() - 1);
+        String antText = ant.substring(ant.indexOf("[") + 1);
+        alchemyAnnotation.setEnd(indexOfAnt + antText.length() - 1);
 
-      String antType = ant.substring(0, ant.indexOf("["));
-      alchemyAnnotation.setAlchemyType(antType);
-      alchemyAnnotation.addToIndexes();
+        String antType = ant.substring(0, ant.indexOf("["));
+        alchemyAnnotation.setAlchemyType(antType);
+        alchemyAnnotation.addToIndexes();
 
-      annotatedText = annotatedText.replaceFirst("\\[" + ant.replace("[", "\\[") + "\\]\\]",
-              antText);
+        annotatedText = annotatedText.replaceFirst("\\[" + ant.replace("[", "\\[") + "\\]\\]",
+                antText);
+      }
     }
 
   }
