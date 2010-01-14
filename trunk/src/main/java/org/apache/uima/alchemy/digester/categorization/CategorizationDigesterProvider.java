@@ -21,7 +21,7 @@ package org.apache.uima.alchemy.digester.categorization;
 import org.apache.commons.lang.Validate;
 import org.apache.uima.alchemy.digester.DigesterProvider;
 import org.apache.uima.alchemy.digester.OutputDigester;
-import org.apache.uima.alchemy.digester.UnsupportedResultFormatException;
+import org.apache.uima.alchemy.digester.exception.UnsupportedResultFormatException;
 
 public class CategorizationDigesterProvider implements DigesterProvider {
 

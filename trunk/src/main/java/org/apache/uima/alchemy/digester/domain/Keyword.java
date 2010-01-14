@@ -16,21 +16,18 @@
  * 	specific language governing permissions and limitations
  * 	under the License.
  */
-package org.apache.uima.alchemy.digester;
+package org.apache.uima.alchemy.digester.domain;
 
-public class UnsupportedResultFormatException extends Exception {
+public class Keyword {
 
-  /**
-   * 
-   */
-  private static final long serialVersionUID = 1L;
+  private String text;
 
-  public UnsupportedResultFormatException(Throwable e) {
-    super(e);
+  public void setText(String text) {
+    this.text = text;
   }
 
-  public UnsupportedResultFormatException(String type) {
-    super(type + " outputs not suppoted");
+  public String getText() {
+    return text;
   }
 
 }

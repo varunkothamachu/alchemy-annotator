@@ -23,9 +23,12 @@ import org.apache.uima.alchemy.digester.domain.AnnotatedResults;
 import org.apache.uima.alchemy.digester.domain.CategorizationResults;
 import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
+import org.apache.uima.alchemy.digester.domain.Keyword;
+import org.apache.uima.alchemy.digester.domain.KeywordResults;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.apache.uima.alchemy.ts.categorization.Category;
 import org.apache.uima.alchemy.ts.entity.AlchemyAnnotation;
+import org.apache.uima.alchemy.ts.keywords.KeywordFS;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.Type;
@@ -147,6 +150,18 @@ public class Alchemy2TypeSystemMapper {
     } catch (Exception e) {
       e.printStackTrace();
       throw new MappingException(e);
+    }
+  }
+
+  public static void mapKeywordEntity(KeywordResults results, JCas aJCas) throws MappingException {
+    for (Keyword k : results.getKeywords()) {
+      try {
+        KeywordFS fs = new KeywordFS(aJCas);
+        Type type = fs.getType();
+        fs.setFeatureValueFromString(type.getFeatureByBaseName("text"), k.getText()); // text
+      } catch (Exception e) {
+        throw new MappingException(e);
+      }
     }
   }
 
