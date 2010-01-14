@@ -16,12 +16,29 @@
  * 	specific language governing permissions and limitations
  * 	under the License.
  */
-package org.apache.uima.alchemy.digester;
+package org.apache.uima.alchemy.digester.domain;
 
-import org.apache.uima.alchemy.digester.exception.UnsupportedResultFormatException;
+import java.util.ArrayList;
+import java.util.List;
 
-public interface DigesterProvider {
+public class KeywordResults extends Results {
 
-  public OutputDigester getDigester(String type) throws UnsupportedResultFormatException;
+  private List<Keyword> keywords;
+
+  public KeywordResults() {
+    keywords = new ArrayList<Keyword>();
+  }
+
+  public void setKeywords(List<Keyword> keywords) {
+    this.keywords = keywords;
+  }
+
+  public List<Keyword> getKeywords() {
+    return keywords;
+  }
+
+  public void addKeyword(Keyword k) {
+    keywords.add(k);
+  }
 
 }

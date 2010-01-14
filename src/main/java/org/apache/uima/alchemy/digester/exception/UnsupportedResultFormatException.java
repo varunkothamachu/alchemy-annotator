@@ -16,12 +16,21 @@
  * 	specific language governing permissions and limitations
  * 	under the License.
  */
-package org.apache.uima.alchemy.digester;
+package org.apache.uima.alchemy.digester.exception;
 
-import org.apache.uima.alchemy.digester.exception.UnsupportedResultFormatException;
+public class UnsupportedResultFormatException extends Exception {
 
-public interface DigesterProvider {
+  /**
+   * 
+   */
+  private static final long serialVersionUID = 1L;
 
-  public OutputDigester getDigester(String type) throws UnsupportedResultFormatException;
+  public UnsupportedResultFormatException(Throwable e) {
+    super(e);
+  }
+
+  public UnsupportedResultFormatException(String type) {
+    super(type + " outputs not suppoted");
+  }
 
 }
