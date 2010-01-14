@@ -159,6 +159,7 @@ public class Alchemy2TypeSystemMapper {
         KeywordFS fs = new KeywordFS(aJCas);
         Type type = fs.getType();
         fs.setFeatureValueFromString(type.getFeatureByBaseName("text"), k.getText()); // text
+        fs.addToIndexes();
       } catch (Exception e) {
         throw new MappingException(e);
       }
