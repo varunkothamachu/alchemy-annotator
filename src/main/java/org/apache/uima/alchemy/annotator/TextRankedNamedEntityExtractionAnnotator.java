@@ -50,4 +50,12 @@ public class TextRankedNamedEntityExtractionAnnotator extends AbstractAlchemyAnn
     return new RankedEntityDigesterProvider();
   }
 
+  protected void initializeRuntimeParameters(JCas aJCas) {
+    // create parameters string
+    StringBuffer serviceParamsBuf = new StringBuffer();
+    serviceParamsBuf.append("&text=");
+    String modifiedText = cleanText(aJCas);
+    serviceParamsBuf.append(modifiedText);
+    this.serviceParams += (serviceParamsBuf.toString());
+  }
 }

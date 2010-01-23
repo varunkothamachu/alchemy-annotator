@@ -49,4 +49,13 @@ public class TextCategorizationAnnotator extends AbstractAlchemyAnnotator {
     return new CategorizationDigesterProvider();
   }
 
+  protected void initializeRuntimeParameters(JCas aJCas) {
+    // create parameters string
+    StringBuffer serviceParamsBuf = new StringBuffer();
+    serviceParamsBuf.append("&text=");
+    String modifiedText = cleanText(aJCas);
+    serviceParamsBuf.append(modifiedText);
+    this.serviceParams += (serviceParamsBuf.toString());
+  }
+
 }

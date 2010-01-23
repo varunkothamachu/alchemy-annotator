@@ -89,16 +89,9 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
     this.serviceParams = serviceParamsBuf.toString();
   }
 
-  private void initializeRuntimeParameters(JCas aJCas) {
-    // create parameters string
-    StringBuffer serviceParamsBuf = new StringBuffer();
-    serviceParamsBuf.append("&text=");
-    String modifiedText = cleanText(aJCas);
-    serviceParamsBuf.append(modifiedText);
-    this.serviceParams += (serviceParamsBuf.toString());
-  }
+  protected abstract void initializeRuntimeParameters(JCas aJCas) throws AnalysisEngineProcessException;
 
-  private String cleanText(JCas aJCas) {
+  protected String cleanText(JCas aJCas) {
     String modifiedText = aJCas.getDocumentText();
     for (int i = 0; i < this.charsToReplace.length; i++) {
       modifiedText = modifiedText.replaceAll(this.charsToReplace[i], "");
@@ -112,6 +105,7 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
     // initialize service parameters
     initializeRuntimeParameters(aJCas);
     try {
+      System.err.println(this.alchemyService.toString()+this.serviceParams);
       // open connection and send data
       URLConnection connection = this.alchemyService.openConnection();
       connection.setDoOutput(true);
