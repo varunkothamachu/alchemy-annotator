@@ -18,44 +18,49 @@
  */
 package org.apache.uima.alchemy.annotator;
 
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
+import java.net.URLEncoder;
 
 import org.apache.uima.alchemy.digester.DigesterProvider;
-import org.apache.uima.alchemy.digester.domain.KeywordResults;
+import org.apache.uima.alchemy.digester.domain.MicroformatsResults;
 import org.apache.uima.alchemy.digester.domain.Results;
-import org.apache.uima.alchemy.digester.keyword.KeywordDigesterProvider;
+import org.apache.uima.alchemy.digester.microformats.MicroformatsDigesterProvider;
 import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
 import org.apache.uima.alchemy.utils.exception.MappingException;
+import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
 
-public class TextKeywordExtractionAnnotator extends AbstractAlchemyAnnotator {
+public class HtmlMicroformatsAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/text/TextGetKeywords").toURL();
+    return URI.create("http://access.alchemyapi.com/calls/html/HTMLGetMicroformatData").toURL();
   }
 
   protected String[] getServiceParameters() {
-    String[] parameters = new String[] { "outputMode", "baseUrl", "url", "maxRetrieve",
-        "showSourceText" };
+    String[] parameters = new String[] { "outputMode", "url" };
     return parameters;
   }
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {
-    Alchemy2TypeSystemMapper.mapKeywordEntity((KeywordResults) results, aJCas);
+    Alchemy2TypeSystemMapper.mapMicroformats((MicroformatsResults) results, aJCas);
   }
 
   protected DigesterProvider createDigester() {
-    return new KeywordDigesterProvider();
+    return new MicroformatsDigesterProvider();
   }
 
-  protected void initializeRuntimeParameters(JCas aJCas) {
-    // create parameters string
-    StringBuffer serviceParamsBuf = new StringBuffer();
-    serviceParamsBuf.append("&text=");
-    String modifiedText = cleanText(aJCas);
-    serviceParamsBuf.append(modifiedText);
-    this.serviceParams += (serviceParamsBuf.toString());
+  protected void initializeRuntimeParameters(JCas aJCas) throws AnalysisEngineProcessException {
+    try {
+      // fill html parameter
+      StringBuffer serviceParamsBuf = new StringBuffer();
+      serviceParamsBuf.append("&html=");
+      serviceParamsBuf.append(URLEncoder.encode(aJCas.getDocumentText(),"UTF-8"));
+      this.serviceParams += (serviceParamsBuf.toString());
+    } catch (UnsupportedEncodingException e) {
+      throw new AnalysisEngineProcessException(e);
+    }
   }
 }
