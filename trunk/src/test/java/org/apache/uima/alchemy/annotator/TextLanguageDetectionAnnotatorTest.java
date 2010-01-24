@@ -18,19 +18,26 @@
  */
 package org.apache.uima.alchemy.annotator;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.util.List;
+
+import org.apache.uima.alchemy.ts.language.LanguageFS;
 import org.apache.uima.alchemy.utils.TestUtils;
+import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-public class AlchemyTextAnnotatedEntityExtractionAnnotatorTest {
+public class TextLanguageDetectionAnnotatorTest {
 
   @Test
   public void testAnnotator() {
-    String doc = "Eight US soldiers die in attacks in south Afghanistan [this quad parentesis], making October the deadliest month for the US in the war there";
-    String xmlPath = "src/main/resources/TextAnnotatedEntityExtractionAEDescriptor.xml";
+    String doc = "Eight US soldiers die in attacks in south Afghanistan, making October the deadliest month for the US in the war there";
+    String xmlPath = "src/main/resources/TextLanguageDetectionAEDescriptor.xml";
     try {
-      TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
+      JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
+      List<LanguageFS> language = (List<LanguageFS>) TestUtils.getAllFSofType(LanguageFS.type, resultingCAS);
+      assertTrue(language.size()==1);
     } catch (Exception e) {
       e.printStackTrace();
       fail();

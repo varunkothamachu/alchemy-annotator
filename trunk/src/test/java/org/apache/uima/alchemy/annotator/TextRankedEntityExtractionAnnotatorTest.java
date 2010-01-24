@@ -18,19 +18,26 @@
  */
 package org.apache.uima.alchemy.annotator;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.util.List;
+
+import org.apache.uima.alchemy.ts.entity.Country;
 import org.apache.uima.alchemy.utils.TestUtils;
+import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-public class AlchemyTextCategorizationAnnotatorTest {
+public class TextRankedEntityExtractionAnnotatorTest {
 
   @Test
   public void testAnnotator() {
     String doc = "Eight US soldiers die in attacks in south Afghanistan, making October the deadliest month for the US in the war there";
-    String xmlPath = "src/main/resources/TextCategorizationAEDescriptor.xml";
+    String xmlPath = "src/main/resources/TextRankedEntityExtractionAEDescriptor.xml";
     try {
-      TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
+      JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
+      List<Country> entities = (List<Country>) TestUtils.getAllFSofType(Country.type, resultingCAS);
+      assertTrue(entities.size()==2);
     } catch (Exception e) {
       e.printStackTrace();
       fail();
