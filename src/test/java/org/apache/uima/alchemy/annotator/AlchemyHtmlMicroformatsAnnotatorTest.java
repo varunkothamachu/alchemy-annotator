@@ -27,11 +27,11 @@ public class AlchemyHtmlMicroformatsAnnotatorTest {
 
   @Test
   public void testAnnotator() {
-    String doc = "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head profile=\"http://www.w3.org/2006/03/hcard\">" +
+    String doc = "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head profile=\"http://www.w3.org/2006/03/hcard\"><body>" +
     		"<div class=\"vcard\"><a class=\" fn\">Dan McCreary</a>    <!-- fn is a full name --> <div class=\"org\">Syntactica</div>" +
     		"<div class=\"title\">    Semantic Solutions Architect  <div>  <div class=\"adr\"> <div class=\"street-address\">" +
     		"7400 Metro Boulevard, Suite 350 </div> <span class=\"locality\"> Minneapolis </span>, <span class=\"region\">MN</span>" +
-    		"<span class=\"postal-code\">55439</span> </div> <div class=\"tel\">(952) 921-9368</div>/div> ";
+    		"<span class=\"postal-code\">55439</span> </div> <div class=\"tel\">(952) 921-9368</div>/div> </body></html>";
     String xmlPath = "src/main/resources/HtmlMicroformatsAEDescriptor.xml";
     try {
       TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
