@@ -57,7 +57,7 @@ public class HtmlMicroformatsAnnotator extends AbstractAlchemyAnnotator {
       // fill html parameter
       StringBuffer serviceParamsBuf = new StringBuffer();
       serviceParamsBuf.append("&html=");
-      serviceParamsBuf.append(URLEncoder.encode(aJCas.getDocumentText(),"UTF-8"));
+      serviceParamsBuf.append(URLEncoder.encode(aJCas.getDocumentText(), "UTF-8"));
       this.serviceParams += (serviceParamsBuf.toString());
     } catch (UnsupportedEncodingException e) {
       throw new AnalysisEngineProcessException(e);

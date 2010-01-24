@@ -16,25 +16,24 @@
  * 	specific language governing permissions and limitations
  * 	under the License.
  */
-package org.apache.uima.alchemy.digester.domain;
+package org.apache.uima.alchemy.digester.language;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.apache.commons.lang.Validate;
+import org.apache.uima.alchemy.digester.DigesterProvider;
+import org.apache.uima.alchemy.digester.OutputDigester;
+import org.apache.uima.alchemy.digester.exception.UnsupportedResultFormatException;
+import org.apache.uima.alchemy.digester.microformats.XMLMicroformatsDigester;
 
-public class MicroformatsResults extends Results {
+public class LanguageDetectionDigesterProvider implements DigesterProvider {
 
-  private List<Microformat> microformats = new ArrayList<Microformat>();
-
-  public void setMicroformats(List<Microformat> microformats) {
-    this.microformats = microformats;
-  }
-
-  public List<Microformat> getMicroformats() {
-    return microformats;
-  }
-
-  public void addMicroformat(Microformat microformat) {
-    this.microformats.add(microformat);
+  public OutputDigester getDigester(String type) throws UnsupportedResultFormatException {
+    Validate.notEmpty(type);
+    OutputDigester digester = null;
+    if (type.equals("xml")) {
+      digester = new XMLLanguageDigester();
+    } else
+      throw new UnsupportedResultFormatException(type);
+    return digester;
   }
 
 }

@@ -25,13 +25,15 @@ import org.apache.uima.alchemy.digester.domain.EntitiesResults;
 import org.apache.uima.alchemy.digester.domain.Entity;
 import org.apache.uima.alchemy.digester.domain.Keyword;
 import org.apache.uima.alchemy.digester.domain.KeywordResults;
+import org.apache.uima.alchemy.digester.domain.LanguageDetectionResults;
 import org.apache.uima.alchemy.digester.domain.Microformat;
 import org.apache.uima.alchemy.digester.domain.MicroformatsResults;
 import org.apache.uima.alchemy.digester.domain.Results;
-import org.apache.uima.alchemy.ts.MicroformatFS;
 import org.apache.uima.alchemy.ts.categorization.Category;
 import org.apache.uima.alchemy.ts.entity.AlchemyAnnotation;
 import org.apache.uima.alchemy.ts.keywords.KeywordFS;
+import org.apache.uima.alchemy.ts.language.LanguageFS;
+import org.apache.uima.alchemy.ts.microformats.MicroformatFS;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.Type;
@@ -173,11 +175,33 @@ public class Alchemy2TypeSystemMapper {
     for (Microformat microformat : results.getMicroformats()) {
       MicroformatFS microformatFS = new MicroformatFS(aJCas);
       Type type = microformatFS.getType();
-      microformatFS.setFeatureValueFromString(type.getFeatureByBaseName("fieldName"), microformat.getFieldName());
-      microformatFS.setFeatureValueFromString(type.getFeatureByBaseName("fieldData"), microformat.getFieldData());
+      microformatFS.setFeatureValueFromString(type.getFeatureByBaseName("fieldName"), microformat
+              .getFieldName());
+      microformatFS.setFeatureValueFromString(type.getFeatureByBaseName("fieldData"), microformat
+              .getFieldData());
       microformatFS.addToIndexes();
     }
-    
+
+  }
+
+  public static void mapLanguageDetection(LanguageDetectionResults results, JCas aJCas) {
+    LanguageFS languageFS = new LanguageFS(aJCas);
+    Type type = languageFS.getType();
+    languageFS.setFeatureValueFromString(type.getFeatureByBaseName("language"), results
+            .getLanguage());
+    languageFS
+            .setFeatureValueFromString(type.getFeatureByBaseName("iso6391"), results.getIso6391());
+    languageFS
+            .setFeatureValueFromString(type.getFeatureByBaseName("iso6392"), results.getIso6392());
+    languageFS
+            .setFeatureValueFromString(type.getFeatureByBaseName("iso6393"), results.getIso6393());
+    languageFS.setFeatureValueFromString(type.getFeatureByBaseName("ethnologue"), results
+            .getEthnologue());
+    languageFS.setFeatureValueFromString(type.getFeatureByBaseName("nativeSpeakers"), results
+            .getNativeSpeakers());
+    languageFS.setFeatureValueFromString(type.getFeatureByBaseName("wikipedia"), results
+            .getWikipedia());
+    languageFS.addToIndexes();
   }
 
 }
