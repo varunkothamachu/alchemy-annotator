@@ -70,6 +70,12 @@ public class TestUtils {
     return jcas;
   }
   
+  /** 
+   * get all FeatureStructures of a type from the CAS
+   * @param type
+   * @param cas
+   * @return
+   */
   public static List<? extends FeatureStructure> getAllFSofType(int type,JCas cas) {
     List<FeatureStructure> featureStructures = new ArrayList<FeatureStructure>();
     for (FSIterator<FeatureStructure> it = cas.getFSIndexRepository().getAllIndexedFS(cas.getCasType(type)); it.hasNext();) {
