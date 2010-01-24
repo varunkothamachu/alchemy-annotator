@@ -27,7 +27,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.logging.Logger;
 
 import javax.xml.parsers.ParserConfigurationException;
 
@@ -44,7 +43,6 @@ import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
-import org.apache.uima.util.Level;
 import org.xml.sax.SAXException;
 
 public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
@@ -105,8 +103,6 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
     // initialize service parameters
     initializeRuntimeParameters(aJCas);
     try {
-      this.getContext().getLogger().log(Level.ALL,
-              "Calling AlchemyAPI Service: " + this.alchemyService.toString() + this.serviceParams);
       // open connection and send data
       URLConnection connection = this.alchemyService.openConnection();
       connection.setDoOutput(true);
