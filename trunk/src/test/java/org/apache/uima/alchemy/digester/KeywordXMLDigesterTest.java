@@ -31,8 +31,8 @@ public class KeywordXMLDigesterTest extends TestCase {
     try {
       String xmlString = "<results><status>OK</status><language>english</language><keywords><keyword>pluto</keyword><keyword>pippo</keyword></keywords></results>";
       XMLTextKeywordExctractionDigester digester = new XMLTextKeywordExctractionDigester();
-      KeywordResults results = (KeywordResults) digester
-              .parseAlchemyXML(new ByteArrayInputStream(xmlString.getBytes()));
+      KeywordResults results = (KeywordResults) digester.parseAlchemyXML(new ByteArrayInputStream(
+              xmlString.getBytes()));
       assertTrue(results != null);
       assertTrue(results.getLanguage() != null);
       assertTrue(results.getStatus() != null);

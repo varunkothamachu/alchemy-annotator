@@ -19,19 +19,23 @@
 package org.apache.uima.alchemy.digester.domain;
 
 public class Microformat {
-  
+
   private String fieldName;
+
   private String fieldData;
-  
+
   public void setFieldName(String fieldName) {
     this.fieldName = fieldName;
   }
+
   public String getFieldName() {
     return fieldName;
   }
+
   public void setFieldData(String fieldData) {
     this.fieldData = fieldData;
   }
+
   public String getFieldData() {
     return fieldData;
   }

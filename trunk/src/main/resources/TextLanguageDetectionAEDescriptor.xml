@@ -22,9 +22,9 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>true</primitive>
-  <annotatorImplementationName>org.apache.uima.alchemy.annotator.HtmlMicroformatsAnnotator</annotatorImplementationName>
+  <annotatorImplementationName>org.apache.uima.alchemy.annotator.TextLanguageDetectionAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>TextAnnotatedEntityExtractionAEDescriptor</name>
+    <name>TextCategorizationAEDescriptor</name>
     <description/>
     <version>1.0</version>
     <vendor/>
@@ -42,7 +42,7 @@
         <mandatory>true</mandatory>
       </configurationParameter>
       <configurationParameter>
-        <name>html</name>
+        <name>url</name>
         <type>String</type>
         <multiValued>false</multiValued>
         <mandatory>false</mandatory>
@@ -65,17 +65,42 @@
     <typeSystemDescription>
       <types>
         <typeDescription>
-          <name>org.apache.uima.alchemy.ts.microformats.MicroformatFS</name>
+          <name>org.apache.uima.alchemy.ts.language.LanguageFS</name>
           <description/>
           <supertypeName>uima.cas.TOP</supertypeName>
           <features>
             <featureDescription>
-              <name>fieldName</name>
+              <name>language</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>
             <featureDescription>
-              <name>fieldData</name>
+              <name>iso6391</name>
+              <description/>
+              <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>iso6392</name>
+              <description/>
+              <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>iso6393</name>
+              <description/>
+              <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>ethnologue</name>
+              <description/>
+              <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>nativeSpeakers</name>
+              <description/>
+              <rangeTypeName>uima.cas.String</rangeTypeName>
+            </featureDescription>
+            <featureDescription>
+              <name>wikipedia</name>
               <description/>
               <rangeTypeName>uima.cas.String</rangeTypeName>
             </featureDescription>

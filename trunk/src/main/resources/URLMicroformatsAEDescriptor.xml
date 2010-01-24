@@ -65,7 +65,7 @@
     <typeSystemDescription>
       <types>
         <typeDescription>
-          <name>org.apache.uima.alchemy.ts.MicroformatFS</name>
+          <name>org.apache.uima.alchemy.ts.microformats.MicroformatFS</name>
           <description/>
           <supertypeName>uima.cas.TOP</supertypeName>
           <features>

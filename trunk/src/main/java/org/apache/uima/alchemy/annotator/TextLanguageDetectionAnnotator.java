@@ -18,49 +18,44 @@
  */
 package org.apache.uima.alchemy.annotator;
 
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
-import java.net.URLEncoder;
 
 import org.apache.uima.alchemy.digester.DigesterProvider;
-import org.apache.uima.alchemy.digester.domain.MicroformatsResults;
+import org.apache.uima.alchemy.digester.domain.LanguageDetectionResults;
 import org.apache.uima.alchemy.digester.domain.Results;
-import org.apache.uima.alchemy.digester.microformats.MicroformatsDigesterProvider;
+import org.apache.uima.alchemy.digester.language.LanguageDetectionDigesterProvider;
 import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
 import org.apache.uima.alchemy.utils.exception.MappingException;
-import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
 
-public class URLMicroformatsAnnotator extends AbstractAlchemyAnnotator {
+public class TextLanguageDetectionAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
-    return URI.create("http://access.alchemyapi.com/calls/url/URLGetMicroformatData").toURL();
+    return URI.create("http://access.alchemyapi.com/calls/text/TextGetLanguage").toURL();
   }
 
   protected String[] getServiceParameters() {
-    String[] parameters = new String[] { "outputMode" };
+    String[] parameters = new String[] { "outputMode", "url" };
     return parameters;
   }
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {
-    Alchemy2TypeSystemMapper.mapMicroformats((MicroformatsResults) results, aJCas);
+    Alchemy2TypeSystemMapper.mapLanguageDetection((LanguageDetectionResults) results, aJCas);
   }
 
   protected DigesterProvider createDigester() {
-    return new MicroformatsDigesterProvider();
+    return new LanguageDetectionDigesterProvider();
   }
 
-  protected void initializeRuntimeParameters(JCas aJCas) throws AnalysisEngineProcessException {
-    try {
-      // fill url parameter
-      StringBuffer serviceParamsBuf = new StringBuffer();
-      serviceParamsBuf.append("&url=");
-      serviceParamsBuf.append(URLEncoder.encode(aJCas.getDocumentText(), "UTF-8"));
-      this.serviceParams += (serviceParamsBuf.toString());
-    } catch (UnsupportedEncodingException e) {
-      throw new AnalysisEngineProcessException(e);
-    }
+  protected void initializeRuntimeParameters(JCas aJCas) {
+    // create parameters string
+    StringBuffer serviceParamsBuf = new StringBuffer();
+    serviceParamsBuf.append("&text=");
+    String modifiedText = cleanText(aJCas);
+    serviceParamsBuf.append(modifiedText);
+    this.serviceParams += (serviceParamsBuf.toString());
   }
+
 }
