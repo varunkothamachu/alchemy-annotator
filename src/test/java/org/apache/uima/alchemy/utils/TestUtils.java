@@ -39,6 +39,14 @@ import org.junit.Ignore;
 @Ignore
 public class TestUtils {
 
+  /**
+   * get an AE from a path of the descriptor
+   * @param filePath
+   * @return
+   * @throws IOException
+   * @throws InvalidXMLException
+   * @throws ResourceInitializationException
+   */
   public static AnalysisEngine getAE(String filePath) throws IOException, InvalidXMLException,
           ResourceInitializationException {
     AnalysisEngine ae = null;
@@ -52,6 +60,14 @@ public class TestUtils {
     return ae;
   }
 
+  /**
+   * executes an AE on a document
+   * @param ae
+   * @param docText
+   * @return
+   * @throws AnalysisEngineProcessException
+   * @throws ResourceInitializationException
+   */
   public static JCas executeAE(AnalysisEngine ae, String docText)
           throws AnalysisEngineProcessException, ResourceInitializationException {
     // create a JCas, given an Analysis Engine (ae)
