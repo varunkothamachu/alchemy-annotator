@@ -159,6 +159,7 @@ public class Alchemy2TypeSystemMapper {
   }
 
   public static void mapKeywordEntity(KeywordResults results, JCas aJCas) throws MappingException {
+    setLanaguage(results, aJCas);
     for (Keyword k : results.getKeywords()) {
       try {
         KeywordFS fs = new KeywordFS(aJCas);
@@ -172,6 +173,7 @@ public class Alchemy2TypeSystemMapper {
   }
 
   public static void mapMicroformats(MicroformatsResults results, JCas aJCas) {
+    setLanaguage(results, aJCas);
     for (Microformat microformat : results.getMicroformats()) {
       MicroformatFS microformatFS = new MicroformatFS(aJCas);
       Type type = microformatFS.getType();
@@ -185,6 +187,7 @@ public class Alchemy2TypeSystemMapper {
   }
 
   public static void mapLanguageDetection(LanguageDetectionResults results, JCas aJCas) {
+    setLanaguage(results, aJCas);
     LanguageFS languageFS = new LanguageFS(aJCas);
     Type type = languageFS.getType();
     languageFS.setFeatureValueFromString(type.getFeatureByBaseName("language"), results
