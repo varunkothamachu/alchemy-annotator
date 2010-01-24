@@ -54,7 +54,7 @@ public class URLMicroformatsAnnotator extends AbstractAlchemyAnnotator {
 
   protected void initializeRuntimeParameters(JCas aJCas) throws AnalysisEngineProcessException {
     try {
-      // fill html parameter
+      // fill url parameter
       StringBuffer serviceParamsBuf = new StringBuffer();
       serviceParamsBuf.append("&url=");
       serviceParamsBuf.append(URLEncoder.encode(aJCas.getDocumentText(),"UTF-8"));
