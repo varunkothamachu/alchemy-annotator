@@ -58,8 +58,7 @@ public class TestUtils {
     ProcessTrace pt = ae.process(jcas);
 
     // analyze results
-    for (Object eventObject : pt.getEvents()) {
-      ProcessTraceEvent e = (ProcessTraceEvent) eventObject;
+    for (ProcessTraceEvent e : pt.getEvents()) {
       if (e != null && e.getResultMessage() != null && e.getResultMessage().contains("error")) {
         throw new AnalysisEngineProcessException();
       }
