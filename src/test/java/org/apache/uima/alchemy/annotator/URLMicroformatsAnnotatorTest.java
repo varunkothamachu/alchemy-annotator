@@ -18,23 +18,26 @@
  */
 package org.apache.uima.alchemy.annotator;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.util.List;
+
+import org.apache.uima.alchemy.ts.microformats.MicroformatFS;
 import org.apache.uima.alchemy.utils.TestUtils;
+import org.apache.uima.jcas.JCas;
 import org.junit.Test;
 
-public class AlchemyHtmlMicroformatsAnnotatorTest {
+public class URLMicroformatsAnnotatorTest {
 
   @Test
   public void testAnnotator() {
-    String doc = "<html xmlns=\"http://www.w3.org/1999/xhtml\"><head profile=\"http://www.w3.org/2006/03/hcard\"><body>"
-            + "<div class=\"vcard\"><a class=\" fn\">Dan McCreary</a>    <!-- fn is a full name --> <div class=\"org\">Syntactica</div>"
-            + "<div class=\"title\">    Semantic Solutions Architect  <div>  <div class=\"adr\"> <div class=\"street-address\">"
-            + "7400 Metro Boulevard, Suite 350 </div> <span class=\"locality\"> Minneapolis </span>, <span class=\"region\">MN</span>"
-            + "<span class=\"postal-code\">55439</span> </div> <div class=\"tel\">(952) 921-9368</div>/div> </body></html>";
-    String xmlPath = "src/main/resources/HtmlMicroformatsAEDescriptor.xml";
+    String url = "http://www.semanticuniverse.com/articles-entity-extraction-and-semantic-web.html";
+    String xmlPath = "src/main/resources/URLMicroformatsAEDescriptor.xml";
     try {
-      TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
+      JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(xmlPath), url);
+      List<MicroformatFS> microformats = (List<MicroformatFS>) TestUtils.getAllFSofType(MicroformatFS.type, resultingCAS);
+      assertTrue(microformats.size()==2);
     } catch (Exception e) {
       e.printStackTrace();
       fail();

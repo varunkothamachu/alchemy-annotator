@@ -19,10 +19,14 @@
 package org.apache.uima.alchemy.utils;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.uima.UIMAFramework;
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.cas.FSIterator;
+import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceSpecifier;
@@ -48,7 +52,7 @@ public class TestUtils {
     return ae;
   }
 
-  public static void executeAE(AnalysisEngine ae, String docText)
+  public static JCas executeAE(AnalysisEngine ae, String docText)
           throws AnalysisEngineProcessException, ResourceInitializationException {
     // create a JCas, given an Analysis Engine (ae)
     JCas jcas = ae.newJCas();
@@ -63,6 +67,15 @@ public class TestUtils {
         throw new AnalysisEngineProcessException();
       }
     }
+    return jcas;
+  }
+  
+  public static List<? extends FeatureStructure> getAllFSofType(int type,JCas cas) {
+    List<FeatureStructure> featureStructures = new ArrayList<FeatureStructure>();
+    for (FSIterator<FeatureStructure> it = cas.getFSIndexRepository().getAllIndexedFS(cas.getCasType(type)); it.hasNext();) {
+      featureStructures.add(it.next());
+    }
+    return featureStructures;
   }
 
 }

@@ -18,19 +18,26 @@
  */
 package org.apache.uima.alchemy.annotator;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import org.apache.uima.alchemy.ts.entity.AlchemyAnnotation;
 import org.apache.uima.alchemy.utils.TestUtils;
+import org.apache.uima.cas.text.AnnotationIndex;
+import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
 import org.junit.Test;
 
-public class AlchemyURLMicroformatsAnnotatorTest {
+public class TextAnnotatedEntityExtractionAnnotatorTest {
 
   @Test
   public void testAnnotator() {
-    String url = "http://www.semanticuniverse.com/articles-entity-extraction-and-semantic-web.html";
-    String xmlPath = "src/main/resources/URLMicroformatsAEDescriptor.xml";
+    String doc = "Eight US soldiers die in attacks in south Afghanistan [this quad parentesis], making October the deadliest month for the US in the war there";
+    String xmlPath = "src/main/resources/TextAnnotatedEntityExtractionAEDescriptor.xml";
     try {
-      TestUtils.executeAE(TestUtils.getAE(xmlPath), url);
+      JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
+      AnnotationIndex<Annotation> annotations = resultingCAS.getAnnotationIndex(AlchemyAnnotation.type);
+      assertTrue(annotations.size()>0);
     } catch (Exception e) {
       e.printStackTrace();
       fail();
