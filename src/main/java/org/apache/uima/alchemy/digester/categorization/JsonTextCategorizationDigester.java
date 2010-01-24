@@ -28,7 +28,7 @@ import org.apache.uima.alchemy.digester.domain.CategorizationResults;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.xml.sax.SAXException;
 
-import com.digestertools.json.JsonDigester;
+import org.apache.uima.alchemy.digester.json.JsonDigester;
 
 public class JsonTextCategorizationDigester implements OutputDigester {
 
