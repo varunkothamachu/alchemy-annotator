@@ -31,7 +31,7 @@ import org.apache.uima.alchemy.digester.domain.Quotations;
 import org.apache.uima.alchemy.digester.domain.Results;
 import org.xml.sax.SAXException;
 
-import com.digestertools.json.JsonDigester;
+import org.apache.uima.alchemy.digester.json.JsonDigester;
 
 public class JsonTextRankedEntityExtractionDigester implements OutputDigester {
 
