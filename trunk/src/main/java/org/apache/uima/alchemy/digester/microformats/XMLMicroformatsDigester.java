@@ -40,8 +40,8 @@ public class XMLMicroformatsDigester implements OutputDigester {
     digester.addBeanPropertySetter("results/status", "status");
     digester.addBeanPropertySetter("results/url", "url");
     digester.addObjectCreate("results/microformats/microformat", Microformat.class);
-    digester.addBeanPropertySetter("results/microformats/microformat/fieldName","fieldName");
-    digester.addBeanPropertySetter("results/microformats/microformat/fieldData","fieldData");
+    digester.addBeanPropertySetter("results/microformats/microformat/field","fieldName");
+    digester.addBeanPropertySetter("results/microformats/microformat/data","fieldData");
     digester.addSetNext("results/microformats/microformat", "addMicroformat");
     
     return (Results) digester.parse(responseStream);
