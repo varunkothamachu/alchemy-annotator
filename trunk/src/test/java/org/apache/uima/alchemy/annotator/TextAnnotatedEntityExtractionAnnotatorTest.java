@@ -26,8 +26,16 @@ import org.apache.uima.alchemy.utils.TestUtils;
 import org.apache.uima.cas.text.AnnotationIndex;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.tcas.Annotation;
+import org.junit.Ignore;
 import org.junit.Test;
 
+/**
+ * 
+ * This test is skipped since the functionality is not supported anymore at the moment
+ *
+ */
+
+@Ignore
 public class TextAnnotatedEntityExtractionAnnotatorTest {
 
   @Test
