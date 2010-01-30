@@ -30,6 +30,12 @@ import org.apache.uima.alchemy.utils.Alchemy2TypeSystemMapper;
 import org.apache.uima.alchemy.utils.exception.MappingException;
 import org.apache.uima.jcas.JCas;
 
+/**
+ * 
+ * This functionality has been disabled for free API keys
+ *
+ */
+@Deprecated
 public class TextAnnotatedNamedEntityExtractionAnnotator extends AbstractAlchemyAnnotator {
 
   protected URL createServiceURI() throws MalformedURLException {
