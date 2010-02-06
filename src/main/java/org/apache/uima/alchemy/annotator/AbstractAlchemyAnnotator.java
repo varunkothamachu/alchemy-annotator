@@ -18,18 +18,6 @@
  */
 package org.apache.uima.alchemy.annotator;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-
-import javax.xml.parsers.ParserConfigurationException;
-
 import org.apache.commons.lang.Validate;
 import org.apache.uima.UimaContext;
 import org.apache.uima.alchemy.annotator.exception.AlchemyCallFailedException;
@@ -45,6 +33,12 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
 public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
 
   private static final String STATUS_OK = "OK";
@@ -53,7 +47,7 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
 
   protected String serviceParams;
 
-  private String[] charsToReplace = { "<", ">", "\"", "'", "&" };
+  private final String[] charsToReplace = { "<", ">", "\"", "'", "&" };
 
   private OutputDigester digester;
 
@@ -82,7 +76,7 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
     serviceParamsBuf.append(aContext.getConfigParameterValue("apikey"));
 
     for (String param : this.getServiceParameters()) {
-      serviceParamsBuf.append("&" + param + "=");
+      serviceParamsBuf.append("&").append(param).append("=");
       serviceParamsBuf.append(aContext.getConfigParameterValue(param));
     }
 
@@ -138,7 +132,7 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
   }
 
   private InputStream parseOutput(URLConnection connection) throws ParserConfigurationException,
-          IOException, SAXException, UnsupportedEncodingException {
+          IOException, SAXException{
     BufferedInputStream in = new BufferedInputStream(connection.getInputStream());
     return in;
   }
