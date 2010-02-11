@@ -37,7 +37,7 @@ public class HtmlMicroformatsAnnotatorTest {
             + "<div class=\"title\">    Semantic Solutions Architect  <div>  <div class=\"adr\"> <div class=\"street-address\">"
             + "7400 Metro Boulevard, Suite 350 </div> <span class=\"locality\"> Minneapolis </span>, <span class=\"region\">MN</span>"
             + "<span class=\"postal-code\">55439</span> </div> <div class=\"tel\">(952) 921-9368</div>/div> </body></html>";
-    String xmlPath = "src/main/resources/HtmlMicroformatsAEDescriptor.xml";
+    String xmlPath = "desc/HtmlMicroformatsAEDescriptor.xml";
     try {
       JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
       List<MicroformatFS> microformatsList = (List<MicroformatFS>) TestUtils.getAllFSofType(MicroformatFS.type, resultingCAS);

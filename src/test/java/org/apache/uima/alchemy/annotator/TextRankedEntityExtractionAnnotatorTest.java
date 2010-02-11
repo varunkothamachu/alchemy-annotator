@@ -33,7 +33,7 @@ public class TextRankedEntityExtractionAnnotatorTest {
   @Test
   public void testAnnotator() {
     String doc = "Eight US soldiers die in attacks in south Afghanistan, making October the deadliest month for the US in the war there";
-    String xmlPath = "src/main/resources/TextRankedEntityExtractionAEDescriptor.xml";
+    String xmlPath = "desc/TextRankedEntityExtractionAEDescriptor.xml";
     try {
       JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
       List<Country> entities = (List<Country>) TestUtils.getAllFSofType(Country.type, resultingCAS);

@@ -33,7 +33,7 @@ public class URLMicroformatsAnnotatorTest {
   @Test
   public void testAnnotator() {
     String url = "http://www.semanticuniverse.com/articles-entity-extraction-and-semantic-web.html";
-    String xmlPath = "src/main/resources/URLMicroformatsAEDescriptor.xml";
+    String xmlPath = "desc/URLMicroformatsAEDescriptor.xml";
     try {
       JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(xmlPath), url);
       List<MicroformatFS> microformats = (List<MicroformatFS>) TestUtils.getAllFSofType(MicroformatFS.type, resultingCAS);
