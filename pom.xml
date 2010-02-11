@@ -20,17 +20,16 @@
 		<artifactId>SandboxDistr-pearBuilder</artifactId>
 		<groupId>org.apache.uima</groupId>
 		<version>2.3.0-incubating</version>
+		<relativePath>../SandboxDistr/pear-builder-pom</relativePath>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.apache.uima</groupId>
 	<artifactId>alchemy-annotator</artifactId>
-	<name>alchemy-annotator</name>
-	<version>0.1.0-SNAPSHOT</version>
+	<name>AlchemyAPI Annotator</name>
+	<version>2.3.0-incubating</version>
 	<description>A UIMA set of AEs that wrap Alchemy API services from Orchestr8</description>
-	<url>http://code.google.com/p/alchemy-annotator/</url>
 
 	<scm>
-		<url>http://alchemy-annotator.googlecode.com/svn/trunk/</url>
 	</scm>
 
 	<dependencies>
@@ -88,14 +87,6 @@
 				</executions>
 			</plugin>
 
-			<plugin>
-				<groupId>com.google.code.maven-license-plugin</groupId>
-				<artifactId>maven-license-plugin</artifactId>
-				<version>1.4.0</version>
-				<configuration>
-					<header>src/main/resources/header.txt</header>
-				</configuration>
-			</plugin>
 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
