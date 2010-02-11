@@ -33,7 +33,7 @@ public class TextLanguageDetectionAnnotatorTest {
   @Test
   public void testAnnotator() {
     String doc = "Eight US soldiers die in attacks in south Afghanistan, making October the deadliest month for the US in the war there";
-    String xmlPath = "src/main/resources/TextLanguageDetectionAEDescriptor.xml";
+    String xmlPath = "desc/TextLanguageDetectionAEDescriptor.xml";
     try {
       JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
       List<LanguageFS> language = (List<LanguageFS>) TestUtils.getAllFSofType(LanguageFS.type, resultingCAS);

@@ -33,7 +33,7 @@ public class TextCategorizationAnnotatorTest {
   @Test
   public void testAnnotator() {
     String doc = "Eight US soldiers die in attacks in south Afghanistan, making October the deadliest month for the US in the war there";
-    String xmlPath = "src/main/resources/TextCategorizationAEDescriptor.xml";
+    String xmlPath = "desc/TextCategorizationAEDescriptor.xml";
     try {
       JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
       List<Category> categories = (List<Category>) TestUtils.getAllFSofType(Category.type, resultingCAS);

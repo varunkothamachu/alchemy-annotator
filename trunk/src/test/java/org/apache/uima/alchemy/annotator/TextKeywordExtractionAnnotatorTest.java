@@ -33,7 +33,7 @@ public class TextKeywordExtractionAnnotatorTest {
   @Test
   public void testAnnotator() {
     String doc = "In an effort to centralize developer resources and help newcomers to open source, the Apache Software Foundation recently launched the Community Developer project.  So far, the project includes plans for a mentoring program, a \"Newbie FAQ\", and resources for educators.  To find out how the project started and where it's going, DZone conducted an exclusive interview with Bertrand Delacretaz, an Apache member who has been with the project since the beginning.  He says some of the major goals for the project include mentoring for student developers and an entry point to the foundation at-large.";
-    String xmlPath = "src/main/resources/TextKeywordExtractionAEDescriptor.xml";
+    String xmlPath = "desc/TextKeywordExtractionAEDescriptor.xml";
     try {
       JCas resultingCAS = TestUtils.executeAE(TestUtils.getAE(xmlPath), doc);
       List<KeywordFS> keywords = (List<KeywordFS>) TestUtils.getAllFSofType(KeywordFS.type, resultingCAS);
