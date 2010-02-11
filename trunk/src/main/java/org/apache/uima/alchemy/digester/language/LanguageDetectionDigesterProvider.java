@@ -22,7 +22,6 @@ import org.apache.commons.lang.Validate;
 import org.apache.uima.alchemy.digester.DigesterProvider;
 import org.apache.uima.alchemy.digester.OutputDigester;
 import org.apache.uima.alchemy.digester.exception.UnsupportedResultFormatException;
-import org.apache.uima.alchemy.digester.microformats.XMLMicroformatsDigester;
 
 public class LanguageDetectionDigesterProvider implements DigesterProvider {
 
