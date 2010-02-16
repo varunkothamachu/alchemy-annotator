@@ -40,8 +40,7 @@ public class URLMicroformatsAnnotator extends AbstractAlchemyAnnotator {
   }
 
   protected String[] getServiceParameters() {
-    String[] parameters = new String[] { "outputMode" };
-    return parameters;
+    return new String[] { "outputMode" };
   }
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {

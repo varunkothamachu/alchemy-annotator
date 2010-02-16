@@ -131,10 +131,8 @@ public abstract class AbstractAlchemyAnnotator extends JCasAnnotator_ImplBase {
 
   }
 
-  private InputStream parseOutput(URLConnection connection) throws ParserConfigurationException,
-          IOException, SAXException{
-    BufferedInputStream in = new BufferedInputStream(connection.getInputStream());
-    return in;
+  private InputStream parseOutput(URLConnection connection) throws IOException {
+    return new BufferedInputStream(connection.getInputStream());
   }
 
   public void setDigesterProvider(DigesterProvider digesterProvider) {
