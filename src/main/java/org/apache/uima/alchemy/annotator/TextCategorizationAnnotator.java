@@ -37,8 +37,7 @@ public class TextCategorizationAnnotator extends AbstractAlchemyAnnotator {
   }
 
   protected String[] getServiceParameters() {
-    String[] parameters = new String[] { "outputMode", "baseUrl", "url" };
-    return parameters;
+    return new String[] { "outputMode", "baseUrl", "url" };
   }
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {

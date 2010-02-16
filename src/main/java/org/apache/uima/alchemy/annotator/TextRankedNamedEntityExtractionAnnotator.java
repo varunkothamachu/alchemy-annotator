@@ -37,9 +37,8 @@ public class TextRankedNamedEntityExtractionAnnotator extends AbstractAlchemyAnn
   }
 
   protected String[] getServiceParameters() {
-    String[] parameters = new String[] { "outputMode", "baseUrl", "disambiguate", "linkedData",
+    return new String[] { "outputMode", "baseUrl", "disambiguate", "linkedData",
         "showSourceText" };
-    return parameters;
   }
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {

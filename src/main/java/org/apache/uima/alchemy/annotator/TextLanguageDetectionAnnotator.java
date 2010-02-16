@@ -37,8 +37,7 @@ public class TextLanguageDetectionAnnotator extends AbstractAlchemyAnnotator {
   }
 
   protected String[] getServiceParameters() {
-    String[] parameters = new String[] { "outputMode", "url" };
-    return parameters;
+    return new String[] { "outputMode", "url" };
   }
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {

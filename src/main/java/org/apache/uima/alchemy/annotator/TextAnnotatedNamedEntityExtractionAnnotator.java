@@ -44,9 +44,8 @@ public class TextAnnotatedNamedEntityExtractionAnnotator extends AbstractAlchemy
   }
 
   protected String[] getServiceParameters() {
-    String[] parameters = new String[] { "outputMode", "baseUrl", "disambiguate", "quotations",
+    return new String[] { "outputMode", "baseUrl", "disambiguate", "quotations",
         "showSourceText", "coreference" };
-    return parameters;
   }
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {

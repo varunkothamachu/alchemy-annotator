@@ -37,9 +37,8 @@ public class TextKeywordExtractionAnnotator extends AbstractAlchemyAnnotator {
   }
 
   protected String[] getServiceParameters() {
-    String[] parameters = new String[] { "outputMode", "baseUrl", "url", "maxRetrieve",
+    return new String[] { "outputMode", "baseUrl", "url", "maxRetrieve",
         "showSourceText" };
-    return parameters;
   }
 
   protected void mapResultsToTypeSystem(Results results, JCas aJCas) throws MappingException {
