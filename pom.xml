@@ -23,10 +23,10 @@
   <relativePath>../SandboxDistr/pear-builder-pom</relativePath>
  </parent>
  <modelVersion>4.0.0</modelVersion>
- <groupId>org.apache.uima</groupId>
- <artifactId>alchemy-annotator</artifactId>
+ <groupId>gc-alchemy-annotator</groupId>
+ <artifactId>gc-alchemy-annotator</artifactId>
  <name>AlchemyAPI Annotator</name>
- <version>2.3.0-incubating</version>
+ <version>1.0.0</version>
  <description>A UIMA set of AEs that wrap Alchemy API services from Orchestr8</description>
 
  <scm>
